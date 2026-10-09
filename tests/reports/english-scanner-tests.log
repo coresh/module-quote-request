@@ -1,0 +1,18 @@
+test_cli_refuses_to_overwrite_authored_file (test_english_content.EnglishContentTests.test_cli_refuses_to_overwrite_authored_file) ... ok
+test_cli_replaces_own_stale_report_without_repeating_findings (test_english_content.EnglishContentTests.test_cli_replaces_own_stale_report_without_repeating_findings) ... ok
+test_cli_writes_json_with_failure_exit (test_english_content.EnglishContentTests.test_cli_writes_json_with_failure_exit) ... ok
+test_cyrillic_content_reports_exact_positions (test_english_content.EnglishContentTests.test_cyrillic_content_reports_exact_positions) ... ok
+test_cyrillic_directory_and_extensionless_filename_are_checked (test_english_content.EnglishContentTests.test_cyrillic_directory_and_extensionless_filename_are_checked) ... ok
+test_english_and_non_cyrillic_unicode_pass (test_english_content.EnglishContentTests.test_english_and_non_cyrillic_unicode_pass) ... ok
+test_escape_notation_is_language_neutral (test_english_content.EnglishContentTests.test_escape_notation_is_language_neutral) ... ok
+test_explicit_output_is_only_omission_and_names_are_checked (test_english_content.EnglishContentTests.test_explicit_output_is_only_omission_and_names_are_checked) ... ok
+test_extended_blocks_and_combining_cyrillic_are_detected (test_english_content.EnglishContentTests.test_extended_blocks_and_combining_cyrillic_are_detected) ... ok
+test_no_vendor_hidden_or_report_directory_exclusion (test_english_content.EnglishContentTests.test_no_vendor_hidden_or_report_directory_exclusion) ... ok
+test_non_utf8_content_fails_instead_of_silent_skip (test_english_content.EnglishContentTests.test_non_utf8_content_fails_instead_of_silent_skip) ... ok
+test_output_symlink_and_symlink_parent_are_rejected (test_english_content.EnglishContentTests.test_output_symlink_and_symlink_parent_are_rejected) ... ok
+test_symlink_is_reported_and_not_followed (test_english_content.EnglishContentTests.test_symlink_is_reported_and_not_followed) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.006s
+
+OK

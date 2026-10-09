@@ -1,0 +1,24 @@
+{
+  "suite": "Frontend AMD isolated DOM doubles",
+  "passed": 17,
+  "failed": 0,
+  "tests": [
+    "current private profile is fetched without reading stale cached PII",
+    "logout clears previous untouched auto-fill; user-entered fields preserved",
+    "submission contains runtime form key, product ID, quantity, and secure 64hex token",
+    "double click while in-flight does not start another HTTP request",
+    "network failure keeps same idempotency token for unchanged retry",
+    "CSRF cookie change does not change the payload fingerprint token",
+    "edited message generates new token, keeping retry independent",
+    "HTTP 400 application failure renders safe text, not HTML",
+    "product switch resets quantity and rotates idempotency token",
+    "accepted request shows response as text, resets token, and hides form",
+    "new request for same product after success receives fresh token",
+    "missing runtime form key prevents HTTP submission",
+    "out-of-order profile reload cannot replace the latest product profile",
+    "a stale product reload arriving before the latest response cannot prefill the new form",
+    "a delayed current profile response preserves manually entered fields",
+    "admin first submit disables resend/save button without cancelling POST",
+    "admin accidental second submit is cancelled"
+  ]
+}

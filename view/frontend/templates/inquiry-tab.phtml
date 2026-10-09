@@ -1,0 +1,14 @@
+<?php
+/** @var \Coresh\QuoteRequest\Block\ProductButton $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$viewModel = $block->getQuoteRequestViewModel();
+$product = $block->getProduct();
+if ($product === null) {
+    return;
+}
+?>
+<p><?= $escaper->escapeHtml(__('Send a product inquiry to receive a quote by email.')) ?></p>
+<div class="coresh-quote-inline"
+     data-mage-init="<?= $escaper->escapeHtmlAttr($viewModel->getInitializationJson($product, true)) ?>">
+    <?= $block->getChildHtml('quote_request_form') ?>
+</div>

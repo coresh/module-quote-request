@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Coresh\QuoteRequest\Block\ProductButton" name="coresh.quote.request.product.button" template="Coresh_QuoteRequest::button.phtml" after="product.info.price"/>
+        </referenceContainer>
+        <referenceBlock name="product.info.details">
+            <block class="Coresh\QuoteRequest\Block\ProductButton" name="coresh.quote.request.inquiry.tab" template="Coresh_QuoteRequest::inquiry-tab.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="title" xsi:type="string" translate="true">Product Inquiry</argument>
+                    <argument name="is_inquiry_tab" xsi:type="boolean">true</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="coresh.quote.request.inquiry.form" as="quote_request_form" template="Coresh_QuoteRequest::form.phtml">
+                    <arguments><argument name="view_model" xsi:type="object">Coresh\QuoteRequest\ViewModel\ProductQuoteRequest</argument></arguments>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

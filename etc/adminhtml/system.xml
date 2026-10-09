@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="coresh" translate="label" sortOrder="900">
+            <label>Coresh</label>
+        </tab>
+        <section id="coresh_quote_request" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Coresh — Quote Request</label>
+            <tab>coresh</tab>
+            <resource>Coresh_QuoteRequest::config</resource>
+            <group id="migration" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Legacy migration</label>
+                <field id="status" translate="label comment" type="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Detected legacy extensions</label>
+                    <frontend_model>Coresh\QuoteRequest\Block\Adminhtml\System\Config\MigrationNotice</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General and display</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Quote Request</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="button_label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button / link text</label>
+                    <comment>Default: Contact Us for a Quote. Plain text, up to 120 characters; empty uses the default.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\ButtonLabel</backend_model>
+                </field>
+                <field id="scope" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply quote requests to</label>
+                    <comment>Global includes all products. Product and category flags always qualify; selected categories are additionally used in Category mode.</comment>
+                    <source_model>Coresh\QuoteRequest\Model\Config\Source\Scope</source_model>
+                </field>
+                <field id="selected_categories" translate="label comment" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Selected categories</label>
+                    <comment>Selected categories and their descendants qualify only inside the current store root. Used in Category mode.</comment>
+                    <source_model>Coresh\QuoteRequest\Model\Config\Source\Categories</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="scope">category</field>
+                    </depends>
+                </field>
+                <field id="apply_to_all_products" translate="label comment" type="select" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply to all products (legacy-compatible override)</label>
+                    <comment>Yes overrides the scope selector with Global. Group and date restrictions still apply.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="restrict_customer_groups" translate="label comment" type="select" sortOrder="48" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restrict customer groups</label>
+                    <comment>No permits every customer group. Yes permits only the selected groups; Yes with an empty selection permits nobody. Existing v1 selections are preserved during upgrade.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_groups" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allowed customer groups</label>
+                    <comment>Used only when Restrict customer groups is Yes. An empty selection then permits no group. NOT LOGGED IN is guest group 0; select it to permit guests.</comment>
+                    <source_model>Coresh\QuoteRequest\Model\Config\Source\CustomerGroups</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="restrict_customer_groups">1</field>
+                    </depends>
+                </field>
+                <field id="request_display" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Request display</label>
+                    <source_model>Coresh\QuoteRequest\Model\Config\Source\RequestDisplay</source_model>
+                    <comment>Button and Text link open an enquiry form. Static label displays plain text without a form, and direct public enquiries are disabled in that mode.</comment>
+                </field>
+                <field id="show_inquiry_tab" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Product Inquiry tab</label>
+                    <comment>Displays an inquiry tab for eligible products on the product detail page.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="use_date_range" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use date range</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="from_date" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start date</label>
+                    <comment>YYYY-MM-DD. Inclusive midnight in this store timezone; empty means no lower bound.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\Date</backend_model>
+                    <depends>
+                        <field id="use_date_range">1</field>
+                    </depends>
+                </field>
+                <field id="to_date" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>End date</label>
+                    <comment>YYYY-MM-DD. Inclusive local calendar date; empty means no upper bound. Invalid or reversed periods fail closed.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\Date</backend_model>
+                    <depends>
+                        <field id="use_date_range">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email notifications</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send store notification emails</label>
+                    <comment>Applies to initial notifications and administrator Send / Resend. Disabling the frontend module retains historical requests.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="recipient" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store recipient email</label>
+                    <comment>One recipient address. Empty falls back to the store contact email under General → Contacts.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\Recipient</backend_model>
+                    <validate>validate-email</validate>
+                </field>
+                <field id="sender_identity" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender identity</label>
+                    <comment>The From address belongs to the store. The validated customer email is used as Reply-To.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="admin_template" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store notification template</label>
+                    <comment>Uses the original request store. The default template excludes product fields whose inclusion switches are disabled.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="include_product_name" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include product name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="include_quantity" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include requested quantity</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="include_product_id" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include product ID</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_confirmation" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send customer confirmation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_template" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer confirmation template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends>
+                        <field id="customer_confirmation">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="catalog" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Catalogue mode</label>
+                <field id="allow_add_to_cart" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Add to Cart for quote-enabled products</label>
+                    <comment>No hides the eligible product storefront purchase CTA only. It does not block APIs or direct purchases; use Disable purchasing for a server restriction.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_cart" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart Hidden</label>
+                    <comment>Hides standard Luma/Blank minicart, cart icon and known cart links. This display setting alone does not prohibit purchases.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="disable_purchasing" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable online purchasing (server catalogue mode)</label>
+                    <comment>Blocks standard storefront, REST and GraphQL cart mutations and order placement. Checks current and saved cart stores. Administration and cron are exempt; existing orders remain operational. Does not cancel previously started external payment transactions.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_prices" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide eligible product prices in storefront HTML</label>
+                    <comment>Default No: prices remain visible. This display setting is not price confidentiality: APIs and third-party structured data may still expose prices.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="security" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Validation and anti-spam</label>
+                <field id="rate_limit_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable server rate limit</label>
+                    <comment>Shared database-backed limits for submissions; honeypot validation remains enabled.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rate_limit_max" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum requests per window</label>
+                    <comment>Default 5; allowed 1–1000.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\SecurityLimit</backend_model>
+                    <validate>required-entry validate-digits validate-greater-than-zero</validate>
+                </field>
+                <field id="rate_limit_window" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rate-limit window (seconds)</label>
+                    <comment>Default 600; allowed 1–86400. Does not trust arbitrary X-Forwarded-For.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\SecurityLimit</backend_model>
+                    <validate>required-entry validate-digits validate-greater-than-zero</validate>
+                </field>
+                <field id="max_quantity" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum requested quantity</label>
+                    <comment>Default 1000000; positive number up to 99999999.9999, maximum four decimal places. Requests do not reserve stock.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\SecurityLimit</backend_model>
+                    <validate>required-entry validate-number validate-greater-than-zero</validate>
+                </field>
+                <field id="max_message_length" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum message characters</label>
+                    <comment>Default 5000; allowed 1–20000. Customer name is limited to 128 characters.</comment>
+                    <backend_model>Coresh\QuoteRequest\Model\Config\Backend\SecurityLimit</backend_model>
+                    <validate>required-entry validate-digits validate-greater-than-zero</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

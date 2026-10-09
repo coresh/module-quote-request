@@ -1,0 +1,13 @@
+{
+  "suite": "Grid export AMD isolated DOM doubles",
+  "passed": 6,
+  "failed": 0,
+  "tests": [
+    "missing runtime form key prevents export POST",
+    "missing grid params prevents export POST",
+    "selected IDs are serialized as POST body with current key and forced module namespace",
+    "native empty selection becomes select-all excluded literal false",
+    "excluded mode remains exclusive and runtime form key is reread",
+    "nested grid filters and HTML-like text remain input values; temporary form is removed"
+  ]
+}

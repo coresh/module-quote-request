@@ -1,0 +1,30 @@
+<!--@subject {{trans "Your quote request #%request_id has been received" request_id=$request_id}} @-->
+<!--@vars {
+"var request_id":"Request ID",
+"var store_name":"Store name",
+"var product_name":"Product name, empty when disabled",
+"var quantity":"Requested units, empty when disabled",
+"var product_id":"Product ID, empty when disabled",
+"var product_sku":"Product SKU",
+"var show_product_name":"Include product name",
+"var show_quantity":"Include quantity",
+"var show_product_id":"Include product ID"
+} @-->
+{{template config_path="design/email/header_template"}}
+<h1>{{trans "Your quote request has been received"}}</h1>
+<p>{{trans "Request reference: #%request_id" request_id=$request_id}}</p>
+<p>{{var store_name|escape}}</p>
+<table class="details">
+    {{depend show_product_name}}
+    <tr><th>{{trans "Product"}}</th><td>{{var product_name|escape}}</td></tr>
+    {{/depend}}
+    {{depend show_quantity}}
+    <tr><th>{{trans "Requested quantity"}}</th><td>{{var quantity|escape}}</td></tr>
+    {{/depend}}
+    {{depend show_product_id}}
+    <tr><th>{{trans "Product ID"}}</th><td>{{var product_id|escape}}</td></tr>
+    {{/depend}}
+    <tr><th>{{trans "SKU"}}</th><td>{{var product_sku|escape}}</td></tr>
+</table>
+<p>{{trans "The store team will review your enquiry and contact you."}}</p>
+{{template config_path="design/email/footer_template"}}

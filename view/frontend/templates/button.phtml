@@ -1,0 +1,27 @@
+<?php
+/** @var \Coresh\QuoteRequest\Block\ProductButton $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$viewModel = $block->getQuoteRequestViewModel();
+$product = $block->getProduct();
+if ($product === null) {
+    return;
+}
+$label = $viewModel->getButtonLabel($product);
+?>
+<?php if ($label === ''): ?>
+    <span hidden data-coresh-display="<?= $escaper->escapeHtmlAttr($viewModel->getContextJson($product)) ?>" data-coresh-pdp="1"></span>
+<?php elseif ($viewModel->isStaticLabelDisplay()): ?>
+    <div class="coresh-quote-request-product"><span class="coresh-quote-label"
+        data-coresh-display="<?= $escaper->escapeHtmlAttr($viewModel->getContextJson($product)) ?>" data-coresh-pdp="1">
+        <?= $escaper->escapeHtml($label) ?>
+    </span></div>
+<?php elseif ($viewModel->canRequestQuote($product)): ?>
+<div class="coresh-quote-request-product">
+    <button type="button"
+            class="action <?= $viewModel->isLinkDisplay() ? 'coresh-quote-link' : 'primary' ?>"
+            data-coresh-quote="<?= $escaper->escapeHtmlAttr($viewModel->getContextJson($product)) ?>"
+            data-coresh-pdp="1">
+        <?= $escaper->escapeHtml($label) ?>
+    </button>
+</div>
+<?php endif; ?>

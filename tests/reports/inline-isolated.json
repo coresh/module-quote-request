@@ -1,0 +1,17 @@
+{
+  "suite": "Inline inquiry form isolated DOM doubles",
+  "passed": 10,
+  "failed": 0,
+  "tests": [
+    "inline form initializes fixed public product context without modal/global handlers",
+    "inline form populates profile only through current private-session reload",
+    "inline POST uses runtime CSRF, entered quantity and selected configurable options",
+    "inline in-flight duplicate is suppressed",
+    "inline uncertain transport retry keeps identical token",
+    "inline edited quantity rotates token",
+    "inline accepted response remains text and form is available for a new inquiry",
+    "new inline inquiry after success uses a new token and same fixed product",
+    "out-of-order inline reload after successive submissions retains only the latest profile",
+    "a delayed inline profile response preserves manually entered fields"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Quote\Model\Quote"><plugin name="coresh_quote_request_purchase_add_guard" type="Coresh\QuoteRequest\Plugin\Catalog\QuotePurchasingGuard" sortOrder="5"/></type>
+    <type name="Magento\Quote\Api\CartRepositoryInterface"><plugin name="coresh_quote_request_purchase_save_guard" type="Coresh\QuoteRequest\Plugin\Catalog\QuoteRepositoryPurchasingGuard" sortOrder="5"/></type>
+    <type name="Magento\Quote\Model\QuoteManagement"><plugin name="coresh_quote_request_purchase_order_guard" type="Coresh\QuoteRequest\Plugin\Catalog\QuoteManagementPurchasingGuard" sortOrder="5"/></type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments><argument name="commands" xsi:type="array"><item name="coresh_quote_request_migrate_legacy" xsi:type="object">Coresh\QuoteRequest\Console\Command\MigrateLegacy</item></argument></arguments>
+    </type>
+</config>

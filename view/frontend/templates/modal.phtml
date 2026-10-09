@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Coresh\QuoteRequest\ViewModel\ProductQuoteRequest $viewModel */
+$viewModel = $block->getData('view_model');
+if (!$viewModel->isEnabled()) {
+    return;
+}
+?>
+<div class="coresh-quote-modal" hidden
+     data-mage-init="<?= $escaper->escapeHtmlAttr($viewModel->getInitializationJson()) ?>">
+    <?= $block->getChildHtml('quote_request_form') ?>
+</div>

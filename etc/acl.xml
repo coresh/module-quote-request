@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl><resources><resource id="Magento_Backend::admin">
+        <resource id="Coresh_QuoteRequest::root" title="Coresh Quote Request" sortOrder="90">
+            <resource id="Coresh_QuoteRequest::view" title="View Quote Requests" sortOrder="10"/>
+            <resource id="Coresh_QuoteRequest::manage" title="Manage Quote Request Status" sortOrder="20"/>
+            <resource id="Coresh_QuoteRequest::migrate" title="Preview and Import Legacy Quote Requests" sortOrder="40"/>
+            <resource id="Coresh_QuoteRequest::send_email" title="Send Notification Email" sortOrder="30"/>
+        </resource>
+        <resource id="Magento_Backend::stores"><resource id="Magento_Backend::stores_settings"><resource id="Magento_Config::config">
+            <resource id="Coresh_QuoteRequest::config" title="Coresh Quote Request Configuration" sortOrder="90"/>
+        </resource></resource></resource>
+    </resource></resources></acl>
+</config>

@@ -1,0 +1,51 @@
+<?php
+/** @var \Coresh\QuoteRequest\Block\Adminhtml\RequestDetails $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$request = $block->getQuoteRequest();
+$requestId = (int) $request->getId();
+?>
+<div class="page-main-actions">
+    <a class="action-default" href="<?= $escaper->escapeUrl($block->getUrl('*/*/index')) ?>">
+        <?= $escaper->escapeHtml(__('Back to Quote Requests')) ?>
+    </a>
+</div>
+<div class="admin__page-section">
+    <div class="admin__page-section-title"><strong class="title">
+        <?= $escaper->escapeHtml(__('Quote Request #%1', $requestId)) ?>
+    </strong></div>
+    <table class="admin__table-secondary">
+        <tbody>
+        <tr><th><?= $escaper->escapeHtml(__('Store')) ?></th><td><?= $escaper->escapeHtml($block->getStoreLabel()) ?></td></tr>
+        <?php foreach ($block->getSnapshotRows() as $row): ?>
+            <tr><th><?= $escaper->escapeHtml($row['label']) ?></th><td>
+                <div class="coresh-request-value"><?= $escaper->escapeHtml($row['value']) ?></div>
+            </td></tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php if ($block->canManage()): ?>
+    <form method="post" action="<?= $escaper->escapeUrl($block->getUrl('*/*/savestatus')) ?>" class="admin__fieldset"
+          data-mage-init='{"Coresh_QuoteRequest/js/submit-once":{}}'>
+        <input type="hidden" name="form_key" value="<?= $escaper->escapeHtmlAttr($block->getFormKey()) ?>"/>
+        <input type="hidden" name="request_id" value="<?= $requestId ?>"/>
+        <label for="coresh-request-status"><?= $escaper->escapeHtml(__('Request Status')) ?></label>
+        <select name="request_status" id="coresh-request-status" class="admin__control-select">
+            <?php foreach (['new' => __('New'), 'processing' => __('Processing'), 'closed' => __('Closed')] as $value => $label): ?>
+                <option value="<?= $escaper->escapeHtmlAttr($value) ?>"<?= $request->getData('request_status') === $value ? ' selected' : '' ?>>
+                    <?= $escaper->escapeHtml($label) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <button type="submit" class="action-default primary"><?= $escaper->escapeHtml(__('Save Status')) ?></button>
+    </form>
+<?php endif; ?>
+<?php if ($block->canSendEmail()): ?>
+    <form method="post" action="<?= $escaper->escapeUrl($block->getUrl('*/*/resendemail')) ?>" class="admin__fieldset"
+          data-mage-init='{"Coresh_QuoteRequest/js/submit-once":{}}'>
+        <input type="hidden" name="form_key" value="<?= $escaper->escapeHtmlAttr($block->getFormKey()) ?>"/>
+        <input type="hidden" name="request_id" value="<?= $requestId ?>"/>
+        <p><?= $escaper->escapeHtml(__('Send a notification using the stored product snapshot and this store’s current email settings.')) ?></p>
+        <button type="submit" class="action-default primary"><?= $escaper->escapeHtml(__('Send / Resend Notification Email')) ?></button>
+    </form>
+<?php endif; ?>

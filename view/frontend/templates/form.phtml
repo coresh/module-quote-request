@@ -1,0 +1,51 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Coresh\QuoteRequest\ViewModel\ProductQuoteRequest $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+    <p class="coresh-quote-product-name" data-role="product-name"></p>
+    <div class="message" data-role="response" role="status" aria-live="polite" hidden></div>
+    <form data-role="quote-form" method="post" action="<?= $escaper->escapeUrl($viewModel->getSubmitUrl()) ?>">
+        <input type="hidden" name="product_id" value=""/>
+        <input type="hidden" name="form_key" value=""/>
+        <input type="hidden" name="request_token" value=""/>
+        <div class="field required">
+            <label><span><?= $escaper->escapeHtml(__('Name')) ?></span>
+                <input type="text" name="customer_name" class="input-text" required maxlength="128" autocomplete="name"/>
+            </label>
+        </div>
+        <div class="field required">
+            <label><span><?= $escaper->escapeHtml(__('Email')) ?></span>
+                <input type="email" name="customer_email" class="input-text" required maxlength="254" autocomplete="email"/>
+            </label>
+        </div>
+        <div class="field required">
+            <label><span><?= $escaper->escapeHtml(__('Quantity')) ?></span>
+                <input type="number" name="quantity" class="input-text" value="1" required min="0.0001" step="0.0001"
+                       max="<?= $escaper->escapeHtmlAttr($viewModel->getMaximumQuantity()) ?>" inputmode="decimal"/>
+            </label>
+        </div>
+        <div class="field">
+            <label><span><?= $escaper->escapeHtml(__('Phone (optional)')) ?></span>
+                <input type="tel" name="customer_telephone" class="input-text" maxlength="64" autocomplete="tel"/>
+            </label>
+        </div>
+        <div class="field required">
+            <label><span><?= $escaper->escapeHtml(__('Message')) ?></span>
+                <textarea name="message" class="input-text" required
+                          maxlength="<?= $viewModel->getMaximumMessageLength() ?>" rows="5"></textarea>
+            </label>
+        </div>
+        <div class="coresh-quote-honeypot" aria-hidden="true">
+            <label><?= $escaper->escapeHtml(__('Leave this field empty')) ?>
+                <input type="text" name="honeypot" value="" tabindex="-1" autocomplete="off"/>
+            </label>
+        </div>
+        <p class="note"><?= $escaper->escapeHtml(__('Your request does not reserve stock or create an order.')) ?></p>
+        <div class="actions-toolbar">
+            <button type="submit" class="action primary" data-role="submit">
+                <span><?= $escaper->escapeHtml(__('Send Quote Request')) ?></span>
+            </button>
+        </div>
+    </form>

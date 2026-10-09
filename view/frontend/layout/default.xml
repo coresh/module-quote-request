@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head><css src="Coresh_QuoteRequest::css/quote-request.css"/></head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Coresh\QuoteRequest\Block\Modal" name="coresh.quote.request.modal" template="Coresh_QuoteRequest::modal.phtml">
+                <arguments><argument name="view_model" xsi:type="object">Coresh\QuoteRequest\ViewModel\ProductQuoteRequest</argument></arguments>
+                <block class="Magento\Framework\View\Element\Template" name="coresh.quote.request.modal.form" as="quote_request_form" template="Coresh_QuoteRequest::form.phtml">
+                    <arguments><argument name="view_model" xsi:type="object">Coresh\QuoteRequest\ViewModel\ProductQuoteRequest</argument></arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

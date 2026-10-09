@@ -1,0 +1,12 @@
+.coresh-quote-request-product { margin: 18px 0; }
+.coresh-quote-request-list { margin-top: 12px; }
+.coresh-quote-link { background: transparent; border: 0; color: #006bb4; padding: 0; text-decoration: underline; box-shadow: none; }
+.coresh-quote-link:hover { background: transparent; border: 0; }
+.coresh-quote-modal .field, .coresh-quote-inline .field { margin-bottom: 16px; }
+.coresh-quote-modal label > span, .coresh-quote-inline label > span { display: block; margin-bottom: 6px; font-weight: 600; }
+.coresh-quote-modal textarea, .coresh-quote-inline textarea { width: 100%; }
+.coresh-quote-modal .message, .coresh-quote-inline .message { margin-bottom: 16px; }
+.coresh-quote-product-name { font-weight: 600; }
+.coresh-quote-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.coresh-quote-purchase-suppressed { display: none !important; }
+.coresh-quote-modal[hidden] { display: none; }

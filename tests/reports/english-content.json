@@ -1,0 +1,18 @@
+{
+  "checker": "coresh-quote-request-english-content",
+  "generated_at": "2026-10-09T18:51:30.226504+00:00",
+  "root": "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest",
+  "status": "PASS",
+  "scope": "All file/directory names and all UTF-8 file contents; no extension or directory allowlist.",
+  "limitation": "Character scan only; does not assess translation quality or prove English-language content.",
+  "names_scanned": 265,
+  "utf8_files_scanned": 190,
+  "findings": [],
+  "unscanned": [],
+  "omitted_output": [
+    {
+      "path": "tests/reports/english-content.json",
+      "reason": "Explicit --output report; omitted to prevent stale self-findings."
+    }
+  ]
+}

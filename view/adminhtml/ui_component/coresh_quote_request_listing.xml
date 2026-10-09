@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array"><item name="js_config" xsi:type="array"><item name="provider" xsi:type="string">coresh_quote_request_listing.coresh_quote_request_listing_data_source</item></item></argument>
+    <settings>
+        <spinner>coresh_quote_request_columns</spinner>
+        <deps><dep>coresh_quote_request_listing.coresh_quote_request_listing_data_source</dep></deps>
+    </settings>
+    <dataSource name="coresh_quote_request_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings><storageConfig><param name="indexField" xsi:type="string">request_id</param></storageConfig><updateUrl path="mui/index/render"/></settings>
+        <aclResource>Coresh_QuoteRequest::view</aclResource>
+        <dataProvider class="CoreshQuoteRequestGridDataProvider" name="coresh_quote_request_listing_data_source">
+            <argument name="data" xsi:type="array"><item name="config" xsi:type="array"><item name="aclResource" xsi:type="string">Coresh_QuoteRequest::view</item></item></argument>
+            <settings><requestFieldName>request_id</requestFieldName><primaryFieldName>request_id</primaryFieldName></settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings><sticky>true</sticky></settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <massaction name="listing_massaction" class="Coresh\QuoteRequest\Ui\Component\Listing\RequestMassAction">
+            <settings>
+                <selectProvider>coresh_quote_request_listing.coresh_quote_request_listing.coresh_quote_request_columns.ids</selectProvider>
+                <indexField>request_id</indexField>
+                <actions>
+                    <action name="new"><type>new</type><label translate="true">Mark as New</label><url path="coresh_quoterequest/request/massstatus"><param name="status">new</param></url></action>
+                    <action name="processing"><type>processing</type><label translate="true">Mark as Processing</label><url path="coresh_quoterequest/request/massstatus"><param name="status">processing</param></url></action>
+                    <action name="closed"><type>closed</type><label translate="true">Mark as Closed</label><url path="coresh_quoterequest/request/massstatus"><param name="status">closed</param></url></action>
+                </actions>
+            </settings>
+        </massaction>
+        <exportButton name="export_button" component="Coresh_QuoteRequest/js/grid/export">
+            <settings>
+                <selectProvider>coresh_quote_request_listing.coresh_quote_request_listing.coresh_quote_request_columns.ids</selectProvider>
+                <options>
+                    <option name="csv" xsi:type="array">
+                        <item name="value" xsi:type="string">csv</item><item name="label" xsi:type="string" translate="true">CSV</item>
+                        <item name="url" xsi:type="url" path="coresh_quoterequest/request/exportcsv"/>
+                    </option>
+                </options>
+            </settings>
+        </exportButton>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="coresh_quote_request_columns">
+        <selectionsColumn name="ids"><settings><indexField>request_id</indexField></settings></selectionsColumn>
+        <column name="request_id"><settings><filter>textRange</filter><sorting>desc</sorting><label translate="true">Request ID</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="product_name"><settings><filter>text</filter><label translate="true">Product Name</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="product_id"><settings><filter>textRange</filter><label translate="true">Product ID</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="product_sku"><settings><filter>text</filter><label translate="true">SKU</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="quantity"><settings><filter>textRange</filter><label translate="true">Quantity</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="customer_name"><settings><filter>text</filter><label translate="true">Customer Name</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="customer_email"><settings><filter>text</filter><label translate="true">Customer Email</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="customer_telephone"><settings><filter>text</filter><label translate="true">Phone</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="message"><settings><filter>text</filter><label translate="true">Description</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="store_id"><settings><filter>textRange</filter><label translate="true">Store ID</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="request_status"><settings><filter>text</filter><label translate="true">Request Status</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="email_status"><settings><filter>text</filter><label translate="true">Email Status</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="email_attempts"><settings><filter>textRange</filter><label translate="true">Email Attempts</label><bodyTmpl>ui/grid/cells/text</bodyTmpl></settings></column>
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date"><settings><filter>dateRange</filter><dataType>date</dataType><label translate="true">Inquiry Date</label></settings></column>
+        <column name="last_email_sent_at" class="Magento\Ui\Component\Listing\Columns\Date"><settings><filter>dateRange</filter><dataType>date</dataType><label translate="true">Last Email Sent</label></settings></column>
+        <actionsColumn name="actions" class="Coresh\QuoteRequest\Ui\Component\Listing\Column\RequestActions"><settings><indexField>request_id</indexField><label translate="true">Actions</label></settings></actionsColumn>
+    </columns>
+</listing>

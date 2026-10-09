@@ -1,0 +1,1954 @@
+{
+  "generated_at": "2026-10-09T18:49:03.928120+00:00",
+  "checks": [
+    {
+      "check": "Composer metadata and module identity",
+      "status": "PASS",
+      "detail": "coresh/module-quote-request"
+    },
+    {
+      "check": "composer validate --strict",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/composer",
+          "validate",
+          "--strict"
+        ],
+        "exit_code": 0,
+        "stdout": "./composer.json is valid",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Block/Adminhtml/Migration.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/Migration.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/Migration.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Block/Adminhtml/RequestDetails.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Block/Adminhtml/System/Config/MigrationNotice.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Block/Modal.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Modal.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/Modal.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Block/ProductButton.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/ProductButton.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Block/ProductButton.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Console/Command/MigrateLegacy.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Migration/Index.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Migration/Run.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/AbstractRequestAction.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/ExportCsv.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/Index.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/MassStatus.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/ResendEmail.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/SaveStatus.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Adminhtml/Request/View.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Controller/Request/Submit.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Request/Submit.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Controller/Request/Submit.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: CustomerData/Profile.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/CustomerData/Profile.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/CustomerData/Profile.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Attribute/Backend/ButtonLabel.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Attribute/Backend/InheritYesNo.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Attribute/Backend/LabelMode.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Attribute/Source/InheritYesNo.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Attribute/Source/LabelMode.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Catalog/ProductDisplayPolicy.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Catalog/PurchasingPolicy.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Catalog/QuoteStoreResolver.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Backend/ButtonLabel.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Backend/Date.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/Date.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/Date.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Backend/Recipient.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Backend/SecurityLimit.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Source/Categories.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/Categories.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/Categories.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Source/CustomerGroups.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Source/RequestDisplay.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config/Source/Scope.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/Scope.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config/Source/Scope.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Config.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Config.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Eligibility/CategoryRuleResolver.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Eligibility/DateRangePolicy.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Eligibility/QuoteRequestEligibility.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Email/AdminNotificationSender.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Email/CustomerConfirmationSender.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Email/TemplateVariablesBuilder.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Migration/LegacyDataMigrator.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Migration/LegacySourceDetector.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Migration/MigrationApproval.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Product/ProductContextResolver.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/QuoteRequest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/QuoteRequest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/QuoteRequest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/ResourceModel/QuoteRequest/Collection.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/ResourceModel/QuoteRequest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Security/RateLimiter.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Security/RateLimiter.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Security/RateLimiter.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Service/SubmitQuoteRequest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Model/Validation/QuoteRequestValidator.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Observer/AddProductListAttribute.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/AddProductListAttribute.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/AddProductListAttribute.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Observer/ApplyCatalogueLayout.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Observer/BlockPurchasingRoutes.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Observer/InvalidateQuoteRequestCache.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Adminhtml/PreventUnsafeCoreExport.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Adminhtml/ProtectPrivateGridFields.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Catalog/PageCacheDateTtl.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Catalog/ProductCollectionContext.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Catalog/QuoteManagementPurchasingGuard.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Catalog/QuotePurchasingGuard.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Catalog/QuoteRepositoryPurchasingGuard.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Frontend/CatalogDetailsButton.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Plugin/Frontend/PriceVisibility.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Setup/Patch/Data/AddProductDisplayAttributes.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Setup/Patch/Data/AddQuoteRequestAttributes.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Setup/Patch/Data/PreserveCustomerGroupRestrictions.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Component/Listing/Column/RequestActions.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Component/Listing/RequestMassAction.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/DataProvider/FulltextFilter.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Export/CsvCellSanitizer.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Export/RequestCsvExporter.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Service/GridSelectionValidator.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Ui/Service/SelectedRequests.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: ViewModel/ProductQuoteRequest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: registration.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/registration.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/registration.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Fixtures/admin_action_framework.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Fixtures/isolated_framework.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/AtomicResourceTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/ExportAclTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/MassStatusAclTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/PersistenceTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/ProductDisplayScopeTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Integration/SubmitCsrfTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/AdminNotificationSenderTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/AdminPostGuardTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/CollectionReentrancyTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ConfigDateBackendTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ConfigTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ConfigTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ConfigTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/CsvCellSanitizerTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/DateRangePolicyTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/EligibilityTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/EmailVariablesTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/FulltextFilterTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/GridSelectionValidatorTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/GroupRestrictionMigrationTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/LegacyGroupImportTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/LegacySourceDetectorTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/MassStatusResourceTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/MigrationApprovalTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/PreventUnsafeCoreExportTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ProductAttributeBackendTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ProductContextResolverTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ProductDisplayPolicyTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/ProtectPrivateGridFieldsTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/PurchasingPolicyTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/QuoteRepositoryGuardTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/QuoteRequestValidatorTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/RequestCsvExporterTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/SubmitControllerTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/SubmitQuoteRequestServiceTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/bootstrap.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/bootstrap.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/tests/bootstrap.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/adminhtml/templates/migration.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/adminhtml/templates/request-details.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/frontend/templates/button.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/button.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/button.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/frontend/templates/form.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/form.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/form.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/frontend/templates/inquiry-tab.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: view/frontend/templates/modal.phtml",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/modal.phtml"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/templates/modal.phtml",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "JavaScript syntax: view/adminhtml/web/js/grid/export.js",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--check",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/web/js/grid/export.js"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "JavaScript syntax: view/adminhtml/web/js/submit-once.js",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--check",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/adminhtml/web/js/submit-once.js"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "JavaScript syntax: view/frontend/web/js/quote-request.js",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--check",
+          "/workspace/scratch/ff728627a180/english-review/Coresh_QuoteRequest/view/frontend/web/js/quote-request.js"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "XML well-formed: etc/acl.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/acl.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Acl/etc/acl.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/adminhtml/di.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/adminhtml/di.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/adminhtml/events.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/adminhtml/events.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Event/etc/events.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/adminhtml/menu.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/adminhtml/menu.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Backend/etc/menu.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/adminhtml/routes.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/adminhtml/routes.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/App/etc/routes.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/adminhtml/system.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/adminhtml/system.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Config/etc/system_file.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/config.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/config.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Store/etc/config.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/db_schema.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/db_schema.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc/schema.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/di.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/di.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/email_templates.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/email_templates.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Email/etc/email_templates.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/events.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/events.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Event/etc/events.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/frontend/di.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/frontend/di.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/frontend/events.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/frontend/events.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Event/etc/events.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/frontend/routes.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/frontend/routes.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/App/etc/routes.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/frontend/sections.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/frontend/sections.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Customer/etc/sections.xsd"
+    },
+    {
+      "check": "XML well-formed: etc/module.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: etc/module.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/Module/etc/module.xsd"
+    },
+    {
+      "check": "XML well-formed: tests/reports/unit-junit.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/layout/coresh_quoterequest_migration_index.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/layout/coresh_quoterequest_migration_index.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/layout/coresh_quoterequest_request_index.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/layout/coresh_quoterequest_request_index.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/layout/coresh_quoterequest_request_view.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/layout/coresh_quoterequest_request_view.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/ui_component/category_form.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/ui_component/category_form.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Ui/etc/ui_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/ui_component/coresh_quote_request_listing.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/ui_component/coresh_quote_request_listing.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Ui/etc/ui_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/adminhtml/ui_component/product_form.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/adminhtml/ui_component/product_form.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Ui/etc/ui_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/frontend/layout/catalog_product_view.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/frontend/layout/catalog_product_view.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+    },
+    {
+      "check": "XML well-formed: view/frontend/layout/default.xml",
+      "status": "PASS",
+      "detail": "Parsed without resolving external entities"
+    },
+    {
+      "check": "Magento XSD: view/frontend/layout/default.xml",
+      "status": "PASS",
+      "detail": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+    }
+  ],
+  "totals": {
+    "PASS": 171,
+    "FAIL": 0,
+    "NOT RUN": 0
+  }
+}

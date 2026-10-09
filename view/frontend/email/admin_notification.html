@@ -1,0 +1,56 @@
+<!--@subject {{trans "Quote request #%request_id" request_id=$request_id}} @-->
+<!--@vars {
+"var request_id":"Request ID",
+"var created_at":"Created at (UTC)",
+"var store_name":"Store name",
+"var customer_name":"Customer name",
+"var customer_email":"Customer email",
+"var customer_telephone":"Customer telephone",
+"var message":"Customer message (plain text)",
+"var product_name":"Product name, empty when disabled",
+"var quantity":"Requested units, empty when disabled",
+"var product_id":"Product ID, empty when disabled",
+"var product_sku":"Product SKU",
+"var product_url":"Validated product URL",
+"var selected_options":"Selected options as plain text",
+"var selected_product_id":"Selected child ID, empty when disabled",
+"var selected_product_sku":"Selected child SKU",
+"var show_product_name":"Include product name",
+"var show_quantity":"Include quantity",
+"var show_product_id":"Include product ID",
+"var has_product_url":"Has a valid product URL",
+"var has_selected_product":"A configurable child is selected",
+"var show_selected_product_id":"A configurable child is selected and IDs are enabled"
+} @-->
+{{template config_path="design/email/header_template"}}
+<h1>{{trans "Quote request #%request_id" request_id=$request_id}}</h1>
+<p><strong>{{trans "Store:"}}</strong> {{var store_name|escape}}</p>
+<p><strong>{{trans "Created (UTC):"}}</strong> {{var created_at|escape}}</p>
+<table class="details">
+    <tr><th>{{trans "Customer"}}</th><td>{{var customer_name|escape}}</td></tr>
+    <tr><th>{{trans "Email"}}</th><td>{{var customer_email|escape}}</td></tr>
+    <tr><th>{{trans "Telephone"}}</th><td>{{var customer_telephone|escape}}</td></tr>
+    {{depend show_product_name}}
+    <tr><th>{{trans "Product"}}</th><td>{{var product_name|escape}}</td></tr>
+    {{/depend}}
+    {{depend show_quantity}}
+    <tr><th>{{trans "Requested quantity"}}</th><td>{{var quantity|escape}}</td></tr>
+    {{/depend}}
+    {{depend show_product_id}}
+    <tr><th>{{trans "Product ID"}}</th><td>{{var product_id|escape}}</td></tr>
+    {{/depend}}
+    <tr><th>{{trans "SKU"}}</th><td>{{var product_sku|escape}}</td></tr>
+    {{depend has_selected_product}}
+    <tr><th>{{trans "Selected SKU"}}</th><td>{{var selected_product_sku|escape}}</td></tr>
+    {{/depend}}
+    {{depend show_selected_product_id}}
+    <tr><th>{{trans "Selected product ID"}}</th><td>{{var selected_product_id|escape}}</td></tr>
+    {{/depend}}
+    <tr><th>{{trans "Product options"}}</th><td>{{var selected_options|escape}}</td></tr>
+</table>
+{{depend has_product_url}}
+<p><a href="{{var product_url|escape}}">{{trans "View product"}}</a></p>
+{{/depend}}
+<h2>{{trans "Customer message"}}</h2>
+<p>{{var message|escape|nl2br}}</p>
+{{template config_path="design/email/footer_template"}}

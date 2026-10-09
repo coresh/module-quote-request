@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-10-09T18:47:57.225151+00:00",
+  "tag": "2.4.9",
+  "scope": "Only source signatures/patterns are checked. DI/interception/persistence/runtime NOT RUN.",
+  "checks": [
+    {
+      "check": "Stock CSV converter method",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Model/Export/ConvertToCsv.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Model/Export/ConvertToCsv.php",
+      "sha256": "bafb9dcff8c707aa4c9a7a2add5959d463adddb939f5d5f148d9552f774b3e49",
+      "pattern": "public\\s+function\\s+getCsvFile\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "Stock XML converter method",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Model/Export/ConvertToXml.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Model/Export/ConvertToXml.php",
+      "sha256": "363c2af0cda105be48628928477089890c8a1e8534f430d591aff4f6a26f6350",
+      "pattern": "public\\s+function\\s+getXmlFile\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "MassAction inheritance",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction.php",
+      "sha256": "13b7b0246ac6f580de798a59b783ea44ca2bf4c286c5b863ae3c1f25bda5d385",
+      "pattern": "class\\s+MassAction\\s+extends\\s+AbstractComponent"
+    },
+    {
+      "check": "MassAction prepare",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction.php",
+      "sha256": "13b7b0246ac6f580de798a59b783ea44ca2bf4c286c5b863ae3c1f25bda5d385",
+      "pattern": "public\\s+function\\s+prepare\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "UI constructor context/components/data",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/AbstractComponent.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/AbstractComponent.php",
+      "sha256": "f76674c8f057a84897414e2144477389c679eececcb59a9ea2b8c1c0335f6e97",
+      "pattern": "public\\s+function\\s+__construct\\s*\\(\\s*ContextInterface\\s+\\$context,\\s*array\\s+\\$components\\s*=\\s*\\[\\],\\s*array\\s+\\$data\\s*=\\s*\\[\\]"
+    },
+    {
+      "check": "UI protected components",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/AbstractComponent.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/AbstractComponent.php",
+      "sha256": "f76674c8f057a84897414e2144477389c679eececcb59a9ea2b8c1c0335f6e97",
+      "pattern": "protected\\s+\\$components"
+    },
+    {
+      "check": "Selection component lookup",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "sha256": "99608c5852676dc7af0cb3fe4219bab9becbc2b40425c218691bf8e2c1841861",
+      "pattern": "public\\s+function\\s+getComponent\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "Selection component preparation",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "sha256": "99608c5852676dc7af0cb3fe4219bab9becbc2b40425c218691bf8e2c1841861",
+      "pattern": "public\\s+function\\s+prepareComponent\\s*\\(UiComponentInterface\\s+\\$component\\)"
+    },
+    {
+      "check": "Selection provider application",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "sha256": "99608c5852676dc7af0cb3fe4219bab9becbc2b40425c218691bf8e2c1841861",
+      "pattern": "public\\s+function\\s+applySelectionOnTargetProvider\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "Selection database collection",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/MassAction/Filter.php",
+      "sha256": "99608c5852676dc7af0cb3fe4219bab9becbc2b40425c218691bf8e2c1841861",
+      "pattern": "public\\s+function\\s+getCollection\\s*\\(AbstractDb\\s+\\$collection\\)"
+    },
+    {
+      "check": "Native selection sends one mode key",
+      "status": "PASS",
+      "file": "app/code/Magento/Ui/view/base/web/js/grid/massactions.js",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/view/base/web/js/grid/massactions.js",
+      "sha256": "0625613e226e00a0705181c198d9b101f625b961e183e61a931b653c589b1c14",
+      "pattern": "var\\s+itemsType\\s*=\\s*data\\.excludeMode\\s*\\?\\s*'excluded'\\s*:\\s*'selected'"
+    },
+    {
+      "check": "Config field renderer element type",
+      "status": "PASS",
+      "file": "app/code/Magento/Config/Block/System/Config/Form/Field.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Config/Block/System/Config/Form/Field.php",
+      "sha256": "71f6ac6f0aa6aa43bfb8bfc61660decc08503795d418c28872bb94fe058f94f6",
+      "pattern": "protected\\s+function\\s+_getElementHtml\\s*\\(\\\\Magento\\\\Framework\\\\Data\\\\Form\\\\Element\\\\AbstractElement\\s+\\$element\\)"
+    },
+    {
+      "check": "Module declaration lookup",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Module/ModuleListInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Module/ModuleListInterface.php",
+      "sha256": "a00ae289e874b0a4d994c0a5ebcc8346f28b275ad10760902d7ff8d39e80386b",
+      "pattern": "public\\s+function\\s+getOne\\s*\\(\\$name\\)"
+    },
+    {
+      "check": "Native product default helper",
+      "status": "PASS",
+      "file": "app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php",
+      "sha256": "6bb9365e97af4ea39cfb1d7ac3e0cb085b600e0e744d94ca70cf415703788281",
+      "pattern": "public\\s+function\\s+prepareProductAttributes\\s*\\(Product\\s+\\$product,\\s*array\\s+\\$productData,\\s*array\\s+\\$useDefaults\\):\\s*array"
+    },
+    {
+      "check": "Native numeric default sentinel",
+      "status": "PASS",
+      "file": "app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php",
+      "sha256": "6bb9365e97af4ea39cfb1d7ac3e0cb085b600e0e744d94ca70cf415703788281",
+      "pattern": "\\$productData\\[\\$attributeCode\\]\\s*=\\s*null"
+    },
+    {
+      "check": "Modern EAV allowed-empty path",
+      "status": "PASS",
+      "file": "app/code/Magento/Eav/Model/ResourceModel/UpdateHandler.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Eav/Model/ResourceModel/UpdateHandler.php",
+      "sha256": "13107c0238e7ac2263a496ad9da1016e3287c57ef9831e8a4ab0fb4d2d7dd165",
+      "pattern": "\\$isAllowedEmptyStringValue\\s*=\\s*\\$attribute->isAllowedEmptyTextValue\\(\\$newValue\\)"
+    }
+  ],
+  "totals": {
+    "PASS": 16,
+    "FAIL": 0,
+    "NOT RUN": 0
+  }
+}
