@@ -1,0 +1,48 @@
+{
+  "scope": "Unmodified uploaded1.1.1 application declarations against hash-verified actual official parent chains; no object construction or DI compilation.",
+  "uploaded_zip_sha256": "fd79b58047f50a3f66fb065a5a7d7cc403d9ba3b883ac27385d3b39bc2f4bebe",
+  "checks": [
+    {
+      "tag": "2.4.8-p5",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\RequestDetails",
+      "exit_code": 255,
+      "stdout": "\nFatal error: Cannot redeclare non-readonly property Magento\\Backend\\Block\\Template::$formKey as readonly Coresh\\QuoteRequest\\Block\\Adminhtml\\RequestDetails::$formKey in /workspace/scratch/ff728627a180/compile-baseline/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php on line 14\n",
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.8-p5",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\Migration",
+      "exit_code": 0,
+      "stdout": "{\"class\":\"Coresh\\\\QuoteRequest\\\\Block\\\\Adminhtml\\\\Migration\",\"status\":\"PASS\",\"parents\":[\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\"],\"interfaces\":[\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"ArrayAccess\"],\"loaded_sources\":[\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\"]}\n",
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.8-p5",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\System\\Config\\MigrationNotice",
+      "exit_code": 0,
+      "stdout": "{\"class\":\"Coresh\\\\QuoteRequest\\\\Block\\\\Adminhtml\\\\System\\\\Config\\\\MigrationNotice\",\"status\":\"PASS\",\"parents\":[\"Magento\\\\Config\\\\Block\\\\System\\\\Config\\\\Form\\\\Field\",\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\"],\"interfaces\":[\"Magento\\\\Framework\\\\Data\\\\Form\\\\Element\\\\Renderer\\\\RendererInterface\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"ArrayAccess\"],\"loaded_sources\":[\"Magento\\\\Config\\\\Block\\\\System\\\\Config\\\\Form\\\\Field\",\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"Magento\\\\Framework\\\\Data\\\\Form\\\\Element\\\\Renderer\\\\RendererInterface\"]}\n",
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.9",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\RequestDetails",
+      "exit_code": 255,
+      "stdout": "\nFatal error: Cannot redeclare non-readonly property Magento\\Backend\\Block\\Template::$formKey as readonly Coresh\\QuoteRequest\\Block\\Adminhtml\\RequestDetails::$formKey in /workspace/scratch/ff728627a180/compile-baseline/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php on line 14\n",
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.9",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\Migration",
+      "exit_code": 0,
+      "stdout": "{\"class\":\"Coresh\\\\QuoteRequest\\\\Block\\\\Adminhtml\\\\Migration\",\"status\":\"PASS\",\"parents\":[\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\"],\"interfaces\":[\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"ArrayAccess\"],\"loaded_sources\":[\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\"]}\n",
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.9",
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\System\\Config\\MigrationNotice",
+      "exit_code": 0,
+      "stdout": "{\"class\":\"Coresh\\\\QuoteRequest\\\\Block\\\\Adminhtml\\\\System\\\\Config\\\\MigrationNotice\",\"status\":\"PASS\",\"parents\":[\"Magento\\\\Config\\\\Block\\\\System\\\\Config\\\\Form\\\\Field\",\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\"],\"interfaces\":[\"Magento\\\\Framework\\\\Data\\\\Form\\\\Element\\\\Renderer\\\\RendererInterface\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"ArrayAccess\"],\"loaded_sources\":[\"Magento\\\\Config\\\\Block\\\\System\\\\Config\\\\Form\\\\Field\",\"Magento\\\\Backend\\\\Block\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\Template\",\"Magento\\\\Framework\\\\View\\\\Element\\\\AbstractBlock\",\"Magento\\\\Framework\\\\DataObject\",\"Magento\\\\Framework\\\\View\\\\Element\\\\BlockInterface\",\"Magento\\\\Framework\\\\Data\\\\Form\\\\Element\\\\Renderer\\\\RendererInterface\"]}\n",
+      "stderr": ""
+    }
+  ]
+}

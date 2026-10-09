@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T18:47:56.995889+00:00",
+  "generated_at": "2026-10-09T20:26:50.958790+00:00",
   "tag": "2.4.8-p5",
   "scope": "Only source signatures/patterns are checked. DI/interception/persistence/runtime NOT RUN.",
   "checks": [

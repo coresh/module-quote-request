@@ -196,6 +196,10 @@ class LegacyDataMigrator
 
     private function parseLegacyDate(string $value): ?\DateTimeImmutable
     {
+        // Reject malformed source data before PHP's date parser, which throws for NUL bytes.
+        if (preg_match('/\A(?:[0-9]{2}\/[0-9]{2}\/[0-9]{4}|[0-9]{4}-[0-9]{2}-[0-9]{2})\z/', $value) !== 1) {
+            return null;
+        }
         foreach (['m/d/Y', 'Y-m-d'] as $format) {
             $date = \DateTimeImmutable::createFromFormat('!' . $format, $value);
             $errors = \DateTimeImmutable::getLastErrors();

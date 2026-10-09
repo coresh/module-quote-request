@@ -1,8 +1,12 @@
 {
-  "generated_at": "2026-10-09T18:49:02.144752+00:00",
+  "generated_at": "2026-10-09T20:26:49.981016+00:00",
   "checks": [
     {
       "check": "tests/Tools/test_english_content.py",
+      "status": "PASS"
+    },
+    {
+      "check": "tests/Tools/test_native_declaration_tools.py",
       "status": "PASS"
     },
     {
@@ -11,6 +15,10 @@
     },
     {
       "check": "tools/check_source_contracts.py",
+      "status": "PASS"
+    },
+    {
+      "check": "tools/fetch_class_reference.py",
       "status": "PASS"
     },
     {

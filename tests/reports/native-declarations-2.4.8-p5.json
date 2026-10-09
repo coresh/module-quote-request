@@ -1,0 +1,1437 @@
+{
+  "generated_at": "2026-10-09T20:23:25.531991+00:00",
+  "tag": "2.4.8-p5",
+  "php_version": "8.3.6",
+  "scope": "Native application class declarations against unmodified upstream parent/interface/trait sources only. Constructors, DI compilation, interceptors, database, framework bootstrap and runtime behavior NOT RUN.",
+  "upstream_source_count": 46,
+  "upstream_sources": {
+    "Magento\\Backend\\App\\AbstractAction": {
+      "file": "app/code/Magento/Backend/App/AbstractAction.php",
+      "sha256": "65c46a90cd81856bbc5b2c9b641f319906068494ad03833ce007f8a66a2693c2",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Backend/App/AbstractAction.php"
+    },
+    "Magento\\Backend\\App\\Action": {
+      "file": "app/code/Magento/Backend/App/Action.php",
+      "sha256": "e8c5edde8e68706ffc6b7002e4af639d5489a8bbf9a2c5caec8ca53744ba9be1",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Backend/App/Action.php"
+    },
+    "Magento\\Backend\\Block\\Template": {
+      "file": "app/code/Magento/Backend/Block/Template.php",
+      "sha256": "fd17b3a5d7c4b1033471aa1eb0dc85eebde11d3b2a9c4af2d3219837b93da282",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Backend/Block/Template.php"
+    },
+    "Magento\\Config\\Block\\System\\Config\\Form\\Field": {
+      "file": "app/code/Magento/Config/Block/System/Config/Form/Field.php",
+      "sha256": "cdc7532ff18547af69c5f9609e5d4072bfaffb395acd930ca4a00ee765aa7dd6",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Config/Block/System/Config/Form/Field.php"
+    },
+    "Magento\\Customer\\CustomerData\\SectionSourceInterface": {
+      "file": "app/code/Magento/Customer/CustomerData/SectionSourceInterface.php",
+      "sha256": "deac575f7c6514c983acdd218ebfef40fb63437d4ff886fa2a9bb73b75794f75",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php"
+    },
+    "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend": {
+      "file": "app/code/Magento/Eav/Model/Entity/Attribute/Backend/AbstractBackend.php",
+      "sha256": "cb27f4edce97950e43112b366191656b56f7a2de70c14dd5a0e3407577419094",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Eav/Model/Entity/Attribute/Backend/AbstractBackend.php"
+    },
+    "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface": {
+      "file": "app/code/Magento/Eav/Model/Entity/Attribute/Backend/BackendInterface.php",
+      "sha256": "b1e7ed1a5f7ecfd3e12bc762bbce268b7d4cafa5d3fb6a0c17996ea0fe093617",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Eav/Model/Entity/Attribute/Backend/BackendInterface.php"
+    },
+    "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource": {
+      "file": "app/code/Magento/Eav/Model/Entity/Attribute/Source/AbstractSource.php",
+      "sha256": "fe19ca78eeb47eac5a8aae4aab5f853aa35adf3923e5b0b8ef24fe0b5c520e2e",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Eav/Model/Entity/Attribute/Source/AbstractSource.php"
+    },
+    "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\SourceInterface": {
+      "file": "app/code/Magento/Eav/Model/Entity/Attribute/Source/SourceInterface.php",
+      "sha256": "da549f67718bc9ae69f4b79cbf570ad2aa814cdf18147055bc2a7f07baef3cad",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Eav/Model/Entity/Attribute/Source/SourceInterface.php"
+    },
+    "Magento\\Framework\\App\\ActionInterface": {
+      "file": "lib/internal/Magento/Framework/App/ActionInterface.php",
+      "sha256": "895a675571e67dd38fbec8a66f72ea099ef04df8f4cfa0d96afce521723a77b3",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/ActionInterface.php"
+    },
+    "Magento\\Framework\\App\\Action\\AbstractAction": {
+      "file": "lib/internal/Magento/Framework/App/Action/AbstractAction.php",
+      "sha256": "d8508d5be33ba241bf69a928d035490bfd1164b3ee544d61215c9891ff4d5b62",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/AbstractAction.php"
+    },
+    "Magento\\Framework\\App\\Action\\Action": {
+      "file": "lib/internal/Magento/Framework/App/Action/Action.php",
+      "sha256": "cffd0a53fb90a69f2f6e3720efe15221c16977f15e7daf19bd5de4061a4ebbe3",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/Action.php"
+    },
+    "Magento\\Framework\\App\\Action\\HttpGetActionInterface": {
+      "file": "lib/internal/Magento/Framework/App/Action/HttpGetActionInterface.php",
+      "sha256": "08686885ea432d9bebc4f0edb9921c65bf9fd358933ee042cc4ad8bd01882681",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/HttpGetActionInterface.php"
+    },
+    "Magento\\Framework\\App\\Action\\HttpHeadActionInterface": {
+      "file": "lib/internal/Magento/Framework/App/Action/HttpHeadActionInterface.php",
+      "sha256": "94823fc075d5c1fbb72b5ce0d262dec800b5ffe15c5375cf0ebf38c828417afb",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/HttpHeadActionInterface.php"
+    },
+    "Magento\\Framework\\App\\Action\\HttpPostActionInterface": {
+      "file": "lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php",
+      "sha256": "1db3f79773af4ae78bf704b909c75c235f6d9c99c6be9ab9ec3988880f9e7ca9",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php"
+    },
+    "Magento\\Framework\\App\\Config\\Value": {
+      "file": "lib/internal/Magento/Framework/App/Config/Value.php",
+      "sha256": "17bfce1b93536f4048b024a0e35f13506ab74b0a589ac7fa31bb5140bc0c4ae3",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Config/Value.php"
+    },
+    "Magento\\Framework\\App\\Config\\ValueInterface": {
+      "file": "lib/internal/Magento/Framework/App/Config/ValueInterface.php",
+      "sha256": "f61f4de4bac00b07113fe98f3828ee5ef2447a264a967e026bc0bd048b4f568f",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Config/ValueInterface.php"
+    },
+    "Magento\\Framework\\App\\ResourceConnection\\SourceProviderInterface": {
+      "file": "lib/internal/Magento/Framework/App/ResourceConnection/SourceProviderInterface.php",
+      "sha256": "592e660ca2bdda22ac88c5ce90cfadb28ebc07cb8a14c4aee9b7e767c420e4e8",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/ResourceConnection/SourceProviderInterface.php"
+    },
+    "Magento\\Framework\\DataObject": {
+      "file": "lib/internal/Magento/Framework/DataObject.php",
+      "sha256": "f3cb59774fb9a0c9902e41a26c1e51786194b597f4f525240cffc947acb6e0f8",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/DataObject.php"
+    },
+    "Magento\\Framework\\DataObject\\IdentityInterface": {
+      "file": "lib/internal/Magento/Framework/DataObject/IdentityInterface.php",
+      "sha256": "0845c5e4ae88bbb637ff201bfbaef873494d3c874de437fcb1156b765e5273b1",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/DataObject/IdentityInterface.php"
+    },
+    "Magento\\Framework\\Data\\Collection": {
+      "file": "lib/internal/Magento/Framework/Data/Collection.php",
+      "sha256": "9f488dcf25d28aea6419f96f19d968e97c311db02175167e932e6223e9a31112",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/Collection.php"
+    },
+    "Magento\\Framework\\Data\\CollectionDataSourceInterface": {
+      "file": "lib/internal/Magento/Framework/Data/CollectionDataSourceInterface.php",
+      "sha256": "130c9b14289f7bf15a27c34d9da4fa8f3d4019df6cf78d97a05e0bf6a86618f8",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/CollectionDataSourceInterface.php"
+    },
+    "Magento\\Framework\\Data\\Collection\\AbstractDb": {
+      "file": "lib/internal/Magento/Framework/Data/Collection/AbstractDb.php",
+      "sha256": "7d1f89f24bde886eacff0d32018b94593eaaca72627925cebcb9a43f83bb2b46",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/Collection/AbstractDb.php"
+    },
+    "Magento\\Framework\\Data\\Form\\Element\\Renderer\\RendererInterface": {
+      "file": "lib/internal/Magento/Framework/Data/Form/Element/Renderer/RendererInterface.php",
+      "sha256": "8c5a82054e06701546e568d3ebd1242db40a60613c697e1350ce223f5af4c573",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/Form/Element/Renderer/RendererInterface.php"
+    },
+    "Magento\\Framework\\Data\\OptionSourceInterface": {
+      "file": "lib/internal/Magento/Framework/Data/OptionSourceInterface.php",
+      "sha256": "5ba5fefe265ba55248ff6ba46d5d85d0862a41ef297900825608c9925bed2c33",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/OptionSourceInterface.php"
+    },
+    "Magento\\Framework\\Event\\ObserverInterface": {
+      "file": "lib/internal/Magento/Framework/Event/ObserverInterface.php",
+      "sha256": "f47e62961a628eac601e838bdeefe094eb69193fab4acc4abcc0bfc9a0fb1eba",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event/ObserverInterface.php"
+    },
+    "Magento\\Framework\\Model\\AbstractModel": {
+      "file": "lib/internal/Magento/Framework/Model/AbstractModel.php",
+      "sha256": "247501e443a0f9c1cd86d266e5f5087dd2b1fa94bd6b1173a17f628f5ebf0e7d",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Model/AbstractModel.php"
+    },
+    "Magento\\Framework\\Model\\ResourceModel\\AbstractResource": {
+      "file": "lib/internal/Magento/Framework/Model/ResourceModel/AbstractResource.php",
+      "sha256": "31663b16a86a3ae2363f61e4c147b0903231a26124598726b72ecf78a27481b6",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Model/ResourceModel/AbstractResource.php"
+    },
+    "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb": {
+      "file": "lib/internal/Magento/Framework/Model/ResourceModel/Db/AbstractDb.php",
+      "sha256": "9e5c7e7e9e5ff304366bd998210c553aedbdd0ec7ca9f6c1081c2a3fd7c89de4",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Model/ResourceModel/Db/AbstractDb.php"
+    },
+    "Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection": {
+      "file": "lib/internal/Magento/Framework/Model/ResourceModel/Db/Collection/AbstractCollection.php",
+      "sha256": "8c17f9d85e46f6183049a7cda6a10d08408637cd2bac06d341da75b0f489dba4",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Model/ResourceModel/Db/Collection/AbstractCollection.php"
+    },
+    "Magento\\Framework\\ObjectManager\\ResetAfterRequestInterface": {
+      "file": "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+      "sha256": "c15b341937333fc8ceb678c01f5c738d06d506422e52bd243020257e43696aa8",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php"
+    },
+    "Magento\\Framework\\Option\\ArrayInterface": {
+      "file": "lib/internal/Magento/Framework/Option/ArrayInterface.php",
+      "sha256": "c26eecace829b1ac1d83e7a78703a177e32fbc478ee46fb5ebe7a38d20df0027",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Option/ArrayInterface.php"
+    },
+    "Magento\\Framework\\Setup\\Patch\\DataPatchInterface": {
+      "file": "lib/internal/Magento/Framework/Setup/Patch/DataPatchInterface.php",
+      "sha256": "5382c655c66fc27b913b5e5d8da76a012917f3651aece47a637a9878a4feaca7",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Setup/Patch/DataPatchInterface.php"
+    },
+    "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface": {
+      "file": "lib/internal/Magento/Framework/Setup/Patch/DependentPatchInterface.php",
+      "sha256": "59fd15041b5036d441cfc7a8b21622396070c82a7cb656890aa3ae4b879bb2d7",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Setup/Patch/DependentPatchInterface.php"
+    },
+    "Magento\\Framework\\Setup\\Patch\\PatchInterface": {
+      "file": "lib/internal/Magento/Framework/Setup/Patch/PatchInterface.php",
+      "sha256": "738fd2fde8fd5ce0b7b8fbfa0664adbe4f89c42130f88d09ebfa079d25f4983a",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Setup/Patch/PatchInterface.php"
+    },
+    "Magento\\Framework\\View\\Element\\AbstractBlock": {
+      "file": "lib/internal/Magento/Framework/View/Element/AbstractBlock.php",
+      "sha256": "eff566320839746042056bfa0a8e6d3b582b0c627a085bc5bdb911619a38a420",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/AbstractBlock.php"
+    },
+    "Magento\\Framework\\View\\Element\\BlockInterface": {
+      "file": "lib/internal/Magento/Framework/View/Element/BlockInterface.php",
+      "sha256": "8b8e1359dbe79de96184443ee839e9632522086b68e2c41969ba734f36318840",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/BlockInterface.php"
+    },
+    "Magento\\Framework\\View\\Element\\Block\\ArgumentInterface": {
+      "file": "lib/internal/Magento/Framework/View/Element/Block/ArgumentInterface.php",
+      "sha256": "dcefd9eacc52628788f379e6cfff638faa9bfb1bcd547daa6e384fba7f7284f9",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/Block/ArgumentInterface.php"
+    },
+    "Magento\\Framework\\View\\Element\\Template": {
+      "file": "lib/internal/Magento/Framework/View/Element/Template.php",
+      "sha256": "65329550b7103ade4ea119b2434f36a120fe6191679e0d0c3714f3e780558ced",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/Template.php"
+    },
+    "Magento\\Framework\\View\\Element\\UiComponentInterface": {
+      "file": "lib/internal/Magento/Framework/View/Element/UiComponentInterface.php",
+      "sha256": "9a5b7a96ceabe4565d25c51ddb4daab2ef16e596cfd5503e9a0c8fa863476725",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponentInterface.php"
+    },
+    "Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\FilterApplierInterface": {
+      "file": "lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/FilterApplierInterface.php",
+      "sha256": "b7bd6fd26070ef5bd2c67529cb751e0c4b19e220fc6a8fb97f4138c72d1b844c",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/FilterApplierInterface.php"
+    },
+    "Magento\\Ui\\Component\\AbstractComponent": {
+      "file": "app/code/Magento/Ui/Component/AbstractComponent.php",
+      "sha256": "ef3acbc3216b2d6fba27e31394eb8f83198bd77688e0e1e456c6d3628e848498",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/AbstractComponent.php"
+    },
+    "Magento\\Ui\\Component\\Listing\\Columns\\Column": {
+      "file": "app/code/Magento/Ui/Component/Listing/Columns/Column.php",
+      "sha256": "b14a3f66e13161991205e3bec4e0dfaebe1c464ed425f43505b9ebc4b60f31c7",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Listing/Columns/Column.php"
+    },
+    "Magento\\Ui\\Component\\Listing\\Columns\\ColumnInterface": {
+      "file": "app/code/Magento/Ui/Component/Listing/Columns/ColumnInterface.php",
+      "sha256": "4442a303a9d0acf21e9d0af282cd11f56889d7ca4e100fe29721fc798debca01",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Listing/Columns/ColumnInterface.php"
+    },
+    "Magento\\Ui\\Component\\MassAction": {
+      "file": "app/code/Magento/Ui/Component/MassAction.php",
+      "sha256": "4847b3dd4060c21ad62743438c2a7efafe51651c4593004ad74ecd42ff9cca66",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/MassAction.php"
+    },
+    "Symfony\\Component\\Console\\Command\\Command": {
+      "file": "vendor/symfony/console/Command/Command.php",
+      "sha256": "3be2d3d9c0cc3dfe6e330132dac616932c13f30cd8d683734fed575a4a7f9be1",
+      "source_url": "https://raw.githubusercontent.com/symfony/console/v6.4.0/Command/Command.php"
+    }
+  },
+  "totals": {
+    "PASS": 74,
+    "FAIL": 0,
+    "NOT RUN": 0
+  },
+  "checks": [
+    {
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\Migration",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\BlockInterface"
+      ],
+      "file": "Block/Adminhtml/Migration.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\RequestDetails",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\BlockInterface"
+      ],
+      "file": "Block/Adminhtml/RequestDetails.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Block\\Adminhtml\\System\\Config\\MigrationNotice",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Config\\Block\\System\\Config\\Form\\Field",
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\Data\\Form\\Element\\Renderer\\RendererInterface",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Config\\Block\\System\\Config\\Form\\Field",
+        "Magento\\Backend\\Block\\Template",
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "Magento\\Framework\\Data\\Form\\Element\\Renderer\\RendererInterface"
+      ],
+      "file": "Block/Adminhtml/System/Config/MigrationNotice.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Block\\Modal",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "ArrayAccess",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "file": "Block/Modal.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Block\\ProductButton",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "ArrayAccess",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\View\\Element\\Template",
+        "Magento\\Framework\\View\\Element\\AbstractBlock",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "file": "Block/ProductButton.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Console\\Command\\MigrateLegacy",
+      "status": "PASS",
+      "parents": [
+        "Symfony\\Component\\Console\\Command\\Command"
+      ],
+      "interfaces": [],
+      "loaded_sources": [
+        "Symfony\\Component\\Console\\Command\\Command"
+      ],
+      "file": "Console/Command/MigrateLegacy.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Migration\\Index",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Migration/Index.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Migration\\Run",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Migration/Run.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\AbstractRequestAction",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/AbstractRequestAction.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\ExportCsv",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/ExportCsv.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\Index",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpHeadActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpHeadActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/Index.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\MassStatus",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/MassStatus.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\ResendEmail",
+      "status": "PASS",
+      "parents": [
+        "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\AbstractRequestAction",
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/ResendEmail.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\SaveStatus",
+      "status": "PASS",
+      "parents": [
+        "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\AbstractRequestAction",
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/SaveStatus.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\View",
+      "status": "PASS",
+      "parents": [
+        "Coresh\\QuoteRequest\\Controller\\Adminhtml\\Request\\AbstractRequestAction",
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpHeadActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Backend\\App\\Action",
+        "Magento\\Backend\\App\\AbstractAction",
+        "Magento\\Framework\\App\\Action\\Action",
+        "Magento\\Framework\\App\\Action\\AbstractAction",
+        "Magento\\Framework\\App\\ActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpGetActionInterface",
+        "Magento\\Framework\\App\\Action\\HttpHeadActionInterface"
+      ],
+      "file": "Controller/Adminhtml/Request/View.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Controller\\Request\\Submit",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface",
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\App\\Action\\HttpPostActionInterface",
+        "Magento\\Framework\\App\\ActionInterface"
+      ],
+      "file": "Controller/Request/Submit.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\CustomerData\\Profile",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Customer\\CustomerData\\SectionSourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Customer\\CustomerData\\SectionSourceInterface"
+      ],
+      "file": "CustomerData/Profile.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Attribute\\Backend\\ButtonLabel",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend"
+      ],
+      "interfaces": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "file": "Model/Attribute/Backend/ButtonLabel.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Attribute\\Backend\\InheritYesNo",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend"
+      ],
+      "interfaces": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "file": "Model/Attribute/Backend/InheritYesNo.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Attribute\\Backend\\LabelMode",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend"
+      ],
+      "interfaces": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\AbstractBackend",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\BackendInterface"
+      ],
+      "file": "Model/Attribute/Backend/LabelMode.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Attribute\\Source\\InheritYesNo",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\SourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\SourceInterface",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Attribute/Source/InheritYesNo.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Attribute\\Source\\LabelMode",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\SourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\AbstractSource",
+        "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\SourceInterface",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Attribute/Source/LabelMode.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Catalog\\ProductDisplayPolicy",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Catalog/ProductDisplayPolicy.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Catalog\\PurchasingPolicy",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Catalog/PurchasingPolicy.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Catalog\\QuoteStoreResolver",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Catalog/QuoteStoreResolver.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Config.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Backend\\ButtonLabel",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\Config\\ValueInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\App\\Config\\ValueInterface"
+      ],
+      "file": "Model/Config/Backend/ButtonLabel.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Backend\\Date",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\Config\\ValueInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\App\\Config\\ValueInterface"
+      ],
+      "file": "Model/Config/Backend/Date.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Backend\\Recipient",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\Config\\ValueInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\App\\Config\\ValueInterface"
+      ],
+      "file": "Model/Config/Backend/Recipient.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Backend\\SecurityLimit",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\Config\\ValueInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\App\\Config\\Value",
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\App\\Config\\ValueInterface"
+      ],
+      "file": "Model/Config/Backend/SecurityLimit.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Source\\Categories",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Config/Source/Categories.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Source\\CustomerGroups",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Config/Source/CustomerGroups.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Source\\RequestDisplay",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Config/Source/RequestDisplay.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Config\\Source\\Scope",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Data\\OptionSourceInterface"
+      ],
+      "file": "Model/Config/Source/Scope.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Eligibility\\CategoryRuleResolver",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Eligibility/CategoryRuleResolver.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Eligibility\\DateRangePolicy",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Eligibility/DateRangePolicy.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Eligibility\\QuoteRequestEligibility",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Eligibility/QuoteRequestEligibility.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Email\\AdminNotificationSender",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Email/AdminNotificationSender.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Email\\CustomerConfirmationSender",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Email/CustomerConfirmationSender.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Email\\TemplateVariablesBuilder",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Email/TemplateVariablesBuilder.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Migration\\LegacyDataMigrator",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Migration/LegacyDataMigrator.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Migration\\LegacySourceDetector",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Migration/LegacySourceDetector.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Migration\\MigrationApproval",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Migration/MigrationApproval.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Product\\ProductContextResolver",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Product/ProductContextResolver.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\QuoteRequest",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Model\\AbstractModel",
+        "Magento\\Framework\\DataObject"
+      ],
+      "file": "Model/QuoteRequest.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\ResourceModel\\QuoteRequest",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+        "Magento\\Framework\\Model\\ResourceModel\\AbstractResource"
+      ],
+      "interfaces": [],
+      "loaded_sources": [
+        "Magento\\Framework\\Model\\ResourceModel\\Db\\AbstractDb",
+        "Magento\\Framework\\Model\\ResourceModel\\AbstractResource"
+      ],
+      "file": "Model/ResourceModel/QuoteRequest.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\ResourceModel\\QuoteRequest\\Collection",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection",
+        "Magento\\Framework\\Data\\Collection\\AbstractDb",
+        "Magento\\Framework\\Data\\Collection"
+      ],
+      "interfaces": [
+        "Magento\\Framework\\App\\ResourceConnection\\SourceProviderInterface",
+        "IteratorAggregate",
+        "Countable",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Framework\\Data\\CollectionDataSourceInterface",
+        "Magento\\Framework\\ObjectManager\\ResetAfterRequestInterface",
+        "Traversable",
+        "Magento\\Framework\\Data\\OptionSourceInterface",
+        "Magento\\Framework\\View\\Element\\Block\\ArgumentInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Model\\ResourceModel\\Db\\Collection\\AbstractCollection",
+        "Magento\\Framework\\Data\\Collection\\AbstractDb",
+        "Magento\\Framework\\Data\\Collection",
+        "Magento\\Framework\\Option\\ArrayInterface",
+        "Magento\\Framework\\Data\\OptionSourceInterface",
+        "Magento\\Framework\\Data\\CollectionDataSourceInterface",
+        "Magento\\Framework\\View\\Element\\Block\\ArgumentInterface",
+        "Magento\\Framework\\ObjectManager\\ResetAfterRequestInterface",
+        "Magento\\Framework\\App\\ResourceConnection\\SourceProviderInterface"
+      ],
+      "file": "Model/ResourceModel/QuoteRequest/Collection.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Security\\RateLimiter",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Security/RateLimiter.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Service\\SubmitQuoteRequest",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Service/SubmitQuoteRequest.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Model\\Validation\\QuoteRequestValidator",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Model/Validation/QuoteRequestValidator.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Observer\\AddProductListAttribute",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "file": "Observer/AddProductListAttribute.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Observer\\ApplyCatalogueLayout",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "file": "Observer/ApplyCatalogueLayout.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Observer\\BlockPurchasingRoutes",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "file": "Observer/BlockPurchasingRoutes.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Observer\\InvalidateQuoteRequestCache",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Event\\ObserverInterface",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Event\\ObserverInterface",
+        "Magento\\Framework\\DataObject\\IdentityInterface"
+      ],
+      "file": "Observer/InvalidateQuoteRequestCache.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Adminhtml\\PreventUnsafeCoreExport",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Adminhtml/PreventUnsafeCoreExport.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Adminhtml\\ProtectPrivateGridFields",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Adminhtml/ProtectPrivateGridFields.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Catalog\\PageCacheDateTtl",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Catalog/PageCacheDateTtl.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Catalog\\ProductCollectionContext",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Catalog/ProductCollectionContext.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Catalog\\QuoteManagementPurchasingGuard",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Catalog/QuoteManagementPurchasingGuard.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Catalog\\QuotePurchasingGuard",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Catalog/QuotePurchasingGuard.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Catalog\\QuoteRepositoryPurchasingGuard",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Catalog/QuoteRepositoryPurchasingGuard.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Frontend\\CatalogDetailsButton",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Frontend/CatalogDetailsButton.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Plugin\\Frontend\\PriceVisibility",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Plugin/Frontend/PriceVisibility.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Setup\\Patch\\Data\\AddProductDisplayAttributes",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface"
+      ],
+      "file": "Setup/Patch/Data/AddProductDisplayAttributes.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Setup\\Patch\\Data\\AddQuoteRequestAttributes",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface"
+      ],
+      "file": "Setup/Patch/Data/AddQuoteRequestAttributes.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Setup\\Patch\\Data\\PreserveCustomerGroupRestrictions",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Setup\\Patch\\DataPatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\PatchInterface",
+        "Magento\\Framework\\Setup\\Patch\\DependentPatchInterface"
+      ],
+      "file": "Setup/Patch/Data/PreserveCustomerGroupRestrictions.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Component\\Listing\\Column\\RequestActions",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Ui\\Component\\Listing\\Columns\\Column",
+        "Magento\\Ui\\Component\\AbstractComponent",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "Magento\\Ui\\Component\\Listing\\Columns\\ColumnInterface",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "Magento\\Framework\\View\\Element\\UiComponentInterface",
+        "ArrayAccess"
+      ],
+      "loaded_sources": [
+        "Magento\\Ui\\Component\\Listing\\Columns\\Column",
+        "Magento\\Ui\\Component\\AbstractComponent",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\UiComponentInterface",
+        "Magento\\Framework\\View\\Element\\BlockInterface",
+        "Magento\\Ui\\Component\\Listing\\Columns\\ColumnInterface"
+      ],
+      "file": "Ui/Component/Listing/Column/RequestActions.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Component\\Listing\\RequestMassAction",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Ui\\Component\\MassAction",
+        "Magento\\Ui\\Component\\AbstractComponent",
+        "Magento\\Framework\\DataObject"
+      ],
+      "interfaces": [
+        "ArrayAccess",
+        "Magento\\Framework\\View\\Element\\UiComponentInterface",
+        "Magento\\Framework\\View\\Element\\BlockInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Ui\\Component\\MassAction",
+        "Magento\\Ui\\Component\\AbstractComponent",
+        "Magento\\Framework\\DataObject",
+        "Magento\\Framework\\View\\Element\\UiComponentInterface",
+        "Magento\\Framework\\View\\Element\\BlockInterface"
+      ],
+      "file": "Ui/Component/Listing/RequestMassAction.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\DataProvider\\FulltextFilter",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\FilterApplierInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\FilterApplierInterface"
+      ],
+      "file": "Ui/DataProvider/FulltextFilter.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Export\\CsvCellSanitizer",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Ui/Export/CsvCellSanitizer.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Export\\RequestCsvExporter",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Ui/Export/RequestCsvExporter.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Service\\GridSelectionValidator",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Ui/Service/GridSelectionValidator.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Ui\\Service\\SelectedRequests",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [],
+      "loaded_sources": [],
+      "file": "Ui/Service/SelectedRequests.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\ViewModel\\ProductQuoteRequest",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\View\\Element\\Block\\ArgumentInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\View\\Element\\Block\\ArgumentInterface"
+      ],
+      "file": "ViewModel/ProductQuoteRequest.php",
+      "exit_code": 0,
+      "missing_classes": []
+    }
+  ]
+}

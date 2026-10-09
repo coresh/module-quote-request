@@ -1,0 +1,115 @@
+{
+  "scope": "Actual upstream FileClassScanner and PhpScanner executed on classless CLI tool without loading it. Actual DirectoryScanner executed with the equivalent single-module Test/tests exclusion regex verified in tagged DiCompileCommand. PhpScanner instantiated by Reflection without constructing Magento services; no framework doubles. Full Magento compilation and generation NOT RUN.",
+  "checks": [
+    {
+      "tag": "2.4.8-p5",
+      "status": "PASS",
+      "result": {
+        "tool_first_class": "",
+        "tool_generated_entities": [],
+        "tests_files_in_application_scan": [],
+        "application_php_file_count": 76,
+        "tool_path_in_token_scan": true
+      },
+      "actual_di_command_excludes_lowercase_tests": true,
+      "actual_di_command_excludes_Test": true,
+      "sources": [
+        {
+          "file": "setup/src/Magento/Setup/Console/Command/DiCompileCommand.php",
+          "sha256": "39fa6ad17514c210dfdc74ca7a876d9e131791d01cda1d69873dab37cf924c1a",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/App/Task/Operation/RepositoryGenerator.php",
+          "sha256": "bd9b09044970a74fcdb46f7a155817984683f56defbcc5ec5e7ca08bdb6acf21",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/App/Task/Operation/RepositoryGenerator.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/App/Task/Operation/ApplicationCodeGenerator.php",
+          "sha256": "6ed3cb3e5ebd3aecdbb946620456b5a5af2f3cd874a9c7fa3bdd00741a47897e",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/App/Task/Operation/ApplicationCodeGenerator.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Reader/ClassesScanner.php",
+          "sha256": "22162d41c3bff80e9a418aa7d42d82ee9a14c78e8d48a78b7fc2826aaf423d5e",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/Code/Reader/ClassesScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Reader/FileClassScanner.php",
+          "sha256": "e2567896d2e4c8fdc8855d9b192be561626cd8cdc1f32c2172bdbe677fbad6b3",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/Code/Reader/FileClassScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/DirectoryScanner.php",
+          "sha256": "02de0fdb2419ce5f8f6c6e752efd92587139c49d949145d8724a26e556ab1399",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/Code/Scanner/DirectoryScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/PhpScanner.php",
+          "sha256": "65d2a5371634e04edafabada126e47d8056704a28192ba251ecdeac8060efc0b",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/Code/Scanner/PhpScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/ScannerInterface.php",
+          "sha256": "b3f777f3acd36260467249b16953b8be3d46e6efa1c71be55d58afa6589f9765",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/setup/src/Magento/Setup/Module/Di/Code/Scanner/ScannerInterface.php"
+        }
+      ]
+    },
+    {
+      "tag": "2.4.9",
+      "status": "PASS",
+      "result": {
+        "tool_first_class": "",
+        "tool_generated_entities": [],
+        "tests_files_in_application_scan": [],
+        "application_php_file_count": 76,
+        "tool_path_in_token_scan": true
+      },
+      "actual_di_command_excludes_lowercase_tests": true,
+      "actual_di_command_excludes_Test": true,
+      "sources": [
+        {
+          "file": "setup/src/Magento/Setup/Console/Command/DiCompileCommand.php",
+          "sha256": "444045c9085ed0c6dab96d7d2d3fb2f8e29b1b053f3fc3dfbf604a15e607fcf7",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Console/Command/DiCompileCommand.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/App/Task/Operation/RepositoryGenerator.php",
+          "sha256": "8e479af8b48c47cd9ee735af7226fc89b6a647f764a3830ee27df5a0d1820597",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/App/Task/Operation/RepositoryGenerator.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/App/Task/Operation/ApplicationCodeGenerator.php",
+          "sha256": "53e27ec29757049636afa15d48fb48f5b23d4279aea2c380b0909e3a0357b5a4",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/App/Task/Operation/ApplicationCodeGenerator.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Reader/ClassesScanner.php",
+          "sha256": "1617fa307e16998f4d09e26bc5cdbec67610e9974312bfaab46e0ae25a1a3ed7",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/Code/Reader/ClassesScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Reader/FileClassScanner.php",
+          "sha256": "3aa2bf3007bb2b471432ed87192ef1f4334591e8ecec8dc0d80f1788aa7a8e37",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/Code/Reader/FileClassScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/DirectoryScanner.php",
+          "sha256": "f0769b810ad5083c117826799a7d452b5df441d61ddc98974acaa073bb05f021",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/Code/Scanner/DirectoryScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/PhpScanner.php",
+          "sha256": "0021d85b58da7c28bc859a4201e4dbbac953d8312553c8093e8af0c230769205",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/Code/Scanner/PhpScanner.php"
+        },
+        {
+          "file": "setup/src/Magento/Setup/Module/Di/Code/Scanner/ScannerInterface.php",
+          "sha256": "e36690fa981a9b1b3c59777c850876bd3f95e35372b1ec4105912d6bd0a9c6c8",
+          "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/setup/src/Magento/Setup/Module/Di/Code/Scanner/ScannerInterface.php"
+        }
+      ]
+    }
+  ]
+}

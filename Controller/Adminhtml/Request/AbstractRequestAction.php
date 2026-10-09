@@ -22,7 +22,10 @@ abstract class AbstractRequestAction extends Action
     protected function loadRequestEntity(): ?QuoteRequest
     {
         $id = $this->getRequest()->getParam('request_id');
-        if (!is_scalar($id) || !ctype_digit((string) $id) || (int) $id <= 0) {
+        if ((!is_int($id) && !is_string($id))
+            || preg_match('/\A[1-9][0-9]{0,9}\z/', (string) $id) !== 1
+            || (strlen((string) $id) === 10 && strcmp((string) $id, '4294967295') > 0)
+        ) {
             return null;
         }
         $request = $this->quoteRequestFactory->create();

@@ -14,16 +14,18 @@ use Magento\Store\Model\StoreManagerInterface;
 class RequestDetails extends Template
 {
     private ?QuoteRequest $quoteRequest = null;
+    private readonly FormKey $requestFormKey;
 
     public function __construct(
         Template\Context $context,
         private readonly QuoteRequestFactory $quoteRequestFactory,
         private readonly QuoteRequestResource $quoteRequestResource,
         private readonly AuthorizationInterface $authorization,
-        private readonly FormKey $formKey,
+        FormKey $formKey,
         private readonly StoreManagerInterface $storeManager,
         array $data = []
     ) {
+        $this->requestFormKey = $formKey;
         parent::__construct($context, $data);
     }
 
@@ -32,7 +34,10 @@ class RequestDetails extends Template
         if ($this->quoteRequest === null) {
             $this->quoteRequest = $this->quoteRequestFactory->create();
             $id = $this->getRequest()->getParam('request_id');
-            if (is_scalar($id) && ctype_digit((string) $id)) {
+            if ((is_int($id) || is_string($id))
+                && preg_match('/\A[1-9][0-9]{0,9}\z/', (string) $id) === 1
+                && (strlen((string) $id) < 10 || strcmp((string) $id, '4294967295') <= 0)
+            ) {
                 $this->quoteRequestResource->load($this->quoteRequest, (int) $id);
             }
         }
@@ -51,7 +56,7 @@ class RequestDetails extends Template
 
     public function getFormKey(): string
     {
-        return $this->formKey->getFormKey();
+        return $this->requestFormKey->getFormKey();
     }
 
     public function getStoreLabel(): string

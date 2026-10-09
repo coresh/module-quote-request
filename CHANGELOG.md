@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.2 — 2026-10-09
+
+- Fixed the `RequestDetails::$formKey` readonly inheritance conflict with the native mutable Backend Template property. Preserved the public constructor argument and current form-key behavior.
+- Added native class declaration checks against actual parent/interface/trait source for both target Magento tags, including reproduction of the uploaded 1.1.1 fatal error.
+- Restricted individual administrative request lookups to canonical positive IDs within the unsigned INT database range.
+- Prevented malformed imported legacy dates from raising PHP `ValueError` and aborting migration.
+- Added block, identifier, migration, rate-limit, customer-confirmation and source-provenance regressions, plus native integration assets explicitly marked NOT RUN.
+
 ## 1.1.1 — 2026-10-09
 
 - Ignore outdated asynchronous customer-profile responses so they cannot overwrite a newer form reload.

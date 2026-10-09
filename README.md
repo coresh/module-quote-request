@@ -1,4 +1,4 @@
-# Coresh Quote Request 1.1.1
+# Coresh Quote Request 1.1.2
 
 A Magento Open Source extension for product enquiries: **Contact Us for a Quote** → form → saved request → notification email to the store. It provides store-view configuration, an admin grid, request details and email resend, quantity and product ID fields, Cart Hidden, and a separate server-side purchasing restriction.
 
@@ -7,6 +7,8 @@ Target versions: Magento 2.4.8-p5 and 2.4.9. The code is written for PHP 8.3+. C
 The settings cover the features shown in the supplied screenshots: Enable, Allow Add To Cart, Disclose Product Price (the inverse of Hide Prices), Global/Product/Category scope, selected categories, Button/Link, Button Text, customer groups, and Show Inquiry Form In Product Information Tab. The YouTube video could not be accessed; no claim of frame-by-frame equivalence is made. The extension uses its own Luma/Blank-compatible markup without copying a third-party commercial extension.
 
 Version 1.1.0 added per-product settings, a static Label display mode, explicit customer-group restrictions, grid search/export/bulk status changes, and an admin preview/import page. A detailed mapping of the six additional screenshots is provided in `docs/SCREENSHOT_FEATURES.md`. Version 1.1.1 provides English documentation and text, with the review results recorded in `docs/TEST_REPORT.md` and `docs/SECURITY_REVIEW.md`.
+
+Version 1.1.2 fixes the admin request-details block inheritance error reported during `setup:di:compile`. It preserves the constructor argument `formKey` while using a distinct child property, validates administrative request IDs, and skips malformed legacy dates safely. All production class declarations were loaded against actual parent/interface sources for both target tags; installed Magento DI compilation still requires the target deployment. See `docs/COMPILATION_FIX.md`.
 
 ## Installation
 
@@ -35,8 +37,8 @@ Skip the first command if the previous module is not installed. The examples dep
 `composer.json` is located at the extension root. For a local installation, use a Composer path repository pointing to the extracted package root outside `app/code`, or your own Composer/artifact repository. Example for an existing directory at `packages/coresh/module-quote-request`:
 
 ```bash
-composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.1"}}}'
-composer require coresh/module-quote-request:1.1.1
+composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.2"}}}'
+composer require coresh/module-quote-request:1.1.2
 php bin/magento module:enable Coresh_QuoteRequest
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
