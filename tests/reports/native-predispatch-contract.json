@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-10T15:00:02.056083+00:00",
+  "generated_at_utc": "2026-10-10T17:36:45.791558+00:00",
   "status": "PASS",
   "scope": "Isolated execution of unmodified, tagged Magento FrontController public dispatch and ActionFlag methods with explicit infrastructure/dependency doubles. Not an installed Magento HTTP/integration run.",
   "native_executed": [
@@ -39,12 +39,12 @@
   ],
   "runtime": "8.3.6",
   "input_log": {
-    "filename": "Pasted text(20261010-142955).txt",
-    "sha256": "14c03aa99c433097edfc84c61219186bb3e73e7a4b3dd6c76e5ada5a815f2d14",
-    "critical_submission_events": 2,
+    "file": "Pasted text(20261010-172401).txt",
+    "sha256": "355f655a7c2f37a5e0720eb522532a7de8b337a1bed9409cd0250b37f3af3536",
+    "critical_submission_events": 1,
+    "critical_report_events": 1,
     "report_view_getter_failure_present": true,
-    "diagnosis": "BlockPurchasingRoutes calls getRequest() on modern action classes before Submit::execute; modern HttpPostActionInterface has no such getter.",
-    "note": "Two complete timestamped Submit error records and an initial, headerless Reports View exception stack trace are supplied."
+    "note": "One complete timestamped Submit error, one complete timestamped Reports View error, and an initial incomplete Submit exception tail. The fixed uploaded observer has no controller getter and a blank line 34; this log is evidence of different executed instructions, not proof of OPcache as their cause."
   },
   "contract": {
     "predispatch_payload": [

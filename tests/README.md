@@ -90,3 +90,17 @@ node tests/Frontend/submit-boundary.test.cjs
 The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the normal 57-test run contains 3373 assertions. The full current suite contains 701 tests/5459 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
 
 The native predispatch report executes actual core FrontController, ActionFlag and payload methods from both tags with explicit infrastructure doubles. It records 34 fixed PASS and 34 expected baseline getter failures. The authoring probe and downloaded references are external to the package; shipped observer/pipeline tests provide reproducible isolated regressions. The full native deployment path is prepared in `FrontendSubmissionTest` (three additional methods, all NOT RUN): accepted popup, owned identical retry, changed-payload token rejection with external email disabled. See `docs/SUBMISSION_FIX.md` and `docs/TEST_REPORT.md` for exact evidence and limitations.
+
+## Installed-source regressions — 1.1.5
+
+`tools/check_installed_release.php` is a standalone, classless, read-only PHP CLI checker. Run it from a separately extracted trusted package, outside the web document root. It compares reference runtime hashes with an explicit module directory or the module resolved by the selected project's Composer autoloader and ComponentRegistrar. It rejects old/mixed/missing/extra source, unsafe/incomplete trusted manifests, self-comparison, symlink escapes/cycles, distinct known copies and disagreement between registration/autoload paths. Missing docs/tests/NOTICE and the explanatory `i18n/README.md` are permitted; missing/changed translation CSV is rejected.
+
+The new Python regression file launches the real checker in PHP subprocesses against temporary filesystem fixtures. Its Composer ClassLoader and ComponentRegistrar are explicitly identified method-compatible doubles. No installed Magento, database, generated DI, web HTTP, FPM or SMTP is invoked. The checker does not load the observer class; full mode executes the selected installed project's Composer registration files, which are trusted project code. A `FILES_MATCH` result verifies the named files/CLI resolution, not the web worker's loaded bytecode or successful submission. See `docs/DEPLOYMENT_VERIFICATION.md` for server commands and acceptance.
+
+Run all tool tests with the intended PHP binary:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 PHP_BINARY=/absolute/path/to/php python3 -m unittest discover -s tests/Tools -p 'test_*.py' -v
+```
+
+The current tool suite contains 70 cases: 13 language-scanner, 15 native declaration/source-tool and 42 installed-source checks. All pass on PHP 8.3.6/Python 3.12.14. The application PHP/AMD suites remain 701 tests/5459 assertions and 90 unique JavaScript scenarios, respectively. Actual native FileClassScanner/PhpScanner execution for both tags finds no class or generated entity in the new CLI tool; this narrow file-scope check does not compile installed Magento.

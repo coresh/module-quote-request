@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.5 — 2026-10-10
+
+- Retain the corrected 1.1.4 application source: the supplied new archive already contains it, while the attached 17:23 web errors execute incompatible older observer instructions.
+- Add a read-only installed-source checker for trusted runtime hashes, Composer/registered module paths, distinct known installations and manifest/path integrity; explicitly leave PHP-FPM/web execution unverified.
+- Add isolated filesystem/autoload/registration regressions and a deployment recovery/web acceptance procedure with supported Cloudways PHP-FPM refresh.
+- Correct the documented module rate-limit response to HTTP 400; the independent JavaScript 429 case verifies client handling rather than a different server protocol.
+- Restore the omitted English documentation and NOTICE, and refresh the executed test/evidence reports. No application behavior or schema changes are introduced by this release.
+
 ## 1.1.4 — 2026-10-10
 
 - Removed calls to request/response getters that modern ActionInterface controllers do not provide, fixing the predispatch HTTP 500 for quote submission and other non-purchase routes.

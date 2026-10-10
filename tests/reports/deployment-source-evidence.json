@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-10-10T17:36:45.793744+00:00",
+  "input_zip": {
+    "file": "Coresh_QuoteRequest-1.1.4(1).zip",
+    "sha256": "364c62eb650182f46f0a5ef44c800eec62cc751354113847a1e13ab3900dc547",
+    "module_files": 217,
+    "runtime_files_matching_previous_fixed_release": 113
+  },
+  "input_log": {
+    "file": "Pasted text(20261010-172401).txt",
+    "sha256": "355f655a7c2f37a5e0720eb522532a7de8b337a1bed9409cd0250b37f3af3536",
+    "critical_submission_events": 1,
+    "critical_report_events": 1,
+    "report_view_getter_failure_present": true,
+    "note": "One complete timestamped Submit error, one complete timestamped Reports View error, and an initial incomplete Submit exception tail. The fixed uploaded observer has no controller getter and a blank line 34; this log is evidence of different executed instructions, not proof of OPcache as their cause."
+  },
+  "fixed_observer": {
+    "file": "Observer/BlockPurchasingRoutes.php",
+    "sha256": "4dfb319d9c1d1d9e61a8763972191537691b266250545c017d3c034dad766772",
+    "line_34": "",
+    "execute_starts_line": 35,
+    "event_request_read_line": 38,
+    "controller_getter_calls": 0
+  },
+  "historical_observer": {
+    "sha256": "c89c7429d868e49b10ddad9fac2d23b52f1bafcb36d4c0f2dd21418c1877d504",
+    "line_34": "        $request = $controller->getRequest();"
+  },
+  "conclusion": "The instructions executed in the supplied timestamped failures do not match the supplied fixed observer body. Installed on-disk source, Composer/registrar resolution, active web release/node and PHP-FPM opcode state need verification.",
+  "not_proved": [
+    "Which module files are currently installed on the server",
+    "When/where 1.1.4 was deployed relative to these errors",
+    "That stale OPcache is the specific cause",
+    "That the web worker uses the CLI-resolved release/node",
+    "Successful live POST/database acceptance or SMTP delivery"
+  ],
+  "references": [
+    "https://www.php.net/manual/en/opcache.configuration.php",
+    "https://support.cloudways.com/en/articles/5120718-what-can-i-do-in-the-manage-services-section-on-cloudways"
+  ]
+}

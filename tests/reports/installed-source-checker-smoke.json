@@ -1,0 +1,31 @@
+{
+  "scope": "Real standalone checker, separate trusted 1.1.5 reference vs local previously verified 1.1.4 module. This is not the user server or an installed Magento/Composer resolution run.",
+  "exit_code": 0,
+  "result": {
+    "schema": 1,
+    "status": "FILES_MATCH",
+    "scope": "CLI source files and optional installed Composer/ComponentRegistrar resolution",
+    "mode": "module_source_only",
+    "paths": {
+      "expected_root": "/workspace/scratch/ff728627a180/deployment-fix/Coresh_QuoteRequest",
+      "module_root": "/workspace/scratch/ff728627a180/submit-fix/Coresh_QuoteRequest",
+      "registered_module_root": null,
+      "autoload_observer_file": null,
+      "known_installed_copies": []
+    },
+    "composer_registration_files_executed": false,
+    "checked_runtime_files": 113,
+    "errors": [],
+    "not_verified": [
+      "web_document_root_and_virtual_host",
+      "PHP_FPM_loaded_classes_and_OPcache",
+      "generated_DI_and_interceptors",
+      "Magento_bootstrap_and_configuration",
+      "database_persistence",
+      "SMTP_delivery",
+      "real_browser_HTTP_submission",
+      "installed_Composer_and_ComponentRegistrar_resolution"
+    ],
+    "notice": "FILES_MATCH means source files match the trusted release. It does not confirm that the web server is fixed."
+  }
+}
