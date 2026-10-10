@@ -1,45 +1,47 @@
 {
-  "generated_at": "2026-10-09T20:26:50.138477+00:00",
-  "runtimes": [
-    {
-      "command": [
-        "/workspace/scratch/ff728627a180/test-bin/php",
-        "--version"
-      ],
-      "exit_code": 0,
-      "output": "PHP 8.3.6 (cli) (built: Jul 16 2026 18:30:41) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies"
-    },
-    {
-      "command": [
-        "/workspace/scratch/ff728627a180/test-bin/phpunit",
-        "--version"
-      ],
-      "exit_code": 0,
-      "output": "PHPUnit 10.5.66 by Sebastian Bergmann and contributors."
-    },
-    {
-      "command": [
-        "/workspace/scratch/ff728627a180/test-bin/composer",
-        "--version"
-      ],
-      "exit_code": 0,
-      "output": "Composer version 2.7.1 2024-02-09 15:26:28"
-    },
-    {
-      "command": [
-        "node",
-        "--version"
-      ],
-      "exit_code": 0,
-      "output": "v24.19.0"
-    },
-    {
-      "command": [
-        "python3",
-        "--version"
-      ],
-      "exit_code": 0,
-      "output": "Python 3.12.14"
-    }
-  ]
+  "PHP": {
+    "command": [
+      "/workspace/scratch/ff728627a180/test-bin/php",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "PHP 8.3.6 (cli) (built: Jul 16 2026 18:30:41) (NTS)\nCopyright (c) The PHP Group\nZend Engine v4.3.6, Copyright (c) Zend Technologies",
+    "stderr": ""
+  },
+  "PHPUnit": {
+    "command": [
+      "/workspace/scratch/ff728627a180/test-bin/phpunit",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "PHPUnit 10.5.66 by Sebastian Bergmann and contributors.",
+    "stderr": ""
+  },
+  "Composer": {
+    "command": [
+      "/workspace/scratch/ff728627a180/test-bin/composer",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Composer version 2.7.1 2024-02-09 15:26:28",
+    "stderr": ""
+  },
+  "Node": {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "v24.19.0",
+    "stderr": ""
+  },
+  "Python": {
+    "command": [
+      "python3",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.12.14",
+    "stderr": ""
+  }
 }

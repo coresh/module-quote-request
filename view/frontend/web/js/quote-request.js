@@ -54,7 +54,7 @@ define([
                 } catch (error) {
                     return;
                 }
-                if (context.suppressPurchase) {
+                if (context && typeof context === 'object' && context.suppressPurchase) {
                     if ($button.attr('data-coresh-pdp')) {
                         $('.product-info-main .box-tocart').addClass('coresh-quote-purchase-suppressed');
                     } else {
@@ -107,7 +107,7 @@ define([
             } catch (error) {
                 return;
             }
-            if (!context.productId) {
+            if (!context || typeof context !== 'object' || !context.productId) {
                 return;
             }
             if (!current || current.productId !== context.productId) {

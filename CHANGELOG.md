@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.3 — 2026-10-09
+
+- Registered the native configuration-path default email template IDs; retained earlier IDs as equivalent aliases and aligned new default values.
+- Prevented malformed or null quote-button JSON from interrupting click handlers and purchase suppression.
+- Kept admin submit buttons available when an earlier validator has already cancelled submission.
+- Rejected control characters in date and security-limit configuration, malformed sibling date values and reversed padded date ranges.
+- Added native template-option reproduction and regression evidence for both target tags, configuration contracts, button events and controller outputs.
+- Included the English documentation and licensing notice referenced by the uploaded package.
+
 ## 1.1.2 — 2026-10-09
 
 - Fixed the `RequestDetails::$formKey` readonly inheritance conflict with the native mutable Backend Template property. Preserved the public constructor argument and current form-key behavior.

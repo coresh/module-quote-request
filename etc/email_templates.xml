@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="coresh_quote_request_email_admin_template" label="Coresh Quote Request: Store Notification" file="admin_notification.html" type="html" module="Coresh_QuoteRequest" area="frontend"/>
+    <template id="coresh_quote_request_email_customer_template" label="Coresh Quote Request: Customer Confirmation" file="customer_confirmation.html" type="html" module="Coresh_QuoteRequest" area="frontend"/>
+    <!-- Preserve identifiers stored by earlier releases. -->
     <template id="coresh_quote_request_admin_notification" label="Coresh Quote Request: Store Notification" file="admin_notification.html" type="html" module="Coresh_QuoteRequest" area="frontend"/>
     <template id="coresh_quote_request_customer_confirmation" label="Coresh Quote Request: Customer Confirmation" file="customer_confirmation.html" type="html" module="Coresh_QuoteRequest" area="frontend"/>
 </config>

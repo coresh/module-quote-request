@@ -1,0 +1,12 @@
+ISOLATED UNIT MODE: minimal framework test doubles; Magento integration is NOT RUN.
+PHPUnit 10.5.66 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.6
+Configuration: /workspace/scratch/ff728627a180/config-fix/Coresh_QuoteRequest/phpunit.xml.dist
+
+................................................................. 65 / 82 ( 79%)
+.................                                                 82 / 82 (100%)
+
+Time: 00:00.030, Memory: 25.04 MB
+
+OK (82 tests, 591 assertions)

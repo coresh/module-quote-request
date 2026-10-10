@@ -1,38 +1,47 @@
 {
-  "generated_at": "2026-10-09T20:26:49.981016+00:00",
   "checks": [
     {
-      "check": "tests/Tools/test_english_content.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tests/Tools/test_native_declaration_tools.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/check_english_content.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/check_source_contracts.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/fetch_class_reference.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/fetch_magento_reference.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/static_checks.py",
-      "status": "PASS"
-    },
-    {
-      "check": "tools/run-magento-checks.sh",
+      "check": "Python syntax: tests/Tools/test_english_content.py",
       "status": "PASS",
-      "detail": ""
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tests/Tools/test_native_declaration_tools.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tools/check_english_content.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tools/check_source_contracts.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tools/fetch_class_reference.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tools/fetch_magento_reference.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Python syntax: tools/static_checks.py",
+      "status": "PASS",
+      "detail": "Compiled in memory; no bytecode written"
+    },
+    {
+      "check": "Bash syntax: tools/run-magento-checks.sh",
+      "status": "PASS"
     }
-  ]
+  ],
+  "totals": {
+    "PASS": 8,
+    "FAIL": 0
+  }
 }

@@ -12,7 +12,11 @@ class Date extends Value
         if (!is_scalar($value) && $value !== null) {
             throw new LocalizedException(__('Enter a date using YYYY-MM-DD.'));
         }
-        $value = trim((string) $value);
+        $value = (string) $value;
+        if (preg_match('/[\x00-\x1f\x7f]/', $value)) {
+            throw new LocalizedException(__('Enter a valid date using YYYY-MM-DD.'));
+        }
+        $value = trim($value);
         if ($value !== '' && preg_match('/\A[0-9]{4}-[0-9]{2}-[0-9]{2}\z/', $value) !== 1) {
             throw new LocalizedException(__('Enter a valid date using YYYY-MM-DD.'));
         }
@@ -26,10 +30,9 @@ class Date extends Value
     public function beforeSave()
     {
         $value = $this->normalize($this->getValue());
-        $from = (string) $this->getFieldsetDataValue('from_date');
-        $to = (string) $this->getFieldsetDataValue('to_date');
-        if ($from !== '' && $to !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $from . '')
-            && preg_match('/^\d{4}-\d{2}-\d{2}$/', $to . '') && $from > $to) {
+        $from = $this->normalize($this->getFieldsetDataValue('from_date'));
+        $to = $this->normalize($this->getFieldsetDataValue('to_date'));
+        if ($from !== '' && $to !== '' && $from > $to) {
             throw new LocalizedException(__('The end date must be on or after the start date.'));
         }
         $this->setValue($value);

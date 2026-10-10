@@ -16,7 +16,7 @@ class SecurityLimit extends Value
             'rate_limit_window' => [1, 86400],
             'max_message_length' => [1, 20000]
         ];
-        if (!is_scalar($value) || !preg_match($isQuantity ? '/^\d+(?:\.\d{1,4})?$/' : '/^\d+$/', (string) $value)) {
+        if (!is_scalar($value) || !preg_match($isQuantity ? '/\A[0-9]+(?:\.[0-9]{1,4})?\z/' : '/\A[0-9]+\z/', (string) $value)) {
             throw new LocalizedException(__('Enter a positive numeric limit. Quantity permits up to four decimal places.'));
         }
         $number = (float) $value;

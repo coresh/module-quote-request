@@ -1,0 +1,26 @@
+{
+  "suite": "Quote and admin button event/output behavior with isolated DOM doubles",
+  "passed": 19,
+  "failed": 0,
+  "tests": [
+    "quote button opens the modal and writes product names as plain text",
+    "malformed or non-object quote context leaves the dialog closed without throwing",
+    "PDP quote button copies quantity and submits only well-formed selected attributes",
+    "listing quote button excludes unrelated PDP quantity and configurable selections",
+    "browser-invalid quote form cancels submission without an HTTP request or locked button",
+    "product clicks while submitting cannot change the in-flight product or reset entered data",
+    "accepted quote produces a success message, hides and resets modal form, and unlocks submit",
+    "application rejection preserves input, displays an error as plain text, and unlocks retry",
+    "empty JSON response produces the documented rejection message and leaves retry available",
+    "HTTP 429 produces the server error message as text and preserves the retry token",
+    "server transport failure uses the connection message and restores submit availability",
+    "unavailable secure randomness prevents a request and displays an actionable message",
+    "repeated widget initialization does not attach another click or submit handler",
+    "purchase suppression skips invalid display context and processes subsequent valid buttons",
+    "contentUpdated reapplies suppression for dynamically inserted quote products",
+    "admin submission previously cancelled by jQuery validation leaves buttons and retry available",
+    "admin submission previously cancelled by a native listener leaves retry available",
+    "admin accepted first submit leaves native POST enabled and suppresses repeated button submits",
+    "admin status-save and resend forms maintain separate submission guards"
+  ]
+}

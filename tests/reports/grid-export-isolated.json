@@ -9,5 +9,9 @@
     "native empty selection becomes select-all excluded literal false",
     "excluded mode remains exclusive and runtime form key is reread",
     "nested grid filters and HTML-like text remain input values; temporary form is removed"
-  ]
+  ],
+  "native_parent_button_methods": {
+    "status": "NOT RUN",
+    "reason": "Pass the installed or upstream Magento_Ui grid/export.js as the third CLI argument."
+  }
 }

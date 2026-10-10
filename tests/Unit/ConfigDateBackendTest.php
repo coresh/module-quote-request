@@ -40,7 +40,8 @@ class ConfigDateBackendTest extends TestCase
     {
         return [[[]], [new \stdClass()], ['2026-02-29'], ['2026-13-01'], ['2026-00-09'],
             ['2026-1-09'], ['2026-10-9'], ['09/10/2026'], ['2026-10-09T00:00:00Z'],
-            ["2026-10\0-09"], ["2026-10\n-09"], ["2026-10\xFF-09"]];
+            ["2026-10\0-09"], ["2026-10\n-09"], ["2026-10\xFF-09"],
+            ["2026-10-09\0"], ["2026-10-09\n"], ["\t2026-10-09"], ["2026-10-09\x7f"]];
     }
 
     public function testBeforeSaveRejectsAReversedNonemptyPeriod(): void
@@ -51,5 +52,30 @@ class ConfigDateBackendTest extends TestCase
         ]]);
         $this->expectException(LocalizedException::class);
         $backend->beforeSave();
+    }
+
+    public function testBeforeSaveRejectsAReversedPeriodWithPaddedBounds(): void
+    {
+        $backend = $this->backend();
+        $backend->setData(['value' => ' 2026-10-08 ', 'fieldset_data' => [
+            'from_date' => ' 2026-10-09 ', 'to_date' => ' 2026-10-08 '
+        ]]);
+        $this->expectException(LocalizedException::class);
+        $backend->beforeSave();
+    }
+
+    #[DataProvider('malformedSiblingDates')]
+    public function testMalformedSiblingDateProducesAValidationError(string $field, mixed $value): void
+    {
+        $backend = $this->backend();
+        $backend->setData(['value' => '2026-10-09', 'fieldset_data' => [$field => $value]]);
+        $this->expectException(LocalizedException::class);
+        $backend->beforeSave();
+    }
+
+    public static function malformedSiblingDates(): array
+    {
+        return [['from_date', []], ['to_date', new \stdClass()], ['from_date', "2026-10-09\0"],
+            ['to_date', '2026-02-29']];
     }
 }

@@ -9,9 +9,9 @@
         </general>
         <email>
             <enabled>1</enabled><recipient/><sender_identity>general</sender_identity>
-            <admin_template>coresh_quote_request_admin_notification</admin_template>
+            <admin_template>coresh_quote_request_email_admin_template</admin_template>
             <include_product_name>1</include_product_name><include_quantity>1</include_quantity><include_product_id>1</include_product_id>
-            <customer_confirmation>0</customer_confirmation><customer_template>coresh_quote_request_customer_confirmation</customer_template>
+            <customer_confirmation>0</customer_confirmation><customer_template>coresh_quote_request_email_customer_template</customer_template>
         </email>
         <catalog><hide_cart>0</hide_cart><disable_purchasing>0</disable_purchasing><hide_prices>0</hide_prices><allow_add_to_cart>1</allow_add_to_cart></catalog>
         <security><rate_limit_enabled>1</rate_limit_enabled><rate_limit_max>5</rate_limit_max><rate_limit_window>600</rate_limit_window><max_quantity>1000000</max_quantity><max_message_length>5000</max_message_length></security>
