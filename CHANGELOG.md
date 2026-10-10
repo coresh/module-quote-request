@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.4 — 2026-10-10
+
+- Removed calls to request/response getters that modern ActionInterface controllers do not provide, fixing the predispatch HTTP 500 for quote submission and other non-purchase routes.
+- Used the event/current HTTP request, injected shared HTTP response and native no-dispatch flag to preserve catalogue purchasing restrictions for modern and legacy actions.
+- Corrected invalid reused-token guidance: a page refresh resets the client state; reopening the same product alone need not do so.
+- Added actual native FrontController execution probes, observer/store-policy tests, captured AMD POST payloads and frontend-to-backend response regressions.
+- Included prepared complete Magento submission/persistence assets with their unexecuted status clearly recorded.
+
 ## 1.1.3 — 2026-10-09
 
 - Registered the native configuration-path default email template IDs; retained earlier IDs as equivalent aliases and aligned new default values.

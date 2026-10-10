@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "source": "view/frontend/web/js/quote-request.js",
+  "source_sha256": "d9b94657102157de6abec672a6ae952519d393b8d30cb8c20f6c09d0eee52fea",
+  "scope": "Actual quote-request.js AMD AJAX payloads captured using explicit DOM/jQuery/customer-data/crypto doubles. No browser, HTTP, Magento bootstrap or email transport. encoded_post is derived with an explicit form encoder for PHP parse_str tests; it is not captured network traffic. Contact values are synthetic example.invalid fixtures.",
+  "captures": [
+    {
+      "id": "modal_first",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote this product.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-runtime-form-key",
+        "request_token": "0101010101010101010101010101010101010101010101010101010101010101"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+this+product.&honeypot=&form_key=boundary-runtime-form-key&request_token=0101010101010101010101010101010101010101010101010101010101010101"
+    },
+    {
+      "id": "modal_retry_500",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote this product.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-runtime-form-key",
+        "request_token": "0101010101010101010101010101010101010101010101010101010101010101"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+this+product.&honeypot=&form_key=boundary-runtime-form-key&request_token=0101010101010101010101010101010101010101010101010101010101010101"
+    },
+    {
+      "id": "modal_retry_session_refreshed",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote this product.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-refreshed-form-key",
+        "request_token": "0101010101010101010101010101010101010101010101010101010101010101"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+this+product.&honeypot=&form_key=boundary-refreshed-form-key&request_token=0101010101010101010101010101010101010101010101010101010101010101"
+    },
+    {
+      "id": "modal_message_changed",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote the revised requirement.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-refreshed-form-key",
+        "request_token": "0202020202020202020202020202020202020202020202020202020202020202"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+the+revised+requirement.&honeypot=&form_key=boundary-refreshed-form-key&request_token=0202020202020202020202020202020202020202020202020202020202020202"
+    },
+    {
+      "id": "modal_quantity_changed",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "4.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote the revised requirement.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-refreshed-form-key",
+        "request_token": "0303030303030303030303030303030303030303030303030303030303030303"
+      },
+      "encoded_post": "product_id=42&quantity=4.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+the+revised+requirement.&honeypot=&form_key=boundary-refreshed-form-key&request_token=0303030303030303030303030303030303030303030303030303030303030303"
+    },
+    {
+      "id": "modal_email_changed",
+      "mode": "popup_listing",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "4.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "revised@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote the revised requirement.",
+        "honeypot": "",
+        "super_attribute": {},
+        "form_key": "boundary-refreshed-form-key",
+        "request_token": "0404040404040404040404040404040404040404040404040404040404040404"
+      },
+      "encoded_post": "product_id=42&quantity=4.5&customer_name=Boundary+Customer&customer_email=revised%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+the+revised+requirement.&honeypot=&form_key=boundary-refreshed-form-key&request_token=0404040404040404040404040404040404040404040404040404040404040404"
+    },
+    {
+      "id": "popup_pdp_configurable",
+      "mode": "popup_pdp",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote this product.",
+        "honeypot": "",
+        "super_attribute": {
+          "12": "5",
+          "13": "7"
+        },
+        "form_key": "boundary-runtime-form-key",
+        "request_token": "2121212121212121212121212121212121212121212121212121212121212121"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+this+product.&honeypot=&super_attribute%5B12%5D=5&super_attribute%5B13%5D=7&form_key=boundary-runtime-form-key&request_token=2121212121212121212121212121212121212121212121212121212121212121"
+    },
+    {
+      "id": "inline_first",
+      "mode": "inline_pdp",
+      "ajax": {
+        "url": "/quoterequest/request/submit",
+        "method": "POST",
+        "dataType": "json",
+        "timeout": 30000
+      },
+      "post": {
+        "product_id": "42",
+        "quantity": "2.5",
+        "customer_name": "Boundary Customer",
+        "customer_email": "boundary@example.invalid",
+        "customer_telephone": "+1 202 555 0100",
+        "message": "Please quote this product.",
+        "honeypot": "",
+        "super_attribute": {
+          "12": "5"
+        },
+        "form_key": "boundary-runtime-form-key",
+        "request_token": "4141414141414141414141414141414141414141414141414141414141414141"
+      },
+      "encoded_post": "product_id=42&quantity=2.5&customer_name=Boundary+Customer&customer_email=boundary%40example.invalid&customer_telephone=%2B1+202+555+0100&message=Please+quote+this+product.&honeypot=&super_attribute%5B12%5D=5&form_key=boundary-runtime-form-key&request_token=4141414141414141414141414141414141414141414141414141414141414141"
+    }
+  ]
+}

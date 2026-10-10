@@ -125,7 +125,7 @@ class SubmitQuoteRequest
     private function duplicateResponse(array $existing, string $fingerprint): array
     {
         if (!hash_equals((string) $existing['payload_hash'], $fingerprint)) {
-            throw new LocalizedException(__('This request token is no longer valid. Please reopen the form.'));
+            throw new LocalizedException(__('This request token is no longer valid. Please refresh the page and try again.'));
         }
         return [
             'success' => true,

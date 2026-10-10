@@ -28,6 +28,6 @@ test_valid_manifest_is_accepted (test_native_declaration_tools.NativeDeclaration
 test_wrong_target_tag_is_rejected (test_native_declaration_tools.NativeDeclarationToolsTest.test_wrong_target_tag_is_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 28 tests in 0.012s
+Ran 28 tests in 0.013s
 
 OK

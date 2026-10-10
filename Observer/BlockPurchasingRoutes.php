@@ -6,8 +6,10 @@ namespace Coresh\QuoteRequest\Observer;
 
 use Coresh\QuoteRequest\Model\Catalog\PurchasingPolicy;
 use Magento\Checkout\Model\Session as CheckoutSession;
-use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\ActionInterface;
 use Magento\Framework\App\ActionFlag;
+use Magento\Framework\App\Request\Http;
+use Magento\Framework\App\Response\Http as HttpResponse;
 use Magento\Framework\App\Response\RedirectInterface;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
@@ -24,14 +26,17 @@ class BlockPurchasingRoutes implements ObserverInterface
         private readonly ActionFlag $actionFlag,
         private readonly RedirectInterface $redirect,
         private readonly UrlInterface $url,
-        private readonly ManagerInterface $messageManager
+        private readonly ManagerInterface $messageManager,
+        private readonly Http $request,
+        private readonly HttpResponse $response
     ) {
     }
 
     public function execute(Observer $observer): void
     {
-        $controller = $observer->getEvent()->getControllerAction();
-        $request = $controller->getRequest();
+        // Modern ActionInterface controllers need not expose request/response getters.
+        $eventRequest = $observer->getEvent()->getRequest();
+        $request = $eventRequest instanceof Http ? $eventRequest : $this->request;
         $route = (string) $request->getRouteName();
         $action = (string) $request->getFullActionName();
         $blockCheckout = in_array($route, ['checkout', 'multishipping', 'paypal'], true);
@@ -47,16 +52,16 @@ class BlockPurchasingRoutes implements ObserverInterface
                 $this->policy->assertAllowed((int) $this->checkoutSession->getQuote()->getStoreId());
             }
         } catch (LocalizedException $exception) {
-            $this->actionFlag->set('', Action::FLAG_NO_DISPATCH, true);
-            $controller->getResponse()->setNoCacheHeaders();
+            $this->actionFlag->set('', ActionInterface::FLAG_NO_DISPATCH, true);
+            $this->response->setNoCacheHeaders();
             if ($request->isXmlHttpRequest()) {
-                $controller->getResponse()->setHttpResponseCode(403);
-                $controller->getResponse()->setHeader('Content-Type', 'application/json', true);
-                $controller->getResponse()->setBody('{"success":false,"message":"Online purchasing is unavailable. Please request a quote."}');
+                $this->response->setHttpResponseCode(403);
+                $this->response->setHeader('Content-Type', 'application/json', true);
+                $this->response->setBody('{"success":false,"message":"Online purchasing is unavailable. Please request a quote."}');
                 return;
             }
             $this->messageManager->addErrorMessage($exception->getMessage());
-            $this->redirect->redirect($controller->getResponse(), $this->url->getUrl(''));
+            $this->redirect->redirect($this->response, $this->url->getUrl(''));
         }
     }
 }

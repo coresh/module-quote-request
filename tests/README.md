@@ -3,10 +3,11 @@
 From the module root, with PHP 8.3+ and PHPUnit 10.5+:
 
 ```sh
-phpunit -c phpunit.xml.dist --log-junit unit-junit.xml
+phpunit -c phpunit.xml.dist --log-junit tests/reports/unit-junit.xml
 node tests/Frontend/quote-request.test.cjs
 node tests/Frontend/inline-form.test.cjs
 node tests/Frontend/button-events.test.cjs
+node tests/Frontend/submit-boundary.test.cjs
 node tests/Frontend/grid-export.test.cjs
 python3 tools/static_checks.py --output static-validation.json
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests/Tools -p 'test_*.py' -v
@@ -28,7 +29,7 @@ python3 tools/fetch_magento_reference.py --tag 2.4.9 --destination reference/2.4
 python3 tools/static_checks.py --xsd-root reference/2.4.9 --output static-249.json
 ```
 
-`tests/Integration` requires the actual Magento test harness. All 23 integration-test assets were **NOT RUN** in the preparation environment: 17 declared methods and six inherited Magento backend ACL checks. They cover schema, snapshots, persistence, CSRF, email leases, status isolation, native EAV store overrides and Use Default, export and mass-status ACLs, and form keys in the POST body. Configure `dev/tests/integration/phpunit.xml` and a dedicated test database separately. **Warning: never use a production database for these tests.**
+`tests/Integration` requires the actual Magento test harness. All 26 integration-test assets were **NOT RUN** in the preparation environment: 20 declared methods and six inherited Magento backend ACL checks. They cover schema, snapshots, persistence, CSRF, email leases, status isolation, native EAV store overrides and Use Default, export and mass-status ACLs, and form keys in the POST body. Configure `dev/tests/integration/phpunit.xml` and a dedicated test database separately. **Warning: never use a production database for these tests.**
 
 ```sh
 MAGENTO_TEST_ENVIRONMENT=1 MAGENTO_TEST_ROOT=/path/to/disposable/magento bash tools/run-magento-checks.sh
@@ -59,9 +60,9 @@ The new block fixture models the native parent's mutable protected `formKey` pro
 
 ## Configuration and button regressions — 1.1.3
 
-The full isolated PHP suite contains 607 tests/1842 assertions. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
+The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 701-test/5459-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
 
-`button-events.test.cjs` adds 19 actual-AMD event/output cases. With the modal (17), inline (10) and grid (10) cases, there are 56 unique JavaScript scenarios. To exercise the four inherited grid button-click cases, pass the actual installed or downloaded upstream Magento AMD parent:
+`button-events.test.cjs` adds 19 actual-AMD event/output cases. With the modal (17), inline (10) and grid (10) cases, there were 56 unique JavaScript scenarios before the additional 34 submission-boundary cases in 1.1.4 (90 current unique scenarios). To exercise the four inherited grid button-click cases, pass the actual installed or downloaded upstream Magento AMD parent:
 
 ```sh
 node tests/Frontend/grid-export.test.cjs view/adminhtml/web/js/grid/export.js /path/to/magento/app/code/Magento/Ui/view/base/web/js/grid/export.js
@@ -70,3 +71,22 @@ node tests/Frontend/grid-export.test.cjs view/adminhtml/web/js/grid/export.js /p
 In a Composer deployment that last path is normally `vendor/magento/module-ui/view/base/web/js/grid/export.js`. The actual parent methods execute with DOM, jQuery, underscore and uiElement doubles; this does not initialize Magento UI or a browser. Without that optional third argument only the six base grid scenarios run.
 
 The native configuration-option report executes real core XML conversion and option lookup for both target tags. External reference sources and the authoring probe are not shipped; the file-contract unit tests and complete `ConfigSectionTest` integration asset are shipped. The integration asset includes two declared methods and two inherited backend ACL checks, all NOT RUN here. See `docs/CONFIGURATION_FIX.md` and the current validation report.
+
+## Submission regressions — 1.1.4
+
+The current suite includes `BlockPurchasingRoutesTest` (37 cases/244 assertions) and `FrontendSubmitPipelineTest` (57 cases/3373 assertions). The route suite uses an explicit request/response/event fixture and real purchasing policy cases; the old controller-getter defect is covered by modern actions without those methods. The pipeline executes the actual controller/service, validation, catalogue/eligibility/display/date policies, rate limiter, resource idempotency lookup and both email senders, with explicit framework/session/catalogue/database/transport dependencies.
+
+`submit-boundary.test.cjs` executes the actual quote AMD handlers with the shared DOM/jQuery/AJAX harness. Eight payloads are captured and checked against the shipped fixture. URL-encoding is performed by a documented deterministic test encoder rather than real jQuery HTTP transport. PHP consumes those fields through `parse_str`. Six actual controller responses are recorded and tested through popup and inline handlers (12 of the 34 new client cases). The normal PHP run verifies recorded responses against current execution; the normal Node run verifies payload captures and consumes those responses. No sockets, real browser, Magento bootstrap, MySQL transactions or SMTP are involved.
+
+The fixtures are shipped and ordinary tests do not regenerate them. After an intentional relevant source change, regenerate and reverify in this order:
+
+```sh
+node tests/Frontend/submit-boundary.test.cjs --write-fixtures
+CORESH_CAPTURE_SUBMIT_RESPONSES=tests/Fixtures/frontend-submit-responses.json phpunit -c phpunit.xml.dist --filter FrontendSubmitPipelineTest
+phpunit -c phpunit.xml.dist --log-junit tests/reports/unit-junit.xml
+node tests/Frontend/submit-boundary.test.cjs
+```
+
+The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the normal 57-test run contains 3373 assertions. The full current suite contains 701 tests/5459 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
+
+The native predispatch report executes actual core FrontController, ActionFlag and payload methods from both tags with explicit infrastructure doubles. It records 34 fixed PASS and 34 expected baseline getter failures. The authoring probe and downloaded references are external to the package; shipped observer/pipeline tests provide reproducible isolated regressions. The full native deployment path is prepared in `FrontendSubmissionTest` (three additional methods, all NOT RUN): accepted popup, owned identical retry, changed-payload token rejection with external email disabled. See `docs/SUBMISSION_FIX.md` and `docs/TEST_REPORT.md` for exact evidence and limitations.

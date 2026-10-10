@@ -1,0 +1,59 @@
+{
+    "schema_version": 1,
+    "scope": "Actual Submit controller/service output under explicit framework, database and transport doubles. No installed Magento or remote HTTP request.",
+    "producer": "tests/Unit/FrontendSubmitPipelineTest.php",
+    "responses": [
+        {
+            "id": "accepted",
+            "http_status": 200,
+            "body": {
+                "success": true,
+                "status": "accepted",
+                "message": "Your quote request has been received.",
+                "request_id": 1
+            }
+        },
+        {
+            "id": "csrf_error",
+            "http_status": 400,
+            "body": {
+                "success": false,
+                "message": "Your session has expired. Please refresh the page and try again."
+            }
+        },
+        {
+            "id": "duplicate",
+            "http_status": 200,
+            "body": {
+                "success": true,
+                "status": "duplicate",
+                "message": "Your quote request has already been received.",
+                "request_id": 1
+            }
+        },
+        {
+            "id": "server_error",
+            "http_status": 500,
+            "body": {
+                "success": false,
+                "message": "The request could not be processed. Please try again later."
+            }
+        },
+        {
+            "id": "token_error",
+            "http_status": 400,
+            "body": {
+                "success": false,
+                "message": "This request token is no longer valid. Please refresh the page and try again."
+            }
+        },
+        {
+            "id": "validation_error",
+            "http_status": 400,
+            "body": {
+                "success": false,
+                "message": "Please check the quote request details and try again."
+            }
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 {
+  "generated_at_utc": "2026-10-10T15:05:32.241155+00:00",
   "checks": [
     {
       "check": "Python syntax: tests/Tools/test_english_content.py",
@@ -38,10 +39,34 @@
     {
       "check": "Bash syntax: tools/run-magento-checks.sh",
       "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/button-events.test.cjs",
+      "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/grid-export.test.cjs",
+      "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/inline-form.test.cjs",
+      "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/quote-request.test.cjs",
+      "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/submit-boundary.test.cjs",
+      "status": "PASS"
+    },
+    {
+      "check": "CJS syntax: tests/Frontend/support/quote-harness.cjs",
+      "status": "PASS"
     }
   ],
   "totals": {
-    "PASS": 8,
+    "PASS": 14,
     "FAIL": 0
   }
 }

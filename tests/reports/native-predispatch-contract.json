@@ -1,0 +1,2008 @@
+{
+  "generated_at_utc": "2026-10-10T15:00:02.056083+00:00",
+  "status": "PASS",
+  "scope": "Isolated execution of unmodified, tagged Magento FrontController public dispatch and ActionFlag methods with explicit infrastructure/dependency doubles. Not an installed Magento HTTP/integration run.",
+  "native_executed": [
+    "FrontController::__construct",
+    "FrontController::dispatch",
+    "FrontController::processRequest",
+    "FrontController::dispatchPreDispatchEvents",
+    "FrontController::getEventParameters",
+    "FrontController::getActionResponse",
+    "FrontController::isSetActionNoPostDispatchFlag",
+    "FrontController::dispatchPostDispatchEvents",
+    "ActionFlag::__construct/set/get/_getControllerKey",
+    "DataObject native event payload getter/setter and Observer::getEvent"
+  ],
+  "native_note": "Native Event constructor is bypassed with Reflection because its observer collection is unrelated to this contract; payload uses native DataObject setters. FrontController constructor and all request-dispatch methods are invoked normally and unmodified. Magento request validation is an explicit permissive double; module Submit own POST/CSRF validation runs.",
+  "explicit_doubles": [
+    "Http request and response transports",
+    "RouterList/router matching",
+    "framework area/state/profiler",
+    "framework request validator",
+    "event-manager observer invocation bridge",
+    "JSON result/factory",
+    "FormKey/framework form-key validator",
+    "checkout/customer sessions",
+    "message/URL/redirect/logger",
+    "PurchasingPolicy decision and SubmitQuoteRequest persistence/mail service",
+    "Reports context/status/store/event/index dependencies (reporting disabled)"
+  ],
+  "not_run": [
+    "Full Magento installation/bootstrap/DI compilation",
+    "Actual HTTP server/socket or browser",
+    "Database persistence/schema",
+    "SMTP/mail delivery",
+    "Full native framework CSRF/HTTP-method validators",
+    "Reports persistence when reporting is enabled",
+    "PHP 8.4/8.5 runtime"
+  ],
+  "runtime": "8.3.6",
+  "input_log": {
+    "filename": "Pasted text(20261010-142955).txt",
+    "sha256": "14c03aa99c433097edfc84c61219186bb3e73e7a4b3dd6c76e5ada5a815f2d14",
+    "critical_submission_events": 2,
+    "report_view_getter_failure_present": true,
+    "diagnosis": "BlockPurchasingRoutes calls getRequest() on modern action classes before Submit::execute; modern HttpPostActionInterface has no such getter.",
+    "note": "Two complete timestamped Submit error records and an initial, headerless Reports View exception stack trace are supplied."
+  },
+  "contract": {
+    "predispatch_payload": [
+      "controller_action",
+      "request"
+    ],
+    "controller_getRequest_required": false,
+    "controller_getResponse_required": false,
+    "no_dispatch_flag": "ActionInterface::FLAG_NO_DISPATCH",
+    "no_dispatch_effect": "FrontController returns injected shared response without executing a modern action; postdispatch is suppressed."
+  },
+  "production_files": [
+    {
+      "file": "Observer/BlockPurchasingRoutes.php",
+      "sha256": "4dfb319d9c1d1d9e61a8763972191537691b266250545c017d3c034dad766772"
+    },
+    {
+      "file": "Controller/Request/Submit.php",
+      "sha256": "266ba9733c4ba281caad433071e99dbe1fed0d852fa12cda1da53c35b2b15e33"
+    }
+  ],
+  "probe_sha256": "126e9cf31b8dc1e4ea0c06e935728fda0a53d9ac8240a19dfcb8ef4370802466",
+  "sources": [
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/FrontController.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/FrontController.php",
+      "sha256": "f4e239cbeb63e3599bbff1325324388e8ee527209fd3223d12b8b4d89fa29a60"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/ActionFlag.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/ActionFlag.php",
+      "sha256": "43ada0f03e34ad2c27ecbccb42f6e689862fc9c55641f578663c74073b1dfd41"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/ActionInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/ActionInterface.php",
+      "sha256": "895a675571e67dd38fbec8a66f72ea099ef04df8f4cfa0d96afce521723a77b3"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/FrontControllerInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/FrontControllerInterface.php",
+      "sha256": "c32d33f6faf5558bcf66bcb9c323fdb51bc7454cc6ebaa9f82eba418abaed2a8"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/Action/AbstractAction.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/AbstractAction.php",
+      "sha256": "d8508d5be33ba241bf69a928d035490bfd1164b3ee544d61215c9891ff4d5b62"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/Response/HttpInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Response/HttpInterface.php",
+      "sha256": "4bf66b68d60a38798ac60f79c0ae48a2374ab790446e7ff762757c25939e9c4e"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/RequestInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/RequestInterface.php",
+      "sha256": "ece9a0ae1fbf1270ff963048e76deea8d1f24b9320fddae34e2abb20cfaaaed4"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/ResponseInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/ResponseInterface.php",
+      "sha256": "29f9b800c94f0b55743dbae310ecdc2147b6286aec49355dab44f1775d2de198"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/FrontController.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/FrontController.php",
+      "sha256": "e6d743c8b1d13469764d6ec174cc9bf5063f4d520abef13f0e7464541b43fc06"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/ActionFlag.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/ActionFlag.php",
+      "sha256": "59896c304a1caea622c90c5fda9df5a5273f5152a73cfdedf8116026b30ed84c"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/ActionInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/ActionInterface.php",
+      "sha256": "66f6caf90fd3dff2844ed033395597c29d081267f4e59529da6666ae74c8aac4"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/FrontControllerInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/FrontControllerInterface.php",
+      "sha256": "665fe58585a62e9751f715d9edf73ceb32f98b27cb1098a97e923420af3718f5"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/Action/AbstractAction.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/Action/AbstractAction.php",
+      "sha256": "b3a58643c78f9f02f0814f41121524f110aded836d6e7af1870512d8f235ea32"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/Response/HttpInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/Response/HttpInterface.php",
+      "sha256": "ceabd9f527e4d5fed3e9d2ccd92ddf40ea1c31bb6ff67cbc4904f67d66105dcf"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/RequestInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/RequestInterface.php",
+      "sha256": "941d6dd724ac898fc115e28fe035cd6880a97486e7bad2b25b365719fd577bfa"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/ResponseInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/ResponseInterface.php",
+      "sha256": "1bdac930c34dc8b863feba778e537d2003c6b15869254a5ceb0d03706e60967c"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/RouterListInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/RouterListInterface.php",
+      "sha256": "9eb1fba02094bcefaac7fb6b54ff24f61de004bd1ecf2d7b181ad492aa92fab9"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/Request/ValidatorInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Request/ValidatorInterface.php",
+      "sha256": "a6753fedeeb27e96b60740d3e188c1e92fcdbc5f82e3d05f72e2acb497632346"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/Event/ManagerInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event/ManagerInterface.php",
+      "sha256": "30db1244c64da28cfe7b6d075bbd9aa34ba4760f90e75987c291370de83d2b1c"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/Event.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event.php",
+      "sha256": "e798c0a9e89e0432f678cf1f2d07a80bd434a60be01f88cb8e9e80eb2bb02e18"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/Event/Observer.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event/Observer.php",
+      "sha256": "199def252d96dfc405ad16fa651acb595212b8ff26d5f3e2ce4f9ca853b59ed5"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/DataObject.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/DataObject.php",
+      "sha256": "f3cb59774fb9a0c9902e41a26c1e51786194b597f4f525240cffc947acb6e0f8"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/RouterListInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/RouterListInterface.php",
+      "sha256": "3980c2ee2e5e4aabd7942a9b396f2c829a9efa19b25aebf5f5ee6a4a722ad1b0"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/Request/ValidatorInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/Request/ValidatorInterface.php",
+      "sha256": "4e5551ccaebf7bc3361ef5a27c559da64cbd80962f508ff4a8b83122c1403ee1"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/Event/ManagerInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Event/ManagerInterface.php",
+      "sha256": "054146304cae2be5fd9ce7ed18d6cb1744575924636e741c2cab8326361e1915"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/Event.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Event.php",
+      "sha256": "673c709400626bcd5321cf2785269b22fec6a972488338a2f797695b187d79d8"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/Event/Observer.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Event/Observer.php",
+      "sha256": "ccf337ccc60ff44da76a9f1c4043ffc7acb3a2bb1f862b4af7735ae5fe0bbc0e"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/DataObject.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/DataObject.php",
+      "sha256": "47c6a1a977bdb8e506132d691eb376ba119f97c1359868261a3029a6b441deb6"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "app/code/Magento/Reports/Controller/Report/Product/View.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Reports/Controller/Report/Product/View.php",
+      "sha256": "a9e71097ccc649e878dd8becabea80e3a6e43cbc701b5abd8013049402fa21af"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php",
+      "sha256": "1db3f79773af4ae78bf704b909c75c235f6d9c99c6be9ab9ec3988880f9e7ca9",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/Event/ObserverInterface.php",
+      "sha256": "f47e62961a628eac601e838bdeefe094eb69193fab4acc4abcc0bfc9a0fb1eba",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event/ObserverInterface.php"
+    },
+    {
+      "tag": "2.4.8-p5",
+      "file": "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+      "sha256": "c15b341937333fc8ceb678c01f5c738d06d506422e52bd243020257e43696aa8",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php",
+      "sha256": "a6d5fe680bc63930fcd228543c28847b64b8991b83f56abd54098827b1b6716f",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/App/Action/HttpPostActionInterface.php"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/Event/ObserverInterface.php",
+      "sha256": "226548a41c2327185bb06ba207b3ddeb5bf8b9b680ad6ff80e25d15cb4e27c10",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Event/ObserverInterface.php"
+    },
+    {
+      "tag": "2.4.9",
+      "file": "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+      "sha256": "4ae8e50c240b0c52b3006d591bff352046ad6471d2f9472727bf44bfa8044dbb",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php"
+    }
+  ],
+  "summary": {
+    "fixed_scenarios_per_tag": 17,
+    "fixed_total_pass": 34,
+    "baseline_expected_failure_total": 34,
+    "failures": 0
+  },
+  "runs": [
+    {
+      "tag": "2.4.8-p5",
+      "baseline": false,
+      "scenarios": [
+        {
+          "name": "quote_submit_success",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true,
+            "message": "Your quote request has been submitted.",
+            "request_id": 71
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_localized",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 400,
+          "data": {
+            "success": false,
+            "message": "The quantity is invalid."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_unexpected",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 500,
+          "data": {
+            "success": false,
+            "message": "The request could not be processed. Please try again later."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_invalid_csrf",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 400,
+          "data": {
+            "success": false,
+            "message": "Your session has expired. Please refresh the page and try again."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_get_rejected",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 405,
+          "data": {
+            "success": false,
+            "message": "This request requires POST."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "modern_reports_shape_action",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_reports",
+            "controller_action_predispatch_reports_report_product_view",
+            "controller_action_postdispatch_reports_report_product_view",
+            "controller_action_postdispatch_reports",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index",
+            "controller_action_postdispatch_checkout_index_index",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index",
+            "controller_action_postdispatch_multishipping_index_index",
+            "controller_action_postdispatch_multishipping",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index",
+            "controller_action_postdispatch_paypal_index_index",
+            "controller_action_postdispatch_paypal",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_success_remains_accessible",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_onepage_success",
+            "controller_action_postdispatch_checkout_onepage_success",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_failure_remains_accessible",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_onepage_failure",
+            "controller_action_postdispatch_checkout_onepage_failure",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        }
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.8-p5",
+      "baseline": true,
+      "scenarios": [
+        {
+          "name": "quote_submit_success",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_localized",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_unexpected",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_invalid_csrf",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_get_rejected",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "modern_reports_shape_action",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_success_remains_accessible",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_failure_remains_accessible",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        }
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.9",
+      "baseline": false,
+      "scenarios": [
+        {
+          "name": "quote_submit_success",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true,
+            "message": "Your quote request has been submitted.",
+            "request_id": 71
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_localized",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 400,
+          "data": {
+            "success": false,
+            "message": "The quantity is invalid."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_unexpected",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 500,
+          "data": {
+            "success": false,
+            "message": "The request could not be processed. Please try again later."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 1,
+          "post_received": [
+            {
+              "form_key": "native-test-form-key",
+              "request_token": "stable-token",
+              "product_id": "10",
+              "quantity": "2"
+            }
+          ],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_invalid_csrf",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 400,
+          "data": {
+            "success": false,
+            "message": "Your session has expired. Please refresh the page and try again."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "quote_submit_get_rejected",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 405,
+          "data": {
+            "success": false,
+            "message": "This request requires POST."
+          },
+          "headers": {
+            "Cache-Control": "no-store, no-cache, must-revalidate"
+          },
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_quoterequest",
+            "controller_action_predispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest_request_submit",
+            "controller_action_postdispatch_quoterequest",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "native_reports_view_report_disabled",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": [],
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_reports",
+            "controller_action_predispatch_reports_report_product_view",
+            "controller_action_postdispatch_reports_report_product_view",
+            "controller_action_postdispatch_reports",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_index_index",
+            "controller_action_postdispatch_checkout_index_index",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "multishipping_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_multishipping",
+            "controller_action_predispatch_multishipping_index_index",
+            "controller_action_postdispatch_multishipping_index_index",
+            "controller_action_postdispatch_multishipping",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_blocked_xhr",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 403,
+          "data": {
+            "success": false,
+            "message": "Online purchasing is unavailable. Please request a quote."
+          },
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_blocked_navigation",
+          "error": null,
+          "result_class": "Magento\\Framework\\App\\Response\\Http",
+          "result_is_shared_response": true,
+          "status": 302,
+          "data": null,
+          "headers": {
+            "Location": "https://store.example.test/"
+          },
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": true,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "paypal_allowed",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 1,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_paypal",
+            "controller_action_predispatch_paypal_index_index",
+            "controller_action_postdispatch_paypal_index_index",
+            "controller_action_postdispatch_paypal",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_success_remains_accessible",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_onepage_success",
+            "controller_action_postdispatch_checkout_onepage_success",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        },
+        {
+          "name": "checkout_failure_remains_accessible",
+          "error": null,
+          "result_class": "Magento\\Framework\\Controller\\Result\\Json",
+          "result_is_shared_response": false,
+          "status": 200,
+          "data": {
+            "success": true
+          },
+          "headers": [],
+          "action_calls": 1,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch",
+            "controller_action_predispatch_checkout",
+            "controller_action_predispatch_checkout_onepage_failure",
+            "controller_action_postdispatch_checkout_onepage_failure",
+            "controller_action_postdispatch_checkout",
+            "controller_action_postdispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "PASS"
+        }
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "tag": "2.4.9",
+      "baseline": true,
+      "scenarios": [
+        {
+          "name": "quote_submit_success",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_localized",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_unexpected",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_invalid_csrf",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "quote_submit_get_rejected",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": 0,
+          "post_received": [],
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "native_reports_view_report_disabled",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method Magento\\Reports\\Controller\\Report\\Product\\View::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": null,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "multishipping_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_blocked_xhr",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_blocked_navigation",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "paypal_allowed",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_success_remains_accessible",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        },
+        {
+          "name": "checkout_failure_remains_accessible",
+          "error": {
+            "class": "Error",
+            "message": "Call to undefined method NativeProbe\\ModernAction::getRequest()"
+          },
+          "result_class": null,
+          "result_is_shared_response": false,
+          "status": null,
+          "data": null,
+          "headers": [],
+          "action_calls": 0,
+          "submitter_calls": null,
+          "post_received": null,
+          "policy_calls": 0,
+          "no_dispatch": false,
+          "event_names": [
+            "controller_action_predispatch"
+          ],
+          "event_request_is_same": true,
+          "status_check": "EXPECTED FAILURE"
+        }
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ]
+}

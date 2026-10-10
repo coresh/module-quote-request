@@ -18,7 +18,6 @@
     "status": "PASS",
     "path": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Ui/view/base/web/js/grid/export.js",
     "sha256": "d3aaa029cf0386365b972fe7c64f2665acfecf5ca700d0f23c2a85311036236f",
-    "scope": "Actual upstream applyOption/getActiveOption/getParams; DOM, jQuery, underscore and uiElement doubles. No browser or Magento UI bootstrap.",
-    "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/view/base/web/js/grid/export.js"
+    "scope": "Actual upstream applyOption/getActiveOption/getParams; DOM, jQuery, underscore and uiElement doubles. No browser or Magento UI bootstrap."
   }
 }
