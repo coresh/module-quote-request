@@ -38,6 +38,7 @@ use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\DB\Select;
 use Magento\Framework\DataObject;
 use Magento\Framework\Mail\Template\TransportBuilder;
+use Magento\Framework\Mail\Template\TransportBuilderFactory;
 use Magento\Framework\Mail\TransportInterface;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 use Magento\Framework\Translate\Inline\StateInterface;
@@ -95,6 +96,7 @@ class FrontendSubmitPipelineTest extends TestCase
             'productAttributes' => [], 'productName' => 'Authoritative server product', 'productSku' => 'SERVER42',
             'failSave' => false, 'raceInsert' => false, 'raceDifferentPayload' => false,
             'failRateDatabase' => false, 'failAdminTransport' => false, 'failCustomerTransport' => false,
+            'failNotificationLog' => false, 'mutateRequestIdOnReload' => false,
             'events' => [], 'logs' => [], 'buckets' => [], 'mail' => ['admin' => [], 'customer' => []],
             'flags' => [
                 'general/enabled' => true, 'general/apply_to_all_products' => true,
@@ -271,6 +273,7 @@ class FrontendSubmitPipelineTest extends TestCase
             foreach ($state->rows as $row) {
                 if ($row['request_id'] === $id) {
                     $request->setData($row);
+                    if ($state->mutateRequestIdOnReload) { $request->setData('request_id', 0); }
                     break;
                 }
             }
@@ -321,15 +324,18 @@ class FrontendSubmitPipelineTest extends TestCase
         foreach (['error', 'warning'] as $level) {
             $logger->method($level)->willReturnCallback(static function ($message, array $context) use ($state, $level): void {
                 $state->logs[] = ['level' => $level, 'message' => $message, 'context' => $context];
+                if ($level === 'warning' && $state->failNotificationLog) {
+                    throw new \RuntimeException('Log backend password boundary@example.invalid');
+                }
             });
         }
         $variables = new TemplateVariablesBuilder($config, $stores);
-        $adminBuilder = $this->mailBuilder($state, 'admin');
-        $customerBuilder = $this->mailBuilder($state, 'customer');
-        $admin = new AdminNotificationSender($config, $resource, $variables, $adminBuilder,
+        $adminFactory = $this->mailFactory($state, 'admin');
+        $customerFactory = $this->mailFactory($state, 'customer');
+        $admin = new AdminNotificationSender($config, $resource, $variables, $adminFactory,
             $this->translationState($state, 'admin'), $stores, $logger);
-        $customer = new CustomerConfirmationSender($config, $variables, $customerBuilder,
-            $this->translationState($state, 'customer'), $stores);
+        $customer = new CustomerConfirmationSender($config, $variables, $customerFactory,
+            $this->translationState($state, 'customer'), $stores, $logger);
         $service = new SubmitQuoteRequest($config, new QuoteRequestValidator($config), $products, $factory,
             $resource, $session, $stores, $http, new RateLimiter($db, $config), $admin, $customer, $logger);
         $results = $this->createMock(JsonFactory::class);
@@ -356,9 +362,17 @@ class FrontendSubmitPipelineTest extends TestCase
     private function translationState(\stdClass $state, string $kind): StateInterface
     {
         $inline = $this->createMock(StateInterface::class);
-        $inline->method('suspend')->willReturnCallback(static function () use ($state, $kind): void { $state->events[] = $kind . '_suspend'; });
-        $inline->method('resume')->willReturnCallback(static function () use ($state, $kind): void { $state->events[] = $kind . '_resume'; });
+        $inline->method('isEnabled')->willReturn(true);
+        $inline->method('disable')->willReturnCallback(static function () use ($state, $kind): void { $state->events[] = $kind . '_disable'; });
+        $inline->method('enable')->willReturnCallback(static function () use ($state, $kind): void { $state->events[] = $kind . '_enable'; });
         return $inline;
+    }
+
+    private function mailFactory(\stdClass $state, string $kind): TransportBuilderFactory
+    {
+        $factory = $this->createMock(TransportBuilderFactory::class);
+        $factory->method('create')->willReturnCallback(fn (): TransportBuilder => $this->mailBuilder($state, $kind));
+        return $factory;
     }
 
     private function mailBuilder(\stdClass $state, string $kind): TransportBuilder
@@ -366,7 +380,7 @@ class FrontendSubmitPipelineTest extends TestCase
         $message = [];
         $builder = $this->createMock(TransportBuilder::class);
         foreach (['setTemplateIdentifier' => 'template', 'setTemplateOptions' => 'options',
-            'setTemplateVars' => 'variables', 'addTo' => 'recipient', 'addReplyTo' => 'reply_to'] as $method => $field) {
+            'setTemplateVars' => 'variables', 'addTo' => 'recipient', 'setReplyTo' => 'reply_to'] as $method => $field) {
             $builder->method($method)->willReturnCallback(static function ($value) use (&$message, $field, $builder) {
                 $message[$field] = $value;
                 return $builder;
@@ -463,7 +477,7 @@ class FrontendSubmitPipelineTest extends TestCase
         self::assertSame('quotes@example.invalid', $state->mail['admin'][0]['recipient']);
         self::assertSame($post['customer_email'], $state->mail['admin'][0]['reply_to']);
         self::assertSame($post['customer_email'], $state->mail['customer'][0]['recipient']);
-        self::assertSame(['save', 'admin_suspend', 'admin_send', 'admin_resume', 'customer_suspend', 'customer_send', 'customer_resume'], $state->events);
+        self::assertSame(['save', 'admin_disable', 'admin_send', 'admin_enable', 'customer_disable', 'customer_send', 'customer_enable'], $state->events);
         self::assertSame([], $state->logs);
         self::assertStringNotContainsString($post['customer_email'], json_encode($response, JSON_THROW_ON_ERROR));
     }
@@ -742,8 +756,8 @@ class FrontendSubmitPipelineTest extends TestCase
         self::assertSame($kind === 'admin' ? 'failed' : 'sent', array_values($state->rows)[0]['email_status']);
         self::assertCount(1, $state->mail['admin']);
         self::assertCount(1, $state->mail['customer']);
-        self::assertContains('admin_resume', $state->events);
-        self::assertContains('customer_resume', $state->events);
+        self::assertContains('admin_enable', $state->events);
+        self::assertContains('customer_enable', $state->events);
         $serialized = json_encode([$response, $state->logs], JSON_THROW_ON_ERROR);
         self::assertStringNotContainsString('password', $serialized);
         self::assertStringNotContainsString('boundary@example.invalid', $serialized);
@@ -754,6 +768,60 @@ class FrontendSubmitPipelineTest extends TestCase
     }
 
     public static function mailFailures(): array { return [['admin'], ['customer']]; }
+
+    #[DataProvider('mailFailuresWithUnavailableLog')]
+    public function testSavedRequestRemainsAcceptedWhenNotificationAndWarningLogBothFail(bool $failAdmin, bool $failCustomer): void
+    {
+        $fixture = $this->pipeline(['failAdminTransport' => $failAdmin, 'failCustomerTransport' => $failCustomer,
+            'failNotificationLog' => true]);
+        $response = $this->dispatch($fixture, $this->payload());
+        self::assertSame(['http_status' => 200, 'body' => ['success' => true, 'status' => 'accepted',
+            'message' => 'Your quote request has been received.', 'request_id' => 1]], $response);
+        $state = $fixture['state'];
+        self::assertCount(1, $state->rows);
+        self::assertSame(1, $state->saveCalls);
+        self::assertSame($failAdmin ? 'failed' : 'sent', array_values($state->rows)[0]['email_status']);
+        self::assertCount(1, $state->mail['admin']);
+        self::assertCount(1, $state->mail['customer']);
+        $serialized = json_encode([$response, $state->logs], JSON_THROW_ON_ERROR);
+        self::assertStringNotContainsString('password', $serialized);
+        self::assertStringNotContainsString('boundary@example.invalid', $serialized);
+        $retry = $this->dispatch($fixture, $this->payload('modal_retry_500'));
+        self::assertSame('duplicate', $retry['body']['status']);
+        self::assertSame(1, $retry['body']['request_id']);
+        self::assertSame(1, $state->saveCalls);
+        self::assertCount(1, $state->mail['admin']);
+        self::assertCount(1, $state->mail['customer']);
+    }
+
+    public static function mailFailuresWithUnavailableLog(): array
+    {
+        return ['admin notification' => [true, false], 'customer confirmation' => [false, true],
+            'both notifications' => [true, true]];
+    }
+
+    public function testReloadedModelLosingIdCannotChangeAcceptedPersistedRequestReference(): void
+    {
+        $fixture = $this->pipeline(['mutateRequestIdOnReload' => true,
+            'flags' => ['email/customer_confirmation' => false]]);
+        $response = $this->dispatch($fixture, $this->payload());
+        self::assertSame(200, $response['http_status']);
+        self::assertTrue($response['body']['success']);
+        self::assertSame('accepted', $response['body']['status']);
+        self::assertSame(1, $response['body']['request_id']);
+        self::assertSame(1, array_values($fixture['state']->rows)[0]['request_id']);
+        self::assertSame('failed', array_values($fixture['state']->rows)[0]['email_status']);
+        self::assertSame([], $fixture['state']->mail['admin']);
+        $serviceWarnings = array_values(array_filter($fixture['state']->logs,
+            static fn (array $entry): bool => $entry['level'] === 'warning'
+                && $entry['message'] === 'Quote request notification failed.'));
+        self::assertCount(1, $serviceWarnings);
+        self::assertSame(1, $serviceWarnings[0]['context']['request_id']);
+        $retry = $this->dispatch($fixture, $this->payload('modal_retry_500'));
+        self::assertSame('duplicate', $retry['body']['status']);
+        self::assertSame(1, $retry['body']['request_id']);
+        self::assertSame(1, $fixture['state']->saveCalls);
+    }
 
     public function testDisabledEmailsStillPersistAndAcknowledgeEnquiry(): void
     {

@@ -167,13 +167,15 @@ function coreshQuoteReleaseCheck(array $arguments): array
             'Observer/EnforcePurchasingPolicy.php', 'Observer/BlockPurchasingRoutes.php', 'Controller/Request/Submit.php',
             'Model/Service/SubmitQuoteRequest.php', 'etc/events.xml', 'registration.php', 'composer.json',
             'etc/frontend/events.xml', 'view/adminhtml/ui_component/product_form.xml', 'etc/adminhtml/di.xml',
+            'Model/Email/AdminNotificationSender.php', 'Model/Email/CustomerConfirmationSender.php',
+            'Exception/NotificationException.php',
         ];
         foreach ($required as $file) {
             if (!isset($runtimeManifest[$file])) {
                 $report['errors'][] = ['code' => 'reference_manifest_missing_required_file', 'file' => $file];
             }
         }
-        // Pin the observer fix, its wiring and the corrected admin UI configuration.
+        // Pin the observer, admin UI and notification API/lifecycle fixes.
         // A manifest rebuilt around an older release must not become a trusted fix.
         $verifiedSource = [
             'Observer/EnforcePurchasingPolicy.php' => ['5a0feacbc173df0c53dd9d0bcfd897e76167d8676c9f9f24c4a442c5ec3562b8', 'reference_observer_not_verified_fix'],
@@ -181,6 +183,9 @@ function coreshQuoteReleaseCheck(array $arguments): array
             'etc/frontend/events.xml' => ['37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00', 'reference_route_observer_registration_not_verified_fix'],
             'view/adminhtml/ui_component/product_form.xml' => ['b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775', 'reference_product_form_configuration_not_verified_fix'],
             'etc/adminhtml/di.xml' => ['b96cef7defdd6abf4d3e88a0907dcfbeb0291590935d1f42af977786ab3df286', 'reference_admin_collection_factory_not_verified_fix'],
+            'Model/Email/AdminNotificationSender.php' => ['d6d9fb038f47a0e1043d02578cb1642e342464a341921aadf45aceb6dca2ff9d', 'reference_admin_notification_sender_not_verified_fix'],
+            'Model/Email/CustomerConfirmationSender.php' => ['0a13ce5397265285baa78ae135f9896412ba3964825c5bcbb30ed7b26e463781', 'reference_customer_confirmation_sender_not_verified_fix'],
+            'Exception/NotificationException.php' => ['207b757b34d71ca3f3411c497cc77fa67c8dd8edad92cc956cd191ad8716a04e', 'reference_notification_feedback_not_verified_fix'],
         ];
         foreach ($verifiedSource as $file => [$hash, $code]) {
             if (($runtimeManifest[$file] ?? null) !== $hash) {

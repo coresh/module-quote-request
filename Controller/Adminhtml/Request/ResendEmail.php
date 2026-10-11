@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Coresh\QuoteRequest\Controller\Adminhtml\Request;
 
 use Coresh\QuoteRequest\Model\Email\AdminNotificationSender;
+use Coresh\QuoteRequest\Exception\NotificationException;
 use Coresh\QuoteRequest\Model\QuoteRequestFactory;
 use Coresh\QuoteRequest\Model\ResourceModel\QuoteRequest as QuoteRequestResource;
 use Magento\Backend\App\Action\Context;
@@ -43,18 +44,39 @@ class ResendEmail extends AbstractRequestAction implements HttpPostActionInterfa
             $this->messageManager->addErrorMessage(__('This quote request no longer exists.'));
             return $this->resultRedirectFactory->create()->setPath('*/*/index');
         }
+        $requestId = (int) $request->getId();
         try {
             if ($this->notificationSender->sendNotification($request)) {
                 $this->messageManager->addSuccessMessage(__('The notification was passed to the email transport.'));
             } else {
                 $this->messageManager->addNoticeMessage(__('Notification emails are disabled for this request store.'));
             }
+        } catch (NotificationException $exception) {
+            $context = ['request_id' => $requestId, 'code' => $exception->getErrorCode()];
+            if ($exception->getErrorCode() === 'notification_status_unconfirmed') {
+                $this->logFailure('warning', 'Administrative quote request email status is unconfirmed.', $context);
+                $this->messageManager->addNoticeMessage($exception->getMessage());
+            } else {
+                $this->logFailure('error', 'Administrative quote request email failed.', $context);
+                $this->messageManager->addErrorMessage($exception->getMessage());
+            }
         } catch (\Throwable $exception) {
-            $this->logger->error('Administrative quote request email failed', [
-                'request_id' => (int) $request->getId(), 'code' => 'admin_notification_failed'
+            $this->logFailure('error', 'Administrative quote request email failed', [
+                'request_id' => $requestId, 'code' => 'admin_notification_failed',
+                'exception_type' => get_class($exception)
             ]);
             $this->messageManager->addErrorMessage(__('The notification could not be sent. Check its email status.'));
         }
-        return $this->resultRedirectFactory->create()->setPath('*/*/view', ['request_id' => $request->getId()]);
+        return $this->resultRedirectFactory->create()->setPath('*/*/view', ['request_id' => $requestId]);
+    }
+
+    /** A log backend failure must not erase the safe administrator feedback or its redirect. */
+    private function logFailure(string $level, string $message, array $context): void
+    {
+        try {
+            $this->logger->{$level}($message, $context);
+        } catch (\Throwable $exception) {
+            // Notification delivery and its safe feedback remain authoritative.
+        }
     }
 }

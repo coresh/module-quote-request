@@ -9,6 +9,7 @@ use Coresh\QuoteRequest\Controller\Adminhtml\Request\MassStatus;
 use Coresh\QuoteRequest\Controller\Adminhtml\Request\ResendEmail;
 use Coresh\QuoteRequest\Controller\Adminhtml\Request\SaveStatus;
 use Coresh\QuoteRequest\Model\Email\AdminNotificationSender;
+use Coresh\QuoteRequest\Exception\NotificationException;
 use Coresh\QuoteRequest\Model\Migration\LegacyDataMigrator;
 use Coresh\QuoteRequest\Model\Migration\LegacySourceDetector;
 use Coresh\QuoteRequest\Model\Migration\MigrationApproval;
@@ -215,6 +216,107 @@ class AdminButtonActionsTest extends TestCase
     }
 
     public static function emailResults(): array { return [['sent'], ['disabled'], ['failed']]; }
+
+    #[DataProvider('notificationFailures')]
+    public function testResendReportsSafeActionableFailuresAndDoesNotCallHandoffUnconfirmedASendFailure(
+        string $code,
+        bool $handoffUnconfirmed
+    ): void {
+        $entity = $this->createMock(QuoteRequest::class);
+        $entity->method('getId')->willReturn(42);
+        $failure = new NotificationException($code);
+        $sender = $this->createMock(AdminNotificationSender::class);
+        $sender->expects(self::once())->method('sendNotification')->with($entity)->willThrowException($failure);
+        [$controller, $messages, $redirect] = $this->controller(ResendEmail::class,
+            ['form_key' => 'current-session-key'], ['notificationSender' => $sender]);
+        $controller->expects(self::once())->method('loadRequestEntity')->willReturn($entity);
+
+        self::assertSame($redirect, $controller->execute());
+        self::assertSame('*/*/view', $redirect->path);
+        self::assertSame(['request_id' => 42], $redirect->params);
+        self::assertSame([], $messages->successes);
+        self::assertSame($handoffUnconfirmed ? [] : [$failure->getMessage()], $messages->errors);
+        self::assertSame($handoffUnconfirmed ? [$failure->getMessage()] : [], $messages->notices);
+    }
+
+    public static function notificationFailures(): array
+    {
+        return [
+            ['original_store_unavailable', false], ['email_attempt_in_progress', false],
+            ['notification_recipient_invalid', false], ['notification_reply_to_invalid', false],
+            ['notification_sender_invalid', false], ['notification_template_failed', false],
+            ['notification_transport_failed', false], ['notification_load_failed', false],
+            ['notification_lease_failed', false], ['notification_state_update_failed', false],
+            ['notification_failed', false], ['notification_status_unconfirmed', true],
+        ];
+    }
+
+    #[DataProvider('unsafeEmailFailures')]
+    public function testUnexpectedLocalizedAndRuntimeEmailErrorsNeverExposeTheirText(string $kind): void
+    {
+        $secret = 'SMTP password secret-customer@example.com';
+        $exception = $kind === 'localized' ? new LocalizedException(__($secret)) : new \Error($secret);
+        $entity = $this->createMock(QuoteRequest::class);
+        $entity->method('getId')->willReturn(42);
+        $sender = $this->createMock(AdminNotificationSender::class);
+        $sender->expects(self::once())->method('sendNotification')->willThrowException($exception);
+        [$controller, $messages, $redirect] = $this->controller(ResendEmail::class,
+            ['form_key' => 'current-session-key'], ['notificationSender' => $sender]);
+        $controller->method('loadRequestEntity')->willReturn($entity);
+        self::assertSame($redirect, $controller->execute());
+        self::assertSame(['The notification could not be sent. Check its email status.'], $messages->errors);
+        self::assertSame([], $messages->notices);
+        self::assertSame([], $messages->successes);
+    }
+
+    public static function unsafeEmailFailures(): array { return [['localized'], ['runtime_error']]; }
+
+    #[DataProvider('loggingFailures')]
+    public function testUnavailableLogBackendDoesNotMaskTheNotificationMessageOrRedirect(string $outcome): void
+    {
+        $logger = $this->createMock(LoggerInterface::class);
+        $level = $outcome === 'unconfirmed' ? 'warning' : 'error';
+        $logger->expects(self::once())->method($level)
+            ->willThrowException(new \RuntimeException('Log backend secret-customer@example.com'));
+        $failure = $outcome === 'unexpected'
+            ? new \RuntimeException('SMTP password secret-customer@example.com')
+            : new NotificationException($outcome === 'unconfirmed'
+                ? 'notification_status_unconfirmed' : 'notification_recipient_invalid');
+        $entity = $this->createMock(QuoteRequest::class);
+        $entity->method('getId')->willReturn(42);
+        $sender = $this->createMock(AdminNotificationSender::class);
+        $sender->method('sendNotification')->willThrowException($failure);
+        [$controller, $messages, $redirect] = $this->controller(ResendEmail::class,
+            ['form_key' => 'current-session-key'], ['notificationSender' => $sender, 'logger' => $logger]);
+        $controller->method('loadRequestEntity')->willReturn($entity);
+        self::assertSame($redirect, $controller->execute());
+        self::assertSame(['request_id' => 42], $redirect->params);
+        $expected = $outcome === 'unexpected'
+            ? 'The notification could not be sent. Check its email status.' : $failure->getMessage();
+        self::assertSame($outcome === 'unconfirmed' ? [$expected] : [], $messages->notices);
+        self::assertSame($outcome === 'unconfirmed' ? [] : [$expected], $messages->errors);
+        self::assertSame([], $messages->successes);
+    }
+
+    public static function loggingFailures(): array { return [['typed_failure'], ['unconfirmed'], ['unexpected']]; }
+
+    public function testResendKeepsItsOriginalRequestRedirectWhenAFailedReloadChangesTheModel(): void
+    {
+        $id = 42;
+        $entity = $this->createMock(QuoteRequest::class);
+        $entity->method('getId')->willReturnCallback(static function () use (&$id) { return $id; });
+        $sender = $this->createMock(AdminNotificationSender::class);
+        $sender->method('sendNotification')->willReturnCallback(static function () use (&$id): never {
+            $id = null;
+            throw new NotificationException('notification_load_failed');
+        });
+        [$controller, $messages, $redirect] = $this->controller(ResendEmail::class,
+            ['form_key' => 'current-session-key'], ['notificationSender' => $sender]);
+        $controller->method('loadRequestEntity')->willReturn($entity);
+        self::assertSame($redirect, $controller->execute());
+        self::assertSame(['request_id' => 42], $redirect->params);
+        self::assertCount(1, $messages->errors);
+    }
 
     public function testExportReturnsCsvDownloadUsingGeneratedFileAndRemovalFlag(): void
     {
@@ -428,7 +530,7 @@ class AdminButtonActionsTest extends TestCase
             ['form_key' => 'current-session-key', 'store_id' => '3', 'mode' => 'preview'],
             ['migrator' => $migrator, 'detector' => $detector]);
         self::assertSame($redirect, $controller->execute());
-        self::assertSame(['A verified Darsh source is required.'], $messages->errors);
+        self::assertSame(['A verified legacy source is required.'], $messages->errors);
         self::assertSame([], $messages->successes);
     }
 

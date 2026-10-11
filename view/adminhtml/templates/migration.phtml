@@ -4,7 +4,7 @@
 $preview = $block->getPreview();
 ?>
 <div class="message message-notice">
-    <?= $escaper->escapeHtml(__('Create a backup and disable the old storefront extension first. Select the original store explicitly: legacy requests do not record their store. The verified adapter imports Darsh data only.')) ?>
+    <?= $escaper->escapeHtml(__('Create a backup and disable the old storefront extension first. Select the original store explicitly: legacy requests do not record their store. Only the verified legacy data schema can be imported.')) ?>
 </div>
 <?php foreach ($block->getSources() as $source): ?>
     <p><?= $escaper->escapeHtml($source['name']) ?> — <?= $escaper->escapeHtml($source['supported'] ? __('Verified adapter available.') : __('Import unavailable: source schema not verified.')) ?></p>
@@ -36,7 +36,7 @@ $preview = $block->getPreview();
     <input type="hidden" name="store_id" value="<?= (int) $preview['store_id'] ?>"/>
     <input type="hidden" name="preview_token" value="<?= $escaper->escapeHtmlAttr($preview['token']) ?>"/>
     <label><input type="checkbox" name="confirmed" value="1" required/> <?= $escaper->escapeHtml(__('The selected store is correct, a backup exists, and the old module is disabled. Import without deleting source data.')) ?></label>
-    <button class="action-primary" type="submit"><?= $escaper->escapeHtml(__('Migrate verified Darsh data')) ?></button>
+    <button class="action-primary" type="submit"><?= $escaper->escapeHtml(__('Migrate Verified Legacy Data')) ?></button>
 </form>
 <?php endif; ?>
 <?php endif; ?>

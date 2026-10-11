@@ -8,18 +8,20 @@ use Coresh\QuoteRequest\Model\Config;
 use Coresh\QuoteRequest\Model\QuoteRequest;
 use Magento\Framework\App\Area;
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\Mail\Template\TransportBuilder;
+use Magento\Framework\Mail\Template\TransportBuilderFactory;
 use Magento\Framework\Translate\Inline\StateInterface;
 use Magento\Store\Model\StoreManagerInterface;
+use Psr\Log\LoggerInterface;
 
 class CustomerConfirmationSender
 {
     public function __construct(
         private readonly Config $config,
         private readonly TemplateVariablesBuilder $variables,
-        private readonly TransportBuilder $transportBuilder,
+        private readonly TransportBuilderFactory $transportBuilderFactory,
         private readonly StateInterface $inlineTranslation,
-        private readonly StoreManagerInterface $stores
+        private readonly StoreManagerInterface $stores,
+        private readonly LoggerInterface $logger
     ) {
     }
 
@@ -44,11 +46,13 @@ class CustomerConfirmationSender
         if (!preg_match('/\A[a-z][a-z0-9_]{0,63}\z/', $sender)) {
             throw new LocalizedException(__('The confirmation email could not be sent.'));
         }
-        $suspended = false;
+        $translationDisabled = false;
         try {
-            $this->inlineTranslation->suspend();
-            $suspended = true;
-            $transport = $this->transportBuilder
+            if ($this->inlineTranslation->isEnabled()) {
+                $translationDisabled = true;
+                $this->inlineTranslation->disable();
+            }
+            $transport = $this->transportBuilderFactory->create()
                 ->setTemplateIdentifier($this->config->getValue('email/customer_template', $storeId)
                     ?: 'coresh_quote_request_customer_confirmation')
                 ->setTemplateOptions(['area' => Area::AREA_FRONTEND, 'store' => $storeId])
@@ -58,9 +62,31 @@ class CustomerConfirmationSender
                 ->getTransport();
             $transport->sendMessage();
         } finally {
-            if ($suspended) {
-                $this->inlineTranslation->resume();
+            if ($translationDisabled) {
+                $this->restoreTranslation((int) $request->getId());
             }
+        }
+    }
+
+    private function restoreTranslation(int $requestId): void
+    {
+        try {
+            $this->inlineTranslation->enable();
+        } catch (\Throwable $exception) {
+            $this->log('Quote request confirmation translation cleanup failed.', [
+                'request_id' => $requestId,
+                'error_code' => 'translation_cleanup_failed',
+                'exception_type' => get_class($exception)
+            ]);
+        }
+    }
+
+    private function log(string $message, array $context): void
+    {
+        try {
+            $this->logger->warning($message, $context);
+        } catch (\Throwable $exception) {
+            // Do not replace a transport result with a cleanup logging failure.
         }
     }
 }

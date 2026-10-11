@@ -22,7 +22,7 @@ class MigrateLegacy extends Command
     protected function configure(): void
     {
         $this->setName('coresh:quote-request:migrate-legacy')
-            ->setDescription('Dry-run / explicitly import Darsh requests, flags and configuration without deletion.')
+            ->setDescription('Preview or explicitly import verified legacy requests, flags and configuration without deletion.')
             ->addOption('store-id', null, InputOption::VALUE_REQUIRED, 'Original storefront store ID (required).')
             ->addOption('execute', null, InputOption::VALUE_NONE, 'Write changes; without this flag only inspect.');
         parent::configure();

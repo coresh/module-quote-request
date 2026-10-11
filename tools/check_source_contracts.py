@@ -25,6 +25,12 @@ CONTRACTS = [
     ("Native product default helper", "app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php", r"public\s+function\s+prepareProductAttributes\s*\(Product\s+\$product,\s*array\s+\$productData,\s*array\s+\$useDefaults\):\s*array"),
     ("Native numeric default sentinel", "app/code/Magento/Catalog/Controller/Adminhtml/Product/Initialization/Helper/AttributeFilter.php", r"\$productData\[\$attributeCode\]\s*=\s*null"),
     ("Modern EAV allowed-empty path", "app/code/Magento/Eav/Model/ResourceModel/UpdateHandler.php", r"\$isAllowedEmptyStringValue\s*=\s*\$attribute->isAllowedEmptyTextValue\(\$newValue\)"),
+    ("Mail reply-to API", "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php", r"public\s+function\s+setReplyTo\s*\(\$email,\s*\$name\s*=\s*null\)"),
+    ("Mail scoped sender API", "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php", r"public\s+function\s+setFromByScope\s*\(\$from,\s*\$scopeId\s*=\s*null\)"),
+    ("Mail transport API", "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php", r"public\s+function\s+getTransport\s*\(\s*\)"),
+    ("Inline translation current state", "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php", r"public\s+function\s+isEnabled\s*\(\s*\)"),
+    ("Inline translation suspend API", "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php", r"public\s+function\s+suspend\s*\(\$status\s*=\s*false\)"),
+    ("Inline translation resume API", "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php", r"public\s+function\s+resume\s*\(\$status\s*=\s*true\)"),
 ]
 
 def main() -> int:

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T07:38:20.290982+00:00",
+  "generated_at": "2026-10-11T09:43:35.478845+00:00",
   "checks": [
     {
       "check": "Composer metadata and module identity",
@@ -27,10 +27,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/Migration.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/Migration.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/Migration.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/Migration.php",
         "stderr": ""
       }
     },
@@ -41,10 +41,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/RequestDetails.php",
         "stderr": ""
       }
     },
@@ -55,10 +55,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Adminhtml/System/Config/MigrationNotice.php",
         "stderr": ""
       }
     },
@@ -69,10 +69,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Modal.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Modal.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/Modal.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/Modal.php",
         "stderr": ""
       }
     },
@@ -83,10 +83,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/ProductButton.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/ProductButton.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Block/ProductButton.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Block/ProductButton.php",
         "stderr": ""
       }
     },
@@ -97,10 +97,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Console/Command/MigrateLegacy.php",
         "stderr": ""
       }
     },
@@ -111,10 +111,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Index.php",
         "stderr": ""
       }
     },
@@ -125,10 +125,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Migration/Run.php",
         "stderr": ""
       }
     },
@@ -139,10 +139,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/AbstractRequestAction.php",
         "stderr": ""
       }
     },
@@ -153,10 +153,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/ExportCsv.php",
         "stderr": ""
       }
     },
@@ -167,10 +167,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/Index.php",
         "stderr": ""
       }
     },
@@ -181,10 +181,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/MassStatus.php",
         "stderr": ""
       }
     },
@@ -195,10 +195,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/ResendEmail.php",
         "stderr": ""
       }
     },
@@ -209,10 +209,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/SaveStatus.php",
         "stderr": ""
       }
     },
@@ -223,10 +223,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Adminhtml/Request/View.php",
         "stderr": ""
       }
     },
@@ -237,10 +237,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Request/Submit.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Request/Submit.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Controller/Request/Submit.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Controller/Request/Submit.php",
         "stderr": ""
       }
     },
@@ -251,10 +251,24 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/CustomerData/Profile.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/CustomerData/Profile.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/CustomerData/Profile.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/CustomerData/Profile.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: Exception/NotificationException.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Exception/NotificationException.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Exception/NotificationException.php",
         "stderr": ""
       }
     },
@@ -265,10 +279,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/ButtonLabel.php",
         "stderr": ""
       }
     },
@@ -279,10 +293,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/InheritYesNo.php",
         "stderr": ""
       }
     },
@@ -293,10 +307,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Backend/LabelMode.php",
         "stderr": ""
       }
     },
@@ -307,10 +321,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Source/InheritYesNo.php",
         "stderr": ""
       }
     },
@@ -321,10 +335,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Attribute/Source/LabelMode.php",
         "stderr": ""
       }
     },
@@ -335,10 +349,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/ProductDisplayPolicy.php",
         "stderr": ""
       }
     },
@@ -349,10 +363,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/PurchasingPolicy.php",
         "stderr": ""
       }
     },
@@ -363,10 +377,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Catalog/QuoteStoreResolver.php",
         "stderr": ""
       }
     },
@@ -377,10 +391,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/ButtonLabel.php",
         "stderr": ""
       }
     },
@@ -391,10 +405,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/Date.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/Date.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/Date.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/Date.php",
         "stderr": ""
       }
     },
@@ -405,10 +419,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/Recipient.php",
         "stderr": ""
       }
     },
@@ -419,10 +433,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Backend/SecurityLimit.php",
         "stderr": ""
       }
     },
@@ -433,10 +447,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/Categories.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/Categories.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/Categories.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/Categories.php",
         "stderr": ""
       }
     },
@@ -447,10 +461,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/CustomerGroups.php",
         "stderr": ""
       }
     },
@@ -461,10 +475,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/RequestDisplay.php",
         "stderr": ""
       }
     },
@@ -475,10 +489,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/Scope.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/Scope.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config/Source/Scope.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config/Source/Scope.php",
         "stderr": ""
       }
     },
@@ -489,10 +503,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Config.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Config.php",
         "stderr": ""
       }
     },
@@ -503,10 +517,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/CategoryRuleResolver.php",
         "stderr": ""
       }
     },
@@ -517,10 +531,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/DateRangePolicy.php",
         "stderr": ""
       }
     },
@@ -531,10 +545,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Eligibility/QuoteRequestEligibility.php",
         "stderr": ""
       }
     },
@@ -545,10 +559,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/AdminNotificationSender.php",
         "stderr": ""
       }
     },
@@ -559,10 +573,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/CustomerConfirmationSender.php",
         "stderr": ""
       }
     },
@@ -573,10 +587,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Email/TemplateVariablesBuilder.php",
         "stderr": ""
       }
     },
@@ -587,10 +601,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/LegacyDataMigrator.php",
         "stderr": ""
       }
     },
@@ -601,10 +615,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/LegacySourceDetector.php",
         "stderr": ""
       }
     },
@@ -615,10 +629,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Migration/MigrationApproval.php",
         "stderr": ""
       }
     },
@@ -629,10 +643,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Product/ProductContextResolver.php",
         "stderr": ""
       }
     },
@@ -643,10 +657,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/QuoteRequest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/QuoteRequest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/QuoteRequest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/QuoteRequest.php",
         "stderr": ""
       }
     },
@@ -657,10 +671,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest/Collection.php",
         "stderr": ""
       }
     },
@@ -671,10 +685,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/ResourceModel/QuoteRequest.php",
         "stderr": ""
       }
     },
@@ -685,10 +699,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Security/RateLimiter.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Security/RateLimiter.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Security/RateLimiter.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Security/RateLimiter.php",
         "stderr": ""
       }
     },
@@ -699,10 +713,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Service/SubmitQuoteRequest.php",
         "stderr": ""
       }
     },
@@ -713,10 +727,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Model/Validation/QuoteRequestValidator.php",
         "stderr": ""
       }
     },
@@ -727,10 +741,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/AddProductListAttribute.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/AddProductListAttribute.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/AddProductListAttribute.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/AddProductListAttribute.php",
         "stderr": ""
       }
     },
@@ -741,10 +755,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/ApplyCatalogueLayout.php",
         "stderr": ""
       }
     },
@@ -755,10 +769,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/BlockPurchasingRoutes.php",
         "stderr": ""
       }
     },
@@ -769,10 +783,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/EnforcePurchasingPolicy.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/EnforcePurchasingPolicy.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/EnforcePurchasingPolicy.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/EnforcePurchasingPolicy.php",
         "stderr": ""
       }
     },
@@ -783,10 +797,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Observer/InvalidateQuoteRequestCache.php",
         "stderr": ""
       }
     },
@@ -797,10 +811,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Adminhtml/PreventUnsafeCoreExport.php",
         "stderr": ""
       }
     },
@@ -811,10 +825,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Adminhtml/ProtectPrivateGridFields.php",
         "stderr": ""
       }
     },
@@ -825,10 +839,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/PageCacheDateTtl.php",
         "stderr": ""
       }
     },
@@ -839,10 +853,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/ProductCollectionContext.php",
         "stderr": ""
       }
     },
@@ -853,10 +867,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuoteManagementPurchasingGuard.php",
         "stderr": ""
       }
     },
@@ -867,10 +881,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuotePurchasingGuard.php",
         "stderr": ""
       }
     },
@@ -881,10 +895,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Catalog/QuoteRepositoryPurchasingGuard.php",
         "stderr": ""
       }
     },
@@ -895,10 +909,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Frontend/CatalogDetailsButton.php",
         "stderr": ""
       }
     },
@@ -909,10 +923,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Plugin/Frontend/PriceVisibility.php",
         "stderr": ""
       }
     },
@@ -923,10 +937,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/AddProductDisplayAttributes.php",
         "stderr": ""
       }
     },
@@ -937,10 +951,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/AddQuoteRequestAttributes.php",
         "stderr": ""
       }
     },
@@ -951,10 +965,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Setup/Patch/Data/PreserveCustomerGroupRestrictions.php",
         "stderr": ""
       }
     },
@@ -965,10 +979,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Component/Listing/Column/RequestActions.php",
         "stderr": ""
       }
     },
@@ -979,10 +993,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Component/Listing/RequestMassAction.php",
         "stderr": ""
       }
     },
@@ -993,10 +1007,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/DataProvider/FulltextFilter.php",
         "stderr": ""
       }
     },
@@ -1007,10 +1021,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Export/CsvCellSanitizer.php",
         "stderr": ""
       }
     },
@@ -1021,10 +1035,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Export/RequestCsvExporter.php",
         "stderr": ""
       }
     },
@@ -1035,10 +1049,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Service/GridSelectionValidator.php",
         "stderr": ""
       }
     },
@@ -1049,10 +1063,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/Ui/Service/SelectedRequests.php",
         "stderr": ""
       }
     },
@@ -1063,10 +1077,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/ViewModel/ProductQuoteRequest.php",
         "stderr": ""
       }
     },
@@ -1077,10 +1091,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/registration.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/registration.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/registration.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/registration.php",
         "stderr": ""
       }
     },
@@ -1091,10 +1105,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_action_framework.php",
         "stderr": ""
       }
     },
@@ -1105,10 +1119,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_block_framework.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_block_framework.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_block_framework.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_block_framework.php",
         "stderr": ""
       }
     },
@@ -1119,10 +1133,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_operation_framework.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_operation_framework.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/admin_operation_framework.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/admin_operation_framework.php",
         "stderr": ""
       }
     },
@@ -1133,10 +1147,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/isolated_framework.php",
         "stderr": ""
       }
     },
@@ -1147,10 +1161,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/request_identifier_cases.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/request_identifier_cases.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/request_identifier_cases.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/request_identifier_cases.php",
         "stderr": ""
       }
     },
@@ -1161,10 +1175,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/route_observer_framework.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/route_observer_framework.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Fixtures/route_observer_framework.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Fixtures/route_observer_framework.php",
         "stderr": ""
       }
     },
@@ -1175,10 +1189,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/AtomicResourceTest.php",
         "stderr": ""
       }
     },
@@ -1189,10 +1203,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ConfigSectionTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ConfigSectionTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ConfigSectionTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ConfigSectionTest.php",
         "stderr": ""
       }
     },
@@ -1203,10 +1217,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ExportAclTest.php",
         "stderr": ""
       }
     },
@@ -1217,10 +1231,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/FrontendSubmissionTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/FrontendSubmissionTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/FrontendSubmissionTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/FrontendSubmissionTest.php",
         "stderr": ""
       }
     },
@@ -1231,10 +1245,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/MassStatusAclTest.php",
         "stderr": ""
       }
     },
@@ -1245,10 +1259,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/PersistenceTest.php",
         "stderr": ""
       }
     },
@@ -1259,10 +1273,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/ProductDisplayScopeTest.php",
         "stderr": ""
       }
     },
@@ -1273,10 +1287,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/RequestDetailsBlockTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/RequestDetailsBlockTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/RequestDetailsBlockTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/RequestDetailsBlockTest.php",
         "stderr": ""
       }
     },
@@ -1287,10 +1301,38 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Integration/SubmitCsrfTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Tools/fixtures/1.1.8/admin_notification_sender.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Tools/fixtures/1.1.8/admin_notification_sender.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Tools/fixtures/1.1.8/admin_notification_sender.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Tools/fixtures/1.1.8/customer_confirmation_sender.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Tools/fixtures/1.1.8/customer_confirmation_sender.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Tools/fixtures/1.1.8/customer_confirmation_sender.php",
         "stderr": ""
       }
     },
@@ -1301,10 +1343,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminButtonActionsTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminButtonActionsTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminButtonActionsTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminButtonActionsTest.php",
         "stderr": ""
       }
     },
@@ -1315,10 +1357,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminMenuConfigurationTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminMenuConfigurationTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminMenuConfigurationTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminMenuConfigurationTest.php",
         "stderr": ""
       }
     },
@@ -1329,10 +1371,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminNotificationSenderTest.php",
         "stderr": ""
       }
     },
@@ -1343,10 +1385,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminPostGuardTest.php",
         "stderr": ""
       }
     },
@@ -1357,10 +1399,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminRequestIdentifierTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminRequestIdentifierTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/AdminRequestIdentifierTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/AdminRequestIdentifierTest.php",
         "stderr": ""
       }
     },
@@ -1371,10 +1413,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/BlockPurchasingRoutesTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/BlockPurchasingRoutesTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/BlockPurchasingRoutesTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/BlockPurchasingRoutesTest.php",
         "stderr": ""
       }
     },
@@ -1385,10 +1427,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CollectionReentrancyTest.php",
         "stderr": ""
       }
     },
@@ -1399,10 +1441,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigDateBackendTest.php",
         "stderr": ""
       }
     },
@@ -1413,10 +1455,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigSecurityLimitBackendTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigSecurityLimitBackendTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigSecurityLimitBackendTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigSecurityLimitBackendTest.php",
         "stderr": ""
       }
     },
@@ -1427,10 +1469,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigTemplateContractTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigTemplateContractTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigTemplateContractTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigTemplateContractTest.php",
         "stderr": ""
       }
     },
@@ -1441,10 +1483,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ConfigTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ConfigTest.php",
         "stderr": ""
       }
     },
@@ -1455,10 +1497,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CsvCellSanitizerTest.php",
         "stderr": ""
       }
     },
@@ -1469,10 +1511,24 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSecurityTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSecurityTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSecurityTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSecurityTest.php",
+        "stderr": ""
+      }
+    },
+    {
+      "check": "PHP syntax: tests/Unit/CustomerConfirmationSenderTest.php",
+      "status": "PASS",
+      "detail": {
+        "command": [
+          "/workspace/scratch/ff728627a180/test-bin/php",
+          "-l",
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSenderTest.php"
+        ],
+        "exit_code": 0,
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/CustomerConfirmationSenderTest.php",
         "stderr": ""
       }
     },
@@ -1483,10 +1539,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/DateRangePolicyTest.php",
         "stderr": ""
       }
     },
@@ -1497,10 +1553,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/EligibilityTest.php",
         "stderr": ""
       }
     },
@@ -1511,10 +1567,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/EmailVariablesTest.php",
         "stderr": ""
       }
     },
@@ -1525,10 +1581,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/FrontendSubmitPipelineTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/FrontendSubmitPipelineTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/FrontendSubmitPipelineTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/FrontendSubmitPipelineTest.php",
         "stderr": ""
       }
     },
@@ -1539,10 +1595,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/FulltextFilterTest.php",
         "stderr": ""
       }
     },
@@ -1553,10 +1609,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GridCollectionFactoryIsolationTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GridCollectionFactoryIsolationTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GridCollectionFactoryIsolationTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GridCollectionFactoryIsolationTest.php",
         "stderr": ""
       }
     },
@@ -1567,10 +1623,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GridSelectionValidatorTest.php",
         "stderr": ""
       }
     },
@@ -1581,10 +1637,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/GroupRestrictionMigrationTest.php",
         "stderr": ""
       }
     },
@@ -1595,10 +1651,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacyDateImportTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacyDateImportTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacyDateImportTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacyDateImportTest.php",
         "stderr": ""
       }
     },
@@ -1609,10 +1665,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacyGroupImportTest.php",
         "stderr": ""
       }
     },
@@ -1623,10 +1679,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/LegacySourceDetectorTest.php",
         "stderr": ""
       }
     },
@@ -1637,10 +1693,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/MassStatusResourceTest.php",
         "stderr": ""
       }
     },
@@ -1651,10 +1707,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/MigrationApprovalTest.php",
         "stderr": ""
       }
     },
@@ -1665,10 +1721,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PreventUnsafeCoreExportTest.php",
         "stderr": ""
       }
     },
@@ -1679,10 +1735,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductAttributeBackendTest.php",
         "stderr": ""
       }
     },
@@ -1693,10 +1749,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductContextResolverTest.php",
         "stderr": ""
       }
     },
@@ -1707,10 +1763,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductDisplayPolicyTest.php",
         "stderr": ""
       }
     },
@@ -1721,10 +1777,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductFormFieldConfigurationTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductFormFieldConfigurationTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProductFormFieldConfigurationTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProductFormFieldConfigurationTest.php",
         "stderr": ""
       }
     },
@@ -1735,10 +1791,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/ProtectPrivateGridFieldsTest.php",
         "stderr": ""
       }
     },
@@ -1749,10 +1805,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PurchasingPolicyTest.php",
         "stderr": ""
       }
     },
@@ -1763,10 +1819,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PurchasingRouteEventRegistrationTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PurchasingRouteEventRegistrationTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/PurchasingRouteEventRegistrationTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/PurchasingRouteEventRegistrationTest.php",
         "stderr": ""
       }
     },
@@ -1777,10 +1833,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/QuoteRepositoryGuardTest.php",
         "stderr": ""
       }
     },
@@ -1791,10 +1847,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/QuoteRequestValidatorTest.php",
         "stderr": ""
       }
     },
@@ -1805,10 +1861,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RateLimiterSecurityTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RateLimiterSecurityTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RateLimiterSecurityTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RateLimiterSecurityTest.php",
         "stderr": ""
       }
     },
@@ -1819,10 +1875,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RequestCsvExporterTest.php",
         "stderr": ""
       }
     },
@@ -1833,10 +1889,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RequestDetailsBlockTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RequestDetailsBlockTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/RequestDetailsBlockTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/RequestDetailsBlockTest.php",
         "stderr": ""
       }
     },
@@ -1847,10 +1903,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/SubmitControllerTest.php",
         "stderr": ""
       }
     },
@@ -1861,10 +1917,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/Unit/SubmitQuoteRequestServiceTest.php",
         "stderr": ""
       }
     },
@@ -1875,10 +1931,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/bootstrap.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/bootstrap.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tests/bootstrap.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tests/bootstrap.php",
         "stderr": ""
       }
     },
@@ -1889,10 +1945,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tools/check_class_declarations.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tools/check_class_declarations.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tools/check_class_declarations.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tools/check_class_declarations.php",
         "stderr": ""
       }
     },
@@ -1903,10 +1959,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tools/check_installed_release.php"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tools/check_installed_release.php"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/tools/check_installed_release.php",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/tools/check_installed_release.php",
         "stderr": ""
       }
     },
@@ -1917,10 +1973,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/templates/migration.phtml",
         "stderr": ""
       }
     },
@@ -1931,10 +1987,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/templates/request-details.phtml",
         "stderr": ""
       }
     },
@@ -1945,10 +2001,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/button.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/button.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/button.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/button.phtml",
         "stderr": ""
       }
     },
@@ -1959,10 +2015,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/form.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/form.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/form.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/form.phtml",
         "stderr": ""
       }
     },
@@ -1973,10 +2029,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/inquiry-tab.phtml",
         "stderr": ""
       }
     },
@@ -1987,10 +2043,10 @@
         "command": [
           "/workspace/scratch/ff728627a180/test-bin/php",
           "-l",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/modal.phtml"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/modal.phtml"
         ],
         "exit_code": 0,
-        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/templates/modal.phtml",
+        "stdout": "No syntax errors detected in /workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/templates/modal.phtml",
         "stderr": ""
       }
     },
@@ -2001,7 +2057,7 @@
         "command": [
           "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
           "--check",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/web/js/grid/export.js"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/web/js/grid/export.js"
         ],
         "exit_code": 0,
         "stdout": "",
@@ -2015,7 +2071,7 @@
         "command": [
           "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
           "--check",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/adminhtml/web/js/submit-once.js"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/adminhtml/web/js/submit-once.js"
         ],
         "exit_code": 0,
         "stdout": "",
@@ -2029,7 +2085,7 @@
         "command": [
           "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
           "--check",
-          "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest/view/frontend/web/js/quote-request.js"
+          "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest/view/frontend/web/js/quote-request.js"
         ],
         "exit_code": 0,
         "stdout": "",
@@ -2303,7 +2359,7 @@
     }
   ],
   "totals": {
-    "PASS": 199,
+    "PASS": 203,
     "FAIL": 0,
     "NOT RUN": 0
   }

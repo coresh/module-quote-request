@@ -23,12 +23,17 @@ VERIFIED_SOURCE_SHA256 = {
     "etc/frontend/events.xml": "37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00",
     "view/adminhtml/ui_component/product_form.xml": "b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775",
     "etc/adminhtml/di.xml": "b96cef7defdd6abf4d3e88a0907dcfbeb0291590935d1f42af977786ab3df286",
+    "Model/Email/AdminNotificationSender.php": "d6d9fb038f47a0e1043d02578cb1642e342464a341921aadf45aceb6dca2ff9d",
+    "Model/Email/CustomerConfirmationSender.php": "0a13ce5397265285baa78ae135f9896412ba3964825c5bcbb30ed7b26e463781",
+    "Exception/NotificationException.php": "207b757b34d71ca3f3411c497cc77fa67c8dd8edad92cc956cd191ad8716a04e",
 }
 REQUIRED = (
     "Observer/EnforcePurchasingPolicy.php", "Controller/Request/Submit.php",
     "Model/Service/SubmitQuoteRequest.php", "etc/events.xml", "registration.php", "composer.json",
     "Observer/BlockPurchasingRoutes.php", "etc/frontend/events.xml",
     "view/adminhtml/ui_component/product_form.xml", "etc/adminhtml/di.xml",
+    "Model/Email/AdminNotificationSender.php", "Model/Email/CustomerConfirmationSender.php",
+    "Exception/NotificationException.php",
 )
 LEGACY_ADMIN_SOURCE = (
     ("view/adminhtml/ui_component/product_form.xml", "product_form.xml",
@@ -37,6 +42,14 @@ LEGACY_ADMIN_SOURCE = (
     ("etc/adminhtml/di.xml", "adminhtml_di.xml",
      "d7b324a6dee35dae59777dcf675466001c1ca1969708855522253cfb1106db49",
      "reference_admin_collection_factory_not_verified_fix"),
+)
+LEGACY_MAIL_SOURCE = (
+    ("Model/Email/AdminNotificationSender.php", "admin_notification_sender.php",
+     "bca8dbb189ab50554d0719b327c366e62ceae567651e470c22608268d242d4f3",
+     "reference_admin_notification_sender_not_verified_fix"),
+    ("Model/Email/CustomerConfirmationSender.php", "customer_confirmation_sender.php",
+     "5999a5cdfde845096a5246eb843e98138f45bb0cb86202e93a605a2a0a6c4c11",
+     "reference_customer_confirmation_sender_not_verified_fix"),
 )
 
 
@@ -136,7 +149,7 @@ namespace {{
     def test_matching_source_files_return_files_match_with_limits(self):
         report = self.run_checker()
         self.assertEqual("FILES_MATCH", report["status"])
-        self.assertEqual(12, report["checked_runtime_files"])
+        self.assertEqual(len(REQUIRED) + 2, report["checked_runtime_files"])
         self.assertEqual(str(self.installed), report["paths"]["module_root"])
         self.assertFalse(report["composer_registration_files_executed"])
         self.assertIn("installed_Composer_and_ComponentRegistrar_resolution", report["not_verified"])
@@ -292,6 +305,52 @@ namespace {{
 
     def test_missing_installed_admin_fix_files_are_rejected(self):
         for relative, _, _, _ in LEGACY_ADMIN_SOURCE:
+            with self.subTest(file=relative):
+                original = (self.installed / relative).read_bytes()
+                (self.installed / relative).unlink()
+                report = self.run_checker(expected_exit=1)
+                self.assertIn({"code": "installed_runtime_file_missing", "file": relative}, report["errors"])
+                (self.installed / relative).write_bytes(original)
+
+    def test_legacy_mail_snapshots_match_the_exact_118_release_sources(self):
+        # Unmodified delivered 1.1.8 sources preserve the unsupported reply-to
+        # call and shared builder lifecycle that caused the reported failure.
+        for relative, fixture, expected_hash, _ in LEGACY_MAIL_SOURCE:
+            with self.subTest(file=relative):
+                source = MODULE / "tests/Tools/fixtures/1.1.8" / fixture
+                self.assertEqual(expected_hash, hashlib.sha256(source.read_bytes()).hexdigest())
+
+    def test_installed_legacy_admin_notification_sender_is_rejected(self):
+        relative, fixture, _, _ = LEGACY_MAIL_SOURCE[0]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.8" / fixture, self.installed / relative)
+        report = self.run_checker(expected_exit=1)
+        self.assertIn({"code": "installed_runtime_file_changed", "file": relative}, report["errors"])
+
+    def test_installed_legacy_customer_confirmation_sender_is_rejected(self):
+        relative, fixture, _, _ = LEGACY_MAIL_SOURCE[1]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.8" / fixture, self.installed / relative)
+        report = self.run_checker(expected_exit=1)
+        self.assertIn({"code": "installed_runtime_file_changed", "file": relative}, report["errors"])
+
+    def test_rebuilt_reference_manifest_cannot_trust_legacy_admin_notification_sender(self):
+        relative, fixture, _, code = LEGACY_MAIL_SOURCE[0]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.8" / fixture, self.reference / relative)
+        self.manifest()
+        report = self.run_checker(expected_exit=2)
+        self.assertIn({"code": code, "file": relative}, report["errors"])
+
+    def test_rebuilt_reference_manifest_cannot_trust_legacy_customer_confirmation_sender(self):
+        relative, fixture, _, code = LEGACY_MAIL_SOURCE[1]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.8" / fixture, self.reference / relative)
+        self.manifest()
+        report = self.run_checker(expected_exit=2)
+        self.assertIn({"code": code, "file": relative}, report["errors"])
+
+    def test_missing_installed_mail_fix_files_are_rejected(self):
+        for relative in (
+            "Model/Email/AdminNotificationSender.php", "Model/Email/CustomerConfirmationSender.php",
+            "Exception/NotificationException.php",
+        ):
             with self.subTest(file=relative):
                 original = (self.installed / relative).read_bytes()
                 (self.installed / relative).unlink()

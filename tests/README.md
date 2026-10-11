@@ -1,6 +1,6 @@
 # Running tests and checks
 
-Release 1.1.8 executed results: 748 isolated PHP tests / 5723 assertions, 90 unique JavaScript scenarios, 86 Python tool tests, and 199 passing static/XSD checks for each target tag. Historical results below describe their respective releases. These checks do not certify a deployed Magento instance; the full integration assets remain NOT RUN.
+Release 1.1.9 executed results: 817 isolated PHP tests / 6634 assertions, 90 unique JavaScript scenarios, 92 Python tool tests, and 203 passing static/XSD checks for each target tag. Historical results below describe their respective releases. These checks do not certify a deployed Magento instance; the full integration assets remain NOT RUN.
 
 From the module root, with PHP 8.3+ and PHPUnit 10.5+:
 
@@ -45,7 +45,7 @@ To perform a limited API comparison against an official checkout of the target t
 python3 tools/check_source_contracts.py --tag 2.4.9 --source-root /path/to/magento2 --output source-contracts-249.json
 ```
 
-This check compares 16 source signatures or patterns. It does not execute dependency injection, plugins, or EAV persistence. Development-toolchain dependency resolution was checked separately without installing packages; see `tests/reports/dev-toolchain-resolution.json`. PHPUnit 10.5.66 was executed. The Composer-selected PHPUnit 12.5.38 was not executed.
+This check compares 22 source signatures or patterns, including the native mail and inline translation APIs. It does not execute dependency injection, plugins, or EAV persistence. Development-toolchain dependency resolution was checked separately without installing packages; see `tests/reports/dev-toolchain-resolution.json`. PHPUnit 10.5.66 was executed. The Composer-selected PHPUnit 12.5.38 was not executed.
 
 ## Native class declaration checks
 
@@ -62,7 +62,7 @@ The new block fixture models the native parent's mutable protected `formKey` pro
 
 ## Configuration and button regressions — 1.1.3
 
-The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 735-test/5630-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
+The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current suite. The configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its original 82 tests/591 assertions have grown to 100 tests/763 assertions in 1.1.9; these are included in the full total.
 
 `button-events.test.cjs` adds 19 actual-AMD event/output cases. With the modal (17), inline (10) and grid (10) cases, there were 56 unique JavaScript scenarios before the additional 34 submission-boundary cases in 1.1.4 (90 current unique scenarios). To exercise the four inherited grid button-click cases, pass the actual installed or downloaded upstream Magento AMD parent:
 
@@ -76,7 +76,7 @@ The native configuration-option report executes real core XML conversion and opt
 
 ## Submission regressions — 1.1.4
 
-The current suite includes `BlockPurchasingRoutesTest` (37 cases/244 assertions) and `FrontendSubmitPipelineTest` (57 cases/3373 assertions). The route suite uses an explicit request/response/event fixture and real purchasing policy cases; the old controller-getter defect is covered by modern actions without those methods. The pipeline executes the actual controller/service, validation, catalogue/eligibility/display/date policies, rate limiter, resource idempotency lookup and both email senders, with explicit framework/session/catalogue/database/transport dependencies.
+The 1.1.4 suite included `BlockPurchasingRoutesTest` (37 cases/244 assertions) and `FrontendSubmitPipelineTest` (57 cases/3373 assertions); later releases add cases. The route suite uses an explicit request/response/event fixture and real purchasing policy cases; the old controller-getter defect is covered by modern actions without those methods. The pipeline executes the actual controller/service, validation, catalogue/eligibility/display/date policies, rate limiter, resource idempotency lookup and both email senders, with explicit framework/session/catalogue/database/transport dependencies.
 
 `submit-boundary.test.cjs` executes the actual quote AMD handlers with the shared DOM/jQuery/AJAX harness. Eight payloads are captured and checked against the shipped fixture. URL-encoding is performed by a documented deterministic test encoder rather than real jQuery HTTP transport. PHP consumes those fields through `parse_str`. Six actual controller responses are recorded and tested through popup and inline handlers (12 of the 34 new client cases). The normal PHP run verifies recorded responses against current execution; the normal Node run verifies payload captures and consumes those responses. No sockets, real browser, Magento bootstrap, MySQL transactions or SMTP are involved.
 
@@ -89,7 +89,7 @@ phpunit -c phpunit.xml.dist --log-junit tests/reports/unit-junit.xml
 node tests/Frontend/submit-boundary.test.cjs
 ```
 
-The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the normal 57-test run contains 3373 assertions. The full current suite contains 718 tests/5534 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
+The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the original normal 57-test run contained 3373 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
 
 The native predispatch report executes actual core FrontController, ActionFlag and payload methods from both tags with explicit infrastructure doubles. It records 34 fixed PASS and 34 expected baseline getter failures. The authoring probe and downloaded references are external to the package; shipped observer/pipeline tests provide reproducible isolated regressions. The full native deployment path is prepared in `FrontendSubmissionTest` (three additional methods, all NOT RUN): accepted popup, owned identical retry, changed-payload token rejection with external email disabled. Exact native evidence and execution boundaries are recorded in `tests/reports/native-predispatch-contract.json` and `tests/reports/native-event-registration.json`.
 
@@ -105,11 +105,11 @@ Run all tool tests with the intended PHP binary:
 PYTHONDONTWRITEBYTECODE=1 PHP_BINARY=/absolute/path/to/php python3 -m unittest discover -s tests/Tools -p 'test_*.py' -v
 ```
 
-The current tool suite contains 70 cases: 13 language-scanner, 15 native declaration/source-tool and 42 installed-source checks. All pass on PHP 8.3.6/Python 3.12.14. The application PHP/AMD suites remain 701 tests/5459 assertions and 90 unique JavaScript scenarios, respectively. Actual native FileClassScanner/PhpScanner execution for both tags finds no class or generated entity in the new CLI tool; this narrow file-scope check does not compile installed Magento.
+The 1.1.5 tool suite contained 70 cases: 13 language-scanner, 15 native declaration/source-tool and 42 installed-source checks. All passed on PHP 8.3.6/Python 3.12.14. Actual native FileClassScanner/PhpScanner execution for both tags found no class or generated entity in the new CLI tool; this narrow file-scope check does not compile installed Magento.
 
 ## Scoped event registration — 1.1.6
 
-Current full results: 718 PHP tests/5534 assertions, 90 unique AMD scenarios, 80 Python tests including 52 installed-source checks. BlockPurchasingRoutesTest now exercises EnforcePurchasingPolicy plus three compatibility-class cases. PurchasingRouteEventRegistrationTest adds 14 XML contracts: old global registration disabled, only three purchase route hooks, non-purchasing routes excluded, product/layout hooks retained.
+Release 1.1.6 results: 718 PHP tests/5534 assertions, 90 unique AMD scenarios, 80 Python tests including 52 installed-source checks. BlockPurchasingRoutesTest exercises EnforcePurchasingPolicy plus three compatibility-class cases. PurchasingRouteEventRegistrationTest adds 14 XML contracts: old global registration disabled, only three purchase route hooks, non-purchasing routes excluded, product/layout hooks retained.
 
 Native-event-registration.json separately records 62 checks (31 per tag), using actual core DOM merge/converter/manager/invoker/factory/FrontController with explicit infrastructure doubles. The disabled old entry is skipped before factory lookup and actual Submit executes. Its authoring probe and external reference cache are outside release runtime; ordinary package tests reproduce isolated observer/XML/submission contracts. Installed Magento integration remains NOT RUN.
 
@@ -126,3 +126,15 @@ The checker suite has 58 cases. Two exact 1.1.6 XML snapshots in `tests/Tools/fi
 `AdminMenuConfigurationTest` adds 13 cases / 93 assertions. It verifies a single Sales child entry, consistent menu/controller/listing ACL resources, explicit Sales dependencies, stable active-menu identifiers and separate view, status, email and migration permissions. The legacy migration menu remains under Customers. These are source/configuration contracts; the existing admin controller and button suites continue to verify mutation behavior with explicit dependencies.
 
 The native menu reports execute the unmodified target Backend menu builder, items and permission-filtering iterator with controlled item factories, authorization decisions and other infrastructure doubles. They verify that restricted navigation requires both `Magento_Sales::sales` and `Coresh_QuoteRequest::view`, that denied entries are hidden and that the unchanged native Sales menu resources remain intact. The reference sources and authoring probe are external to the release. The actual installed ACL rule loader, administrator session, XML converter, database and DI compilation are not executed by these probes. Check the role in a staging Admin session after installation.
+
+## Verified legacy source detection — 1.1.9
+
+`LegacySourceDetectorTest` checks the fixed source table using database and module-list doubles. It covers every missing required request column, a compatible schema with extra columns, an absent table, neutral administrator labels, and a registered but unverified extension that cannot enable importing. The existing migration and administrator action suites protect preview approval, store attribution, CSRF, import bounds and retained source rows. No arbitrary source module or table is selected from administrator input.
+
+## Notification email regressions — 1.1.9
+
+The native mail reports execute the actual module senders and variable builder against unmodified `TransportBuilder` and inline translation `State` classes from both target tags. Each report contains 42 passing checks, including the correct `setReplyTo` API, isolated recipients across retries and customer confirmations, original store scope, safe scalar template variables, post-handoff status failures, no-op status updates, and restoration of inline translation after nested template emulation. The template, factory API, MIME, transport, resource, configuration, store and logger dependencies are explicit doubles. Native template rendering, SMTP, database persistence and DI compilation are not executed.
+
+Separate baseline reports reproduce the previous sender's undefined-method failure before any transport is created. Each baseline has six checks specific to that old implementation; the shared native API checks are repeated rather than additional unique cases. Authoring probes and downloaded references remain outside the package. The shipped PHPUnit tests reproduce mail failure, lease ownership, reload and persistence faults, recipient isolation, cleanup and logging failures, safe administrator feedback and preserved redirects. Frontend pipeline tests verify that an already-saved request keeps its positive identifier and accepted response when notification reloads or diagnostic logging fail; an identical retry does not send again.
+
+The 92 Python cases include 64 installed-source checker cases. Six new cases use authentic 1.1.8 sender snapshots to reject old or mixed installations and references rehashed around old mail code. These snapshots are test fixtures. The checker pins both corrected senders and the safe notification exception, while preserving the earlier route, product-form and collection fixes. A successful source comparison does not verify the running web workers or mail delivery.

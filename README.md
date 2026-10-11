@@ -1,4 +1,4 @@
-# Coresh Quote Request 1.1.8
+# Coresh Quote Request 1.1.9
 
 A Magento Open Source extension for product enquiries: **Contact Us for a Quote** → form → saved request → notification email to the store. It provides store-view configuration, an admin grid, request details and email resend, quantity and product ID fields, Cart Hidden, and a separate server-side purchasing restriction.
 
@@ -14,11 +14,9 @@ Validate installation on a Magento staging environment first. No production site
 
 The archive contains one directory, `Coresh_QuoteRequest`. Place its contents in `app/code/Coresh/QuoteRequest`, with `registration.php` directly inside that directory.
 
-After copying the files, run the following from the Magento root:
+If replacing another storefront enquiry extension, disable it through the project's normal deployment procedure before enabling this module to avoid duplicate forms and conflicting price renderers. After copying the files, run the following from the Magento root:
 
 ```bash
-# Disable the previous extension to avoid duplicate forms and conflicting price renderers.
-php bin/magento module:disable Darsh_Callforprice
 php bin/magento module:enable Coresh_QuoteRequest
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
@@ -26,15 +24,15 @@ php bin/magento setup:static-content:deploy -f en_US
 php bin/magento cache:clean config layout block_html full_page translate
 ```
 
-Skip the first command if the previous module is not installed. The examples deploy en_US. Add other configured store locales when required. The new module is disabled in its configuration by default; enable it under Stores → Configuration → Coresh → Quote Request.
+The examples deploy en_US. Add other configured store locales when required. The new module is disabled in its configuration by default; enable it under Stores → Configuration → Coresh → Quote Request.
 
 ### Composer
 
 `composer.json` is located at the extension root. For a local installation, use a Composer path repository pointing to the extracted package root outside `app/code`, or your own Composer/artifact repository. Example for an existing directory at `packages/coresh/module-quote-request`:
 
 ```bash
-composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.8"}}}'
-composer require coresh/module-quote-request:1.1.8
+composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.9"}}}'
+composer require coresh/module-quote-request:1.1.9
 php bin/magento module:enable Coresh_QuoteRequest
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
@@ -111,6 +109,18 @@ The **Email Status** describes the store notification independently of the enqui
 
 To send or retry the store notification, open **Actions → View** and click **Send / Resend Notification Email**. This action uses the saved product snapshot and the original store's current recipient, sender and template settings. It resends the store notification, rather than generating a customer quotation. Inspect **Email Status**, **Email Attempts** and **Last Email Sent** after the action. Sending an email does not change **Request Status**.
 
+### Diagnose notification failures
+
+Version 1.1.9 corrects the native mail Reply-To API and uses a fresh mail builder for each store notification and customer confirmation. Saved requests remain available when sending fails. Known failures now produce a safe, actionable administrator message; **Last Error Code** and Magento logs identify the failure stage without recording SMTP credentials or customer messages.
+
+1. Open the request under **Sales → Coresh — Quote Requests** and identify its original Store View. Select that Store View when checking **Stores → Configuration → Coresh → Quote Request → Admin Email**.
+2. Enable store notification emails. Verify **Recipient**, or the store's contact recipient when this field is empty. Choose a valid **Sender Identity** and configure its sender name/address under **Stores → Configuration → General → Store Email Addresses**.
+3. Select the module's store notification template or a valid custom template. Check custom templates and the store's email header/footer if the reported failure concerns template preparation.
+4. If the reported failure concerns the transport, check the installed mail/SMTP service and its logs, then verify delivery in a test mailbox. A transport error can occur after a provider accepted the message; check delivery before retrying.
+5. If a notice says the email was handed to the transport but its status could not be updated, check delivery and database availability before resending. The module does not mark a completed handoff as a failed send. A status or lease may remain stale when the database is unavailable.
+
+An active attempt holds a ten-minute send lease. This reduces overlapping sends; it cannot guarantee exactly-once delivery through an external mail provider. Do not repeatedly click Resend while an attempt is active or delivery is uncertain. After correcting the reported issue, make one controlled resend and inspect its status and the recipient's mailbox. Configuration failures, transport handoff and final inbox delivery are separate checks.
+
 ### Grant administrator permissions
 
 Go to **System → Permissions → User Roles**, open the relevant role and select **Role Resources**. For a restricted role, grant access to the **Sales** container (`Magento_Sales::sales`), then grant the required permissions under **Coresh Quote Request**. Magento checks the parent menu's permission before displaying its child entries. Access to the Sales container does not require granting Orders, Invoices or other sales operations; review those child permissions individually.
@@ -126,6 +136,8 @@ Configuration access is controlled separately by **Coresh Quote Request Configur
 If **Sales → Coresh — Quote Requests** is missing, confirm that `Coresh_QuoteRequest` and its `Magento_Sales` dependency are installed and enabled, verify the assigned role's **Sales** and **View Quote Requests** permissions, clean the configuration cache and sign out/in. If the menu opens but the list fails to load, check the current Magento logs and the module installation instructions. When the list loads successfully, an empty result means that no requests match the current filters. Clear filters before deciding that a saved enquiry is missing.
 
 ## Upgrade and rollback
+
+Version 1.1.9 changes the mail builder dependency to a generated `TransportBuilderFactory`. After replacing the package through the existing installation method, run `setup:upgrade`, `setup:di:compile`, static-content deployment and cache cleaning as shown above. Refresh the web PHP workers through the hosting provider's supported procedure when old application code remains loaded. The request table and notification templates retain their existing structure.
 
 Version 1.1.8 moves the request workspace to **Sales → Coresh — Quote Requests**. The menu label, request URL and permission identifiers remain the same. After updating through your existing installation method, run the installation commands above, including `setup:upgrade` to refresh module sequencing and `cache:clean config layout block_html full_page translate`. Sign out/in to refresh the administrator session. The legacy migration page remains under **Customers → Legacy Quote Request Migration**.
 

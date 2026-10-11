@@ -30,7 +30,7 @@ class MigrationNotice extends Field
         foreach ($sources as $source) {
             $html .= '<li>' . $this->escapeHtml($source['name']) . ': '
                 . $this->escapeHtml($source['supported']
-                    ? __('Verified Darsh data adapter available.')
+                    ? __('Verified legacy data adapter available.')
                     : __('Automatic import unavailable: the source schema has not been verified.')) . '</li>';
         }
         $html .= '</ul>';
@@ -39,7 +39,7 @@ class MigrationNotice extends Field
         ) {
             $html .= '<a class="action-default" href="'
                 . $this->escapeUrl($this->getUrl('coresh_quoterequest/migration/index')) . '">'
-                . $this->escapeHtml(__('Preview / Migrate Darsh data')) . '</a>';
+                . $this->escapeHtml(__('Preview / Migrate Legacy Data')) . '</a>';
         }
         return $html;
     }

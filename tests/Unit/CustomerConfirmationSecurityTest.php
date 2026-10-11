@@ -10,11 +10,13 @@ use Coresh\QuoteRequest\Model\Email\TemplateVariablesBuilder;
 use Coresh\QuoteRequest\Model\QuoteRequest;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Mail\Template\TransportBuilder;
+use Magento\Framework\Mail\Template\TransportBuilderFactory;
 use Magento\Framework\Mail\TransportInterface;
 use Magento\Framework\Translate\Inline\StateInterface;
 use Magento\Store\Model\Store;
 use Magento\Store\Model\StoreManagerInterface;
 use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /** Real sender with external transport doubles: no email is delivered by these tests. */
 class CustomerConfirmationSecurityTest extends TestCase
@@ -36,11 +38,15 @@ class CustomerConfirmationSecurityTest extends TestCase
             $builder->method($method)->willReturnSelf();
         }
         $builder->method('getTransport')->willReturn($transport);
+        $factory = $this->createMock(TransportBuilderFactory::class);
+        $factory->method('create')->willReturn($builder);
         $inline = $this->createMock(StateInterface::class);
+        $inline->method('isEnabled')->willReturn(true);
         $stores = $this->createMock(StoreManagerInterface::class);
         $stores->method('getStore')->with(2)->willReturn($this->createMock(Store::class));
-        return compact('config', 'request', 'variables', 'transport', 'builder', 'inline') + [
-            'sender' => new CustomerConfirmationSender($config, $variables, $builder, $inline, $stores)
+        $logger = $this->createMock(LoggerInterface::class);
+        return compact('config', 'request', 'variables', 'transport', 'builder', 'factory', 'inline') + [
+            'sender' => new CustomerConfirmationSender($config, $variables, $factory, $inline, $stores, $logger)
         ];
     }
 
@@ -48,7 +54,7 @@ class CustomerConfirmationSecurityTest extends TestCase
     {
         $f = $this->fixture(enabled: false);
         $f['builder']->expects(self::never())->method('getTransport');
-        $f['inline']->expects(self::never())->method('suspend');
+        $f['inline']->expects(self::never())->method('disable');
         $f['sender']->sendConfirmation($f['request']);
     }
 
@@ -57,7 +63,7 @@ class CustomerConfirmationSecurityTest extends TestCase
     {
         $f = $this->fixture($address);
         $f['builder']->expects(self::never())->method('getTransport');
-        $f['inline']->expects(self::never())->method('suspend');
+        $f['inline']->expects(self::never())->method('disable');
         $this->expectException(LocalizedException::class);
         $f['sender']->sendConfirmation($f['request']);
     }
@@ -85,8 +91,8 @@ class CustomerConfirmationSecurityTest extends TestCase
         $f['builder']->expects(self::once())->method('setFromByScope')->with('general', 2);
         $f['builder']->expects(self::once())->method('addTo')->with('customer@example.test');
         $f['transport']->expects(self::once())->method('sendMessage');
-        $f['inline']->expects(self::once())->method('suspend');
-        $f['inline']->expects(self::once())->method('resume');
+        $f['inline']->expects(self::once())->method('disable');
+        $f['inline']->expects(self::once())->method('enable');
         $f['sender']->sendConfirmation($f['request']);
     }
 
@@ -94,8 +100,8 @@ class CustomerConfirmationSecurityTest extends TestCase
     {
         $f = $this->fixture();
         $f['transport']->method('sendMessage')->willThrowException(new \RuntimeException('SMTP unavailable'));
-        $f['inline']->expects(self::once())->method('suspend');
-        $f['inline']->expects(self::once())->method('resume');
+        $f['inline']->expects(self::once())->method('disable');
+        $f['inline']->expects(self::once())->method('enable');
         $this->expectException(\RuntimeException::class);
         $f['sender']->sendConfirmation($f['request']);
     }

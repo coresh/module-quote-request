@@ -1,0 +1,106 @@
+[
+  {
+    "scenario": "current_1.1.9",
+    "expected_exit_code": 0,
+    "actual_exit_code": 0,
+    "result": {
+      "schema": 1,
+      "status": "FILES_MATCH",
+      "scope": "CLI source files and optional installed Composer/ComponentRegistrar resolution",
+      "mode": "module_source_only",
+      "paths": {
+        "expected_root": "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest",
+        "module_root": "/workspace/scratch/ff728627a180/email-fix-119/local-installed-1.1.9",
+        "registered_module_root": null,
+        "autoload_observer_file": null,
+        "known_installed_copies": []
+      },
+      "composer_registration_files_executed": false,
+      "checked_runtime_files": 115,
+      "errors": [],
+      "not_verified": [
+        "web_document_root_and_virtual_host",
+        "PHP_FPM_loaded_classes_and_OPcache",
+        "generated_DI_and_interceptors",
+        "Magento_bootstrap_and_configuration",
+        "database_persistence",
+        "SMTP_delivery",
+        "real_browser_HTTP_submission",
+        "installed_Composer_and_ComponentRegistrar_resolution"
+      ],
+      "notice": "FILES_MATCH means source files match the trusted release. It does not confirm that the web server is fixed."
+    }
+  },
+  {
+    "scenario": "previous_1.1.8",
+    "expected_exit_code": 1,
+    "actual_exit_code": 1,
+    "result": {
+      "schema": 1,
+      "status": "CHECK_FAILED",
+      "scope": "CLI source files and optional installed Composer/ComponentRegistrar resolution",
+      "mode": "module_source_only",
+      "paths": {
+        "expected_root": "/workspace/scratch/ff728627a180/email-fix-119/Coresh_QuoteRequest",
+        "module_root": "/workspace/scratch/ff728627a180/sales-menu-118/Coresh_QuoteRequest",
+        "registered_module_root": null,
+        "autoload_observer_file": null,
+        "known_installed_copies": []
+      },
+      "composer_registration_files_executed": false,
+      "checked_runtime_files": 115,
+      "errors": [
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Block/Adminhtml/System/Config/MigrationNotice.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Console/Command/MigrateLegacy.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Controller/Adminhtml/Migration/Run.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Controller/Adminhtml/Request/ResendEmail.php"
+        },
+        {
+          "code": "installed_runtime_file_missing",
+          "file": "Exception/NotificationException.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Model/Email/AdminNotificationSender.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Model/Email/CustomerConfirmationSender.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Model/Migration/LegacySourceDetector.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "Model/Service/SubmitQuoteRequest.php"
+        },
+        {
+          "code": "installed_runtime_file_changed",
+          "file": "view/adminhtml/templates/migration.phtml"
+        }
+      ],
+      "not_verified": [
+        "web_document_root_and_virtual_host",
+        "PHP_FPM_loaded_classes_and_OPcache",
+        "generated_DI_and_interceptors",
+        "Magento_bootstrap_and_configuration",
+        "database_persistence",
+        "SMTP_delivery",
+        "real_browser_HTTP_submission"
+      ],
+      "notice": "FILES_MATCH means source files match the trusted release. It does not confirm that the web server is fixed."
+    }
+  }
+]

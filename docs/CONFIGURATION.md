@@ -42,6 +42,27 @@ The product SKU and URL are included in the store notification. The three name /
 
 The email uses the store view saved with the request. If that store has been deleted, the module does not automatically switch to another store; the administrator receives an error. The `sent` status means that the message was successfully handed to Magento's email transport, rather than confirming delivery to the recipient's inbox.
 
+### Notification troubleshooting
+
+Open **Sales → Coresh — Quote Requests → Actions → View**, then inspect **Email Status**, **Email Attempts**, **Last Email Sent** and **Last Error Code**. Use the request's original Store View when changing email settings. A saved enquiry is retained when notification preparation or transport fails.
+
+| Failure code | Administrator action |
+| --- | --- |
+| `original_store_unavailable` | Verify that the original Store View still exists. A deleted store is not replaced automatically. |
+| `email_attempt_in_progress` | Wait for the active attempt and inspect delivery before retrying. The send lease lasts ten minutes. |
+| `notification_recipient_invalid` | Correct the module recipient or its contact-email fallback for the original Store View. |
+| `notification_reply_to_invalid` | Review the saved customer email. Invalid values cannot become mail headers. |
+| `notification_sender_invalid` | Verify Sender Identity and its configured name/address under General → Store Email Addresses. |
+| `notification_template_failed` | Review the selected notification template, header/footer and Magento logs. |
+| `notification_transport_failed` | Check the mail/SMTP service and confirm whether delivery occurred before retrying. |
+| `notification_load_failed` / `notification_lease_failed` | Check database availability and the saved request. |
+| `notification_state_update_failed` | Check database availability; the attempt's failure status could not be persisted. |
+| `notification_status_unconfirmed` | The transport handoff completed, but status persistence or refresh failed. Check delivery before resending; this is an administrator notice rather than a failed-send message. |
+
+Codes identify the processing stage; they do not expose raw transport exceptions, credentials or customer messages. If the database cannot update the row, the code may be available only in the administrator notice or Magento log. Older attempts may retain `notification_failed`; repeat one controlled send after updating the module to obtain current diagnostics.
+
+Store notifications and optional customer confirmations use separate, freshly created mail builders. The customer's address is Reply-To on the store notification. Customer confirmations have their own recipient and do not reuse store-notification addresses or headers. An external mail provider's acceptance, successful state persistence and final inbox delivery are separate outcomes. No automatic retry queue or exactly-once email-delivery guarantee is provided.
+
 ## Catalogue mode
 
 | Setting | Default | Behavior |
@@ -88,3 +109,5 @@ Grant **View Quote Requests** alongside **Manage Quote Request Status** or **Sen
 Automatic retry queues and automatic deletion of personal data are not implemented. Request retention and deletion policies must be included in the store owner's regular operational process.
 
 The administrative migration notice and the **Customers → Legacy Quote Request Migration** preview/import page require the `Coresh_QuoteRequest::migrate` ACL permission.
+
+Legacy source detection uses a fixed database table and verifies all required request columns. A compatible source appears as **Legacy quote request data**; an incomplete schema is reported as unsupported, and an absent table is not offered for import. Installing or renaming an arbitrary extension does not enable an adapter. Choose the original Store View explicitly, create a preview, and confirm the import only after backing up the deployment. Importing retains source rows and does not send notifications.

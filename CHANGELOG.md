@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.9 — 2026-10-11
+
+- Correct the native Reply-To API and replace shared mail builders with per-send factory instances for store notifications and customer confirmations.
+- Guard request reload and owned email-attempt completion; do not mark a successful transport handoff as a failed send when status persistence or refresh fails.
+- Preserve inline translation state, including native template-emulation boundaries, without masking the mail outcome during cleanup.
+- Provide fixed, safe failure codes and actionable administrator messages; distinguish unconfirmed status after handoff from a failed send. Retain POST-body form keys and the separate email ACL permission.
+- Retain the persisted request ID and accepted storefront response when notification reloads or warning-log writes fail; a mail failure does not undo a saved enquiry.
+- Remove the obsolete module identifier from the package and use neutral legacy migration labels while retaining verified schema checks and author attribution.
+- Add sender, controller, source-contract, migration and installed-source regressions; verify the repaired senders against native mail classes for both target tags. SMTP delivery and an installed Magento deployment remain separate acceptance checks.
+
 ## 1.1.8 — 2026-10-11
 
 - Move Coresh — Quote Requests to the Sales menu while retaining its label, action URL and separate view/manage/send permissions.
@@ -72,7 +82,7 @@
 - Static Label display without a form; a public POST cannot create a request when the enquiry is hidden.
 - Explicit customer-group restriction switch that preserves existing rules during upgrades and legacy imports.
 - Full-text search, Phone/Description columns, CSV export with formula-injection protection, and bulk status changes.
-- Admin Darsh preview/import page with a dedicated ACL, POST FormKey validation, and an expiring approval token bound to a store.
+- Admin verified legacy preview/import page with a dedicated ACL, POST FormKey validation, and an expiring approval token bound to a store.
 - Sparsh source-module detection with an explicit explanation when a verified migration adapter is unavailable.
 - Separate email lease timestamp that admin handling-status changes do not modify.
 - Additional regression tests and an updated report of checks actually performed.

@@ -97,29 +97,37 @@ class SubmitQuoteRequest
             }
             throw $exception;
         }
+        // Email senders reload a mutable model; acceptance belongs to the row already persisted.
+        $requestId = (int) $request->getId();
+        if ($requestId < 1) {
+            throw new \UnexpectedValueException('The saved quote request reference could not be confirmed.');
+        }
         try {
             $this->adminSender->sendNotification($request);
         } catch (\Throwable $exception) {
             // Persistence succeeded; transport failure must never erase or duplicate the enquiry.
-            $this->logger->warning('Quote request notification failed.', [
-                'request_id' => (int) $request->getId(),
-                'error_code' => 'notification_failed'
-            ]);
+            $this->logNotificationFailure('Quote request notification failed.', $requestId, 'notification_failed');
         }
         try {
             $this->customerSender->sendConfirmation($request);
         } catch (\Throwable $exception) {
-            $this->logger->warning('Quote request confirmation failed.', [
-                'request_id' => (int) $request->getId(),
-                'error_code' => 'confirmation_failed'
-            ]);
+            $this->logNotificationFailure('Quote request confirmation failed.', $requestId, 'confirmation_failed');
         }
         return [
             'success' => true,
             'status' => 'accepted',
             'message' => (string) __('Your quote request has been received.'),
-            'request_id' => (int) $request->getId()
+            'request_id' => $requestId
         ];
+    }
+
+    private function logNotificationFailure(string $message, int $requestId, string $errorCode): void
+    {
+        try {
+            $this->logger->warning($message, ['request_id' => $requestId, 'error_code' => $errorCode]);
+        } catch (\Throwable $exception) {
+            // An unavailable log backend must never turn an already saved enquiry into a failed response.
+        }
     }
 
     private function duplicateResponse(array $existing, string $fingerprint): array

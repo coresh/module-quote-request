@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-11T04:03:26.413860+00:00",
+  "generated_at": "2026-10-11T09:46:17.995005+00:00",
   "tag": "2.4.8-p5",
   "php_version": "8.3.6",
   "scope": "Native application class declarations against unmodified upstream parent/interface/trait sources only. Constructors, DI compilation, interceptors, database, framework bootstrap and runtime behavior NOT RUN.",
-  "upstream_source_count": 46,
+  "upstream_source_count": 47,
   "upstream_sources": {
     "Magento\\Backend\\App\\AbstractAction": {
       "file": "app/code/Magento/Backend/App/AbstractAction.php",
@@ -135,6 +135,11 @@
       "sha256": "f47e62961a628eac601e838bdeefe094eb69193fab4acc4abcc0bfc9a0fb1eba",
       "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Event/ObserverInterface.php"
     },
+    "Magento\\Framework\\Exception\\LocalizedException": {
+      "file": "lib/internal/Magento/Framework/Exception/LocalizedException.php",
+      "sha256": "aa1814cecfe053d737a0d54a65b2c012f6e8fae6cce8e347a9f2dc2cbf902f15",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Exception/LocalizedException.php"
+    },
     "Magento\\Framework\\Model\\AbstractModel": {
       "file": "lib/internal/Magento/Framework/Model/AbstractModel.php",
       "sha256": "247501e443a0f9c1cd86d266e5f5087dd2b1fa94bd6b1173a17f628f5ebf0e7d",
@@ -237,7 +242,7 @@
     }
   },
   "totals": {
-    "PASS": 75,
+    "PASS": 76,
     "FAIL": 0,
     "NOT RUN": 0
   },
@@ -635,6 +640,24 @@
         "Magento\\Customer\\CustomerData\\SectionSourceInterface"
       ],
       "file": "CustomerData/Profile.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Exception\\NotificationException",
+      "status": "PASS",
+      "parents": [
+        "Magento\\Framework\\Exception\\LocalizedException",
+        "Exception"
+      ],
+      "interfaces": [
+        "Stringable",
+        "Throwable"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Exception\\LocalizedException"
+      ],
+      "file": "Exception/NotificationException.php",
       "exit_code": 0,
       "missing_classes": []
     },

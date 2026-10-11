@@ -47,7 +47,7 @@ class Run extends Action implements HttpPostActionInterface
         $storeId = (int) $storeInput;
         try {
             if (!$this->detector->hasSupportedSource()) {
-                $this->messageManager->addErrorMessage(__('A verified Darsh source is required.'));
+                $this->messageManager->addErrorMessage(__('A verified legacy source is required.'));
                 return $redirect;
             }
             if ($mode === 'preview') {

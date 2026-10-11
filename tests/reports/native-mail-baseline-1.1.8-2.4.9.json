@@ -1,0 +1,42 @@
+{
+    "tag": "2.4.9",
+    "status": "PASS",
+    "mode": "authentic_1.1.8_failure_reproduction",
+    "count": 30,
+    "checks": {
+        "native_has_setReplyTo": true,
+        "native_has_no_addReplyTo": true,
+        "old_call_raises_undefined_method": true,
+        "old_call_never_creates_transport": true,
+        "fluent_error_precedes_native_reset": true,
+        "native_handoff_once": true,
+        "original_store_sender_scope": true,
+        "frontend_template_original_store": true,
+        "native_reply_to_header": true,
+        "native_single_admin_recipient": true,
+        "native_html_mime_body": true,
+        "native_subject_entity_decoding": true,
+        "native_success_reset": true,
+        "next_message_has_no_old_recipient": true,
+        "next_message_has_no_old_reply_to": true,
+        "native_template_failure_reset": true,
+        "inline_initially_enabled": true,
+        "inline_owned_suspend_disables": true,
+        "inline_owned_resume_restores": true,
+        "inline_nested_sender_leaves_outer_disabled": true,
+        "inline_outer_resume_preserves_original_enabled": true,
+        "inline_originally_disabled_remains_disabled": true,
+        "inline_old_emulation_cleanup_loses_original_state": true,
+        "inline_explicit_restore_survives_template_emulation": true,
+        "actual_118_sender_raises_generic_failure": true,
+        "actual_118_sender_never_builds_transport": true,
+        "actual_118_sender_records_failed_attempt": true,
+        "actual_118_sender_template_never_prepared": true,
+        "actual_118_sender_only_generic_diagnostic": true,
+        "actual_118_snapshot_hash_is_authentic": true
+    },
+    "limits": [
+        "Authentic 1.1.8 sender fixture executes against unmodified native TransportBuilder/State; old failure is expected.",
+        "Explicit local dependencies; no SMTP, database, inbox delivery or application UI."
+    ]
+}

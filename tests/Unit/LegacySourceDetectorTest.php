@@ -10,11 +10,16 @@ use PHPUnit\Framework\TestCase;
 
 class LegacySourceDetectorTest extends TestCase
 {
+    private const REQUIRED_COLUMNS = ['id', 'product_id', 'product_name', 'customer_name',
+        'customer_email', 'customer_telephone', 'request_detail', 'status'];
+
     private function detector(bool $tableExists, array $columns, array $modules): LegacySourceDetector
     {
         $adapter = $this->createMock(AdapterInterface::class);
-        $adapter->method('isTableExists')->with('prefix_darsh_callprice')->willReturn($tableExists);
-        $adapter->method('describeTable')->with('prefix_darsh_callprice')->willReturn(array_fill_keys($columns, []));
+        $adapter->expects(self::once())->method('isTableExists')
+            ->with('prefix_darsh_callprice')->willReturn($tableExists);
+        $adapter->expects($tableExists ? self::once() : self::never())->method('describeTable')
+            ->with('prefix_darsh_callprice')->willReturn(array_fill_keys($columns, []));
         $resource = $this->createMock(ResourceConnection::class);
         $resource->method('getConnection')->willReturn($adapter);
         $resource->method('getTableName')->with('darsh_callprice')->willReturn('prefix_darsh_callprice');
@@ -23,16 +28,37 @@ class LegacySourceDetectorTest extends TestCase
         return new LegacySourceDetector($resource, $list);
     }
 
-    public function testDarshMigrationIsSupportedOnlyWhenRequiredSchemaIsPresent(): void
+    public function testVerifiedLegacySchemaIsDetectedWithNeutralLabel(): void
     {
-        $columns = ['id', 'product_id', 'product_name', 'customer_name', 'customer_email', 'customer_telephone', 'request_detail', 'status'];
-        self::assertTrue($this->detector(true, $columns, [])->hasSupportedSource());
-        self::assertSame([['name' => 'Darsh_Callforprice', 'supported' => true]],
+        self::assertTrue($this->detector(true, self::REQUIRED_COLUMNS, [])->hasSupportedSource());
+        self::assertSame([['name' => 'Legacy quote request data', 'supported' => true]],
+            $this->detector(true, self::REQUIRED_COLUMNS, [])->getSources());
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('missingRequiredColumns')]
+    public function testEveryRequiredColumnIsMandatoryForImportSupport(string $missing): void
+    {
+        $columns = array_values(array_diff(self::REQUIRED_COLUMNS, [$missing]));
+        self::assertFalse($this->detector(true, $columns, [])->hasSupportedSource());
+        self::assertSame([['name' => 'Legacy quote request data', 'supported' => false]],
             $this->detector(true, $columns, [])->getSources());
-        array_pop($columns);
-        self::assertFalse($this->detector(true, $columns, ['Darsh_Callforprice'])->hasSupportedSource());
-        self::assertSame([['name' => 'Darsh_Callforprice', 'supported' => false]],
-            $this->detector(true, $columns, ['Darsh_Callforprice'])->getSources());
+    }
+
+    public static function missingRequiredColumns(): array
+    {
+        return array_map(static fn (string $column): array => [$column], self::REQUIRED_COLUMNS);
+    }
+
+    public function testAdditionalColumnsDoNotRemoveVerifiedCompatibility(): void
+    {
+        self::assertTrue($this->detector(true, [...self::REQUIRED_COLUMNS, 'created_at'], [])
+            ->hasSupportedSource());
+    }
+
+    public function testRegisteredUnverifiedExtensionDoesNotEnableImportWithoutSourceTable(): void
+    {
+        self::assertFalse($this->detector(false, [], ['Vendor_UnverifiedEnquiry'])->hasSupportedSource());
+        self::assertSame([], $this->detector(false, [], ['Vendor_UnverifiedEnquiry'])->getSources());
     }
 
     public function testUnknownExtensionSchemaIsReportedWithoutInventingAdapterSupport(): void

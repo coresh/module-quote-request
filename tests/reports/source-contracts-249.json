@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T04:05:02.951932+00:00",
+  "generated_at": "2026-10-11T09:35:13.601009+00:00",
   "tag": "2.4.9",
   "scope": "Only source signatures/patterns are checked. DI/interception/persistence/runtime NOT RUN.",
   "checks": [
@@ -130,10 +130,58 @@
       "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Eav/Model/ResourceModel/UpdateHandler.php",
       "sha256": "13107c0238e7ac2263a496ad9da1016e3287c57ef9831e8a4ab0fb4d2d7dd165",
       "pattern": "\\$isAllowedEmptyStringValue\\s*=\\s*\\$attribute->isAllowedEmptyTextValue\\(\\$newValue\\)"
+    },
+    {
+      "check": "Mail reply-to API",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "sha256": "b34db2ae5d261547243aeaac6002eadf96fd695c78bd4cf58564288aa58773ac",
+      "pattern": "public\\s+function\\s+setReplyTo\\s*\\(\\$email,\\s*\\$name\\s*=\\s*null\\)"
+    },
+    {
+      "check": "Mail scoped sender API",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "sha256": "b34db2ae5d261547243aeaac6002eadf96fd695c78bd4cf58564288aa58773ac",
+      "pattern": "public\\s+function\\s+setFromByScope\\s*\\(\\$from,\\s*\\$scopeId\\s*=\\s*null\\)"
+    },
+    {
+      "check": "Mail transport API",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Mail/Template/TransportBuilder.php",
+      "sha256": "b34db2ae5d261547243aeaac6002eadf96fd695c78bd4cf58564288aa58773ac",
+      "pattern": "public\\s+function\\s+getTransport\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "Inline translation current state",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "sha256": "cd10fa11a07a09db2f7dd0c6a75321f534c7c8c7303e1a48d1c2772a34d8104f",
+      "pattern": "public\\s+function\\s+isEnabled\\s*\\(\\s*\\)"
+    },
+    {
+      "check": "Inline translation suspend API",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "sha256": "cd10fa11a07a09db2f7dd0c6a75321f534c7c8c7303e1a48d1c2772a34d8104f",
+      "pattern": "public\\s+function\\s+suspend\\s*\\(\\$status\\s*=\\s*false\\)"
+    },
+    {
+      "check": "Inline translation resume API",
+      "status": "PASS",
+      "file": "lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Translate/Inline/StateInterface.php",
+      "sha256": "cd10fa11a07a09db2f7dd0c6a75321f534c7c8c7303e1a48d1c2772a34d8104f",
+      "pattern": "public\\s+function\\s+resume\\s*\\(\\$status\\s*=\\s*true\\)"
     }
   ],
   "totals": {
-    "PASS": 16,
+    "PASS": 22,
     "FAIL": 0,
     "NOT RUN": 0
   }

@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-10-11T09:47:32.427989+00:00",
+  "release": "1.1.9",
+  "menu": "Sales > Coresh \u2014 Quote Requests",
+  "unit_php": {
+    "status": "PASS",
+    "tests": 817,
+    "assertions": 6634,
+    "environment": "PHP 8.3.6 / PHPUnit 10.5.66; explicit framework doubles",
+    "admin_actions_included": {
+      "tests": 100,
+      "assertions": 763
+    }
+  },
+  "javascript": {
+    "status": "PASS",
+    "unique_scenarios": 90,
+    "scope": "Actual AMD modules with DOM, jQuery, customer-data and AJAX doubles; native grid parent repeated for both tags"
+  },
+  "python_tools": {
+    "status": "PASS",
+    "tests": 92,
+    "installed_source_checker_cases_included": 64
+  },
+  "static_xsd": {
+    "2.4.8-p5": {
+      "PASS": 203,
+      "FAIL": 0,
+      "NOT RUN": 0
+    },
+    "2.4.9": {
+      "PASS": 203,
+      "FAIL": 0,
+      "NOT RUN": 0
+    }
+  },
+  "source_api_contracts": {
+    "status": "PASS",
+    "checks_per_tag": 22,
+    "tags": [
+      "2.4.8-p5",
+      "2.4.9"
+    ],
+    "scope": "Official target source signature and pattern checks"
+  },
+  "native_class_declarations": {
+    "status": "PASS",
+    "checks_per_tag": 76,
+    "tags": [
+      "2.4.8-p5",
+      "2.4.9"
+    ],
+    "scope": "Actual upstream parents/interfaces/traits; constructors and DI not executed"
+  },
+  "native_mail": {
+    "2.4.8-p5": {
+      "status": "PASS",
+      "checks": 42,
+      "native_classes": [
+        "Magento\\Framework\\Mail\\Template\\TransportBuilder",
+        "Magento\\Framework\\Translate\\Inline\\State"
+      ],
+      "limits": [
+        "Actual module senders and variable builder execute against the unmodified native TransportBuilder and inline State.",
+        "Explicit local template, sender resolver, generated factory API, MIME, address, transport, resource, configuration, quote request, store and logger doubles.",
+        "The template double reproduces Store App Emulation inline suspend/resume sequence; native Emulation itself is inspected, not executed.",
+        "No SMTP, inbox delivery, database, DI compilation or storefront/admin HTML rendering."
+      ]
+    },
+    "2.4.9": {
+      "status": "PASS",
+      "checks": 42,
+      "native_classes": [
+        "Magento\\Framework\\Mail\\Template\\TransportBuilder",
+        "Magento\\Framework\\Translate\\Inline\\State"
+      ],
+      "limits": [
+        "Actual module senders and variable builder execute against the unmodified native TransportBuilder and inline State.",
+        "Explicit local template, sender resolver, generated factory API, MIME, address, transport, resource, configuration, quote request, store and logger doubles.",
+        "The template double reproduces Store App Emulation inline suspend/resume sequence; native Emulation itself is inspected, not executed.",
+        "No SMTP, inbox delivery, database, DI compilation or storefront/admin HTML rendering."
+      ]
+    }
+  },
+  "previous_sender_failure": {
+    "status": "REPRODUCED",
+    "baseline": "1.1.8",
+    "baseline_specific_checks_per_tag": 6,
+    "defect": "Undefined reply-to method fails before transport creation",
+    "note": "Shared native checks are repeated and are not additional unique cases"
+  },
+  "installed_source_smoke": {
+    "status": "PASS",
+    "current_runtime_files": 115,
+    "previous_release_rejected": true,
+    "scope": "Source-only CLI comparison against separate local copies"
+  },
+  "package_policy_checks": {
+    "obsolete_identifier_matches_in_paths_or_bytes": 0,
+    "docs_files": [
+      "docs/CONFIGURATION.md"
+    ],
+    "source_author_attribution_preserved": true
+  },
+  "changed_runtime_files": [
+    "Block/Adminhtml/System/Config/MigrationNotice.php",
+    "Console/Command/MigrateLegacy.php",
+    "Controller/Adminhtml/Migration/Run.php",
+    "Controller/Adminhtml/Request/ResendEmail.php",
+    "Exception/NotificationException.php",
+    "Model/Email/AdminNotificationSender.php",
+    "Model/Email/CustomerConfirmationSender.php",
+    "Model/Migration/LegacySourceDetector.php",
+    "Model/Service/SubmitQuoteRequest.php",
+    "view/adminhtml/templates/migration.phtml"
+  ],
+  "security_review": {
+    "mail_addresses": "Reject invalid email/header injection; fresh builder for each administrator or customer email",
+    "diagnostics": "Fixed safe codes and phrases; no raw customer, SMTP or database exception details",
+    "state": "Owned email lease; no failed-state overwrite after successful transport handoff; completion readback required",
+    "acceptance": "Preserved persisted request ID and accepted frontend response when mail reload or diagnostic logging fails",
+    "administrator_actions": "POST body FormKey and separate send_email ACL preserved; safe notices/errors and original redirect",
+    "source_migration": "Fixed table and verified required columns; no arbitrary module/table selection",
+    "unchanged_contracts": "Database schema, frontend response fixtures and API contract, existing route guards, product form and collection isolation"
+  },
+  "not_executed": [
+    "Installed Magento DI compilation and generated factories/interceptors",
+    "Magento integration database and its 26 test assets",
+    "Live administrator session, browser rendering and real HTTP submissions",
+    "Native email template rendering, SMTP and recipient inbox delivery",
+    "Production server deployment",
+    "Execution under later PHP versions"
+  ],
+  "operational_limit": "Transport acceptance does not confirm inbox delivery. A transport or persistence fault may leave delivery uncertain; inspect delivery before retrying. No exactly-once email-delivery guarantee."
+}

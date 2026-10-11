@@ -20,18 +20,27 @@ class LegacySourceDetector
 
     public function hasSupportedSource(): bool
     {
+        return $this->getVerifiedSourceStatus() === true;
+    }
+
+    /** Null means absent; false means the fixed source exists but its schema is unverified. */
+    private function getVerifiedSourceStatus(): ?bool
+    {
         $connection = $this->resource->getConnection();
         $table = $this->resource->getTableName('darsh_callprice');
-        return $connection->isTableExists($table)
-            && array_diff(self::REQUIRED_COLUMNS, array_keys($connection->describeTable($table))) === [];
+        if (!$connection->isTableExists($table)) {
+            return null;
+        }
+        return array_diff(self::REQUIRED_COLUMNS, array_keys($connection->describeTable($table))) === [];
     }
 
     /** @return list<array{name:string,supported:bool}> */
     public function getSources(): array
     {
         $sources = [];
-        if ($this->hasSupportedSource() || $this->modules->getOne('Darsh_Callforprice') !== null) {
-            $sources[] = ['name' => 'Darsh_Callforprice', 'supported' => $this->hasSupportedSource()];
+        $supported = $this->getVerifiedSourceStatus();
+        if ($supported !== null) {
+            $sources[] = ['name' => 'Legacy quote request data', 'supported' => $supported];
         }
         foreach (['Sparsh_ProductInquiry', 'Sparsh_ProductInquiryPro'] as $name) {
             if ($this->modules->getOne($name) !== null) {
