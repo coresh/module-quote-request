@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-10T17:46:08.669902+00:00",
-  "scope": "Actual tagged FileClassScanner and PhpScanner execute against the classless installed-release CLI file without including it. PhpScanner constructor is bypassed by Reflection. No Magento bootstrap, DI generation or framework doubles. Full DI compilation NOT RUN.",
+  "generated_at_utc": "2026-10-11T04:05:27.354892+00:00",
+  "scope": "Actual tagged FileClassScanner and PhpScanner execute against classless CLI source without including it. PhpScanner constructor bypassed via Reflection. No Magento bootstrap, DI generation or framework doubles. Full DI compilation NOT RUN.",
   "tool": {
     "file": "tools/check_installed_release.php",
-    "sha256": "d320bbb12156bbbf678b96d2dd3ba05bfc165f3f6c725559297b273d00db9c5f"
+    "sha256": "fc9921d237095f053c4b09c13cb61657859ee52b44a610edae04f3c0cd03ac65"
   },
   "checks": [
     {

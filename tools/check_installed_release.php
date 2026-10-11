@@ -164,17 +164,26 @@ function coreshQuoteReleaseCheck(array $arguments): array
         $reference = coreshQuoteReleaseInventory($expectedRoot);
         $runtimeManifest = array_filter($manifest, 'coreshQuoteReleaseIsRuntime', ARRAY_FILTER_USE_KEY);
         $required = [
-            'Observer/BlockPurchasingRoutes.php', 'Controller/Request/Submit.php',
+            'Observer/EnforcePurchasingPolicy.php', 'Observer/BlockPurchasingRoutes.php', 'Controller/Request/Submit.php',
             'Model/Service/SubmitQuoteRequest.php', 'etc/events.xml', 'registration.php', 'composer.json',
+            'etc/frontend/events.xml',
         ];
         foreach ($required as $file) {
             if (!isset($runtimeManifest[$file])) {
                 $report['errors'][] = ['code' => 'reference_manifest_missing_required_file', 'file' => $file];
             }
         }
-        $observerHash = '4dfb319d9c1d1d9e61a8763972191537691b266250545c017d3c034dad766772';
-        if (($runtimeManifest['Observer/BlockPurchasingRoutes.php'] ?? null) !== $observerHash) {
-            $report['errors'][] = ['code' => 'reference_observer_not_verified_fix'];
+        // Pin the executable observer, its compatibility shim and the event wiring.
+        // A manifest rebuilt around an older release must not become a trusted fix.
+        $verifiedSource = [
+            'Observer/EnforcePurchasingPolicy.php' => ['5a0feacbc173df0c53dd9d0bcfd897e76167d8676c9f9f24c4a442c5ec3562b8', 'reference_observer_not_verified_fix'],
+            'Observer/BlockPurchasingRoutes.php' => ['abba995ebfda20466d790e0d97004d2222fb4af44a4fc6b173e248017096febb', 'reference_legacy_observer_not_verified_shim'],
+            'etc/frontend/events.xml' => ['37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00', 'reference_route_observer_registration_not_verified_fix'],
+        ];
+        foreach ($verifiedSource as $file => [$hash, $code]) {
+            if (($runtimeManifest[$file] ?? null) !== $hash) {
+                $report['errors'][] = ['code' => $code, 'file' => $file];
+            }
         }
         foreach ($reference['unsafe'] as $file) {
             $report['errors'][] = ['code' => 'reference_unsafe_file', 'file' => $file];
@@ -241,13 +250,13 @@ function coreshQuoteReleaseCheck(array $arguments): array
                 $registrar = new \Magento\Framework\Component\ComponentRegistrar();
                 $registered = $registrar->getPath(\Magento\Framework\Component\ComponentRegistrar::MODULE, 'Coresh_QuoteRequest');
                 $targetRoot = is_string($registered) ? realpath($registered) : false;
-                $observer = $loader->findFile('Coresh\\QuoteRequest\\Observer\\BlockPurchasingRoutes');
+                $observer = $loader->findFile('Coresh\\QuoteRequest\\Observer\\EnforcePurchasingPolicy');
                 $observerFile = is_string($observer) ? realpath($observer) : false;
                 $report['paths']['registered_module_root'] = $targetRoot === false ? null : $targetRoot;
                 $report['paths']['autoload_observer_file'] = $observerFile === false ? null : $observerFile;
                 if ($targetRoot === false || !is_dir($targetRoot)) {
                     $report['errors'][] = ['code' => 'registered_module_missing'];
-                } elseif ($observerFile === false || $observerFile !== realpath($targetRoot . '/Observer/BlockPurchasingRoutes.php')) {
+                } elseif ($observerFile === false || $observerFile !== realpath($targetRoot . '/Observer/EnforcePurchasingPolicy.php')) {
                     $report['errors'][] = ['code' => 'registered_and_autoload_paths_differ'];
                 } elseif ($copies !== [] && !in_array($targetRoot, $copies, true)) {
                     $report['errors'][] = ['code' => 'known_and_registered_module_paths_differ'];

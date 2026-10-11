@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.6 — 2026-10-11
+
+- Explicitly disable the legacy global purchasing observer; bind the corrected guard only to checkout, multishipping and PayPal predispatch events. Quote, Reports and customer section actions do not invoke it.
+- Rename the implementation to EnforcePurchasingPolicy and retain BlockPurchasingRoutes as a deprecated compatibility subclass with no own execution code.
+- Preserve existing purchasing restrictions, saved quote-store checks, safe denial outputs and all submission security/idempotency protections.
+- Pin the new observer, compatibility class and event configuration in installed-source verification; add registration and native event-dispatch regressions.
+- Document the fresh 03:59 server trace, verified uploaded/executed source mismatch and concrete installation/runtime acceptance steps. No database schema or production JavaScript changes.
+
 ## 1.1.5 — 2026-10-10
 
 - Retain the corrected 1.1.4 application source: the supplied new archive already contains it, while the attached 17:23 web errors execute incompatible older observer instructions.

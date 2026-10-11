@@ -1,41 +1,39 @@
 {
-  "generated_at_utc": "2026-10-10T17:36:45.793744+00:00",
-  "input_zip": {
-    "file": "Coresh_QuoteRequest-1.1.4(1).zip",
-    "sha256": "364c62eb650182f46f0a5ef44c800eec62cc751354113847a1e13ab3900dc547",
-    "module_files": 217,
-    "runtime_files_matching_previous_fixed_release": 113
+  "generated_at_utc": "2026-10-11T04:09:00.178568+00:00",
+  "release": "1.1.6",
+  "uploaded_archive": {
+    "name": "Coresh_QuoteRequest-1.1.5(1).zip",
+    "sha256": "aaddfc3881732d307dd895d002677d288df5c618597c71f87f70ffecf350d86f",
+    "matches_previously_delivered_1_1_5": true,
+    "file_entries": 237
   },
-  "input_log": {
-    "file": "Pasted text(20261010-172401).txt",
-    "sha256": "355f655a7c2f37a5e0720eb522532a7de8b337a1bed9409cd0250b37f3af3536",
-    "critical_submission_events": 1,
-    "critical_report_events": 1,
-    "report_view_getter_failure_present": true,
-    "note": "One complete timestamped Submit error, one complete timestamped Reports View error, and an initial incomplete Submit exception tail. The fixed uploaded observer has no controller getter and a blank line 34; this log is evidence of different executed instructions, not proof of OPcache as their cause."
+  "supplied_inline_trace": {
+    "timestamp": "2026-10-11T03:59:06.096864+00:00",
+    "error": "Call to undefined method Coresh\\QuoteRequest\\Controller\\Request\\Submit\\Interceptor::getRequest()",
+    "observer_file": "Observer/BlockPurchasingRoutes.php",
+    "line": 34,
+    "phase": "global controller_action_predispatch before Submit execution"
   },
-  "fixed_observer": {
-    "file": "Observer/BlockPurchasingRoutes.php",
-    "sha256": "4dfb319d9c1d1d9e61a8763972191537691b266250545c017d3c034dad766772",
-    "line_34": "",
-    "execute_starts_line": 35,
-    "event_request_read_line": 38,
-    "controller_getter_calls": 0
+  "source_comparison": {
+    "uploaded_observer_sha256": "4dfb319d9c1d1d9e61a8763972191537691b266250545c017d3c034dad766772",
+    "uploaded_line_34": "",
+    "uploaded_has_controller_getter_calls": false,
+    "observed_source_execution_mismatch": true,
+    "specific_current_deployment_or_OPcache_cause": "NOT ESTABLISHED"
   },
-  "historical_observer": {
-    "sha256": "c89c7429d868e49b10ddad9fac2d23b52f1bafcb36d4c0f2dd21418c1877d504",
-    "line_34": "        $request = $controller->getRequest();"
-  },
-  "conclusion": "The instructions executed in the supplied timestamped failures do not match the supplied fixed observer body. Installed on-disk source, Composer/registrar resolution, active web release/node and PHP-FPM opcode state need verification.",
-  "not_proved": [
-    "Which module files are currently installed on the server",
-    "When/where 1.1.4 was deployed relative to these errors",
-    "That stale OPcache is the specific cause",
-    "That the web worker uses the CLI-resolved release/node",
-    "Successful live POST/database acceptance or SMTP delivery"
+  "runtime_files": 114,
+  "runtime_changes": [
+    "Observer/BlockPurchasingRoutes.php",
+    "Observer/EnforcePurchasingPolicy.php",
+    "etc/frontend/events.xml"
   ],
-  "references": [
-    "https://www.php.net/manual/en/opcache.configuration.php",
-    "https://support.cloudways.com/en/articles/5120718-what-can-i-do-in-the-manage-services-section-on-cloudways"
-  ]
+  "new_runtime_sha256": {
+    "Observer/BlockPurchasingRoutes.php": "abba995ebfda20466d790e0d97004d2222fb4af44a4fc6b173e248017096febb",
+    "Observer/EnforcePurchasingPolicy.php": "5a0feacbc173df0c53dd9d0bcfd897e76167d8676c9f9f24c4a442c5ec3562b8",
+    "etc/frontend/events.xml": "37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00"
+  },
+  "security_review": "No further definite submission/security defect found in focused source/control-flow review; original protections retained. Not certification.",
+  "production_sensitive_curl_fields_in_package": false,
+  "web_server_accessed": false,
+  "live_HTTP_database_FPM_SMTP_DI": "NOT RUN"
 }

@@ -60,7 +60,7 @@ The new block fixture models the native parent's mutable protected `formKey` pro
 
 ## Configuration and button regressions — 1.1.3
 
-The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 701-test/5459-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
+The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 718-test/5534-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
 
 `button-events.test.cjs` adds 19 actual-AMD event/output cases. With the modal (17), inline (10) and grid (10) cases, there were 56 unique JavaScript scenarios before the additional 34 submission-boundary cases in 1.1.4 (90 current unique scenarios). To exercise the four inherited grid button-click cases, pass the actual installed or downloaded upstream Magento AMD parent:
 
@@ -87,7 +87,7 @@ phpunit -c phpunit.xml.dist --log-junit tests/reports/unit-junit.xml
 node tests/Frontend/submit-boundary.test.cjs
 ```
 
-The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the normal 57-test run contains 3373 assertions. The full current suite contains 701 tests/5459 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
+The response-generation run omits 12 fixture-equality assertions to avoid comparing against a stale file while writing it; the normal 57-test run contains 3373 assertions. The full current suite contains 718 tests/5534 assertions. Do not count response-generation or repeated target executions as additional distinct cases.
 
 The native predispatch report executes actual core FrontController, ActionFlag and payload methods from both tags with explicit infrastructure doubles. It records 34 fixed PASS and 34 expected baseline getter failures. The authoring probe and downloaded references are external to the package; shipped observer/pipeline tests provide reproducible isolated regressions. The full native deployment path is prepared in `FrontendSubmissionTest` (three additional methods, all NOT RUN): accepted popup, owned identical retry, changed-payload token rejection with external email disabled. See `docs/SUBMISSION_FIX.md` and `docs/TEST_REPORT.md` for exact evidence and limitations.
 
@@ -104,3 +104,11 @@ PYTHONDONTWRITEBYTECODE=1 PHP_BINARY=/absolute/path/to/php python3 -m unittest d
 ```
 
 The current tool suite contains 70 cases: 13 language-scanner, 15 native declaration/source-tool and 42 installed-source checks. All pass on PHP 8.3.6/Python 3.12.14. The application PHP/AMD suites remain 701 tests/5459 assertions and 90 unique JavaScript scenarios, respectively. Actual native FileClassScanner/PhpScanner execution for both tags finds no class or generated entity in the new CLI tool; this narrow file-scope check does not compile installed Magento.
+
+## Scoped event registration — 1.1.6
+
+Current full results: 718 PHP tests/5534 assertions, 90 unique AMD scenarios, 80 Python tests including 52 installed-source checks. BlockPurchasingRoutesTest now exercises EnforcePurchasingPolicy plus three compatibility-class cases. PurchasingRouteEventRegistrationTest adds 14 XML contracts: old global registration disabled, only three purchase route hooks, non-purchasing routes excluded, product/layout hooks retained.
+
+Native-event-registration.json separately records 62 checks (31 per tag), using actual core DOM merge/converter/manager/invoker/factory/FrontController with explicit infrastructure doubles. The disabled old entry is skipped before factory lookup and actual Submit executes. Its authoring probe and external reference cache are outside release runtime; ordinary package tests reproduce isolated observer/XML/submission contracts. Installed Magento integration remains NOT RUN.
+
+The checker now resolves the new class and pins its body, compatibility subclass and event XML. Ten additional Python cases cover legacy/mixed/missing files and new-class resolution without loading it. Earlier 1.1.5 counts describe that release; current results and boundaries are in docs/TEST_REPORT.md.

@@ -1,73 +1,80 @@
 {
-  "generated_at_utc": "2026-10-10T17:46:08.489503+00:00",
+  "generated_at_utc": "2026-10-11T04:05:27.616090+00:00",
   "checks": [
     {
-      "check": "Python syntax: tests/Tools/test_english_content.py",
+      "file": "tests/Tools/test_english_content.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tests/Tools/test_installed_release.py",
+      "file": "tests/Tools/test_installed_release.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tests/Tools/test_native_declaration_tools.py",
+      "file": "tests/Tools/test_native_declaration_tools.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tools/check_english_content.py",
+      "file": "tools/check_english_content.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tools/check_source_contracts.py",
+      "file": "tools/check_source_contracts.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tools/fetch_class_reference.py",
+      "file": "tools/fetch_class_reference.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tools/fetch_magento_reference.py",
+      "file": "tools/fetch_magento_reference.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Python syntax: tools/static_checks.py",
+      "file": "tools/static_checks.py",
       "status": "PASS",
-      "detail": "Compiled in memory; no bytecode written"
+      "check": "Python in-memory compile"
     },
     {
-      "check": "Bash syntax: tools/run-magento-checks.sh",
-      "status": "PASS"
+      "file": "tools/run-magento-checks.sh",
+      "status": "PASS",
+      "check": "bash -n"
     },
     {
-      "check": "CJS syntax: tests/Frontend/button-events.test.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/button-events.test.cjs",
+      "status": "PASS",
+      "check": "node --check"
     },
     {
-      "check": "CJS syntax: tests/Frontend/grid-export.test.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/grid-export.test.cjs",
+      "status": "PASS",
+      "check": "node --check"
     },
     {
-      "check": "CJS syntax: tests/Frontend/inline-form.test.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/inline-form.test.cjs",
+      "status": "PASS",
+      "check": "node --check"
     },
     {
-      "check": "CJS syntax: tests/Frontend/quote-request.test.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/quote-request.test.cjs",
+      "status": "PASS",
+      "check": "node --check"
     },
     {
-      "check": "CJS syntax: tests/Frontend/submit-boundary.test.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/submit-boundary.test.cjs",
+      "status": "PASS",
+      "check": "node --check"
     },
     {
-      "check": "CJS syntax: tests/Frontend/support/quote-harness.cjs",
-      "status": "PASS"
+      "file": "tests/Frontend/support/quote-harness.cjs",
+      "status": "PASS",
+      "check": "node --check"
     }
   ],
   "totals": {

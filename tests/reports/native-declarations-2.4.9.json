@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T17:36:46.947072+00:00",
+  "generated_at": "2026-10-11T04:03:26.406111+00:00",
   "tag": "2.4.9",
   "php_version": "8.3.6",
   "scope": "Native application class declarations against unmodified upstream parent/interface/trait sources only. Constructors, DI compilation, interceptors, database, framework bootstrap and runtime behavior NOT RUN.",
@@ -242,7 +242,7 @@
     }
   },
   "totals": {
-    "PASS": 74,
+    "PASS": 75,
     "FAIL": 0,
     "NOT RUN": 0
   },
@@ -1152,7 +1152,9 @@
     {
       "class": "Coresh\\QuoteRequest\\Observer\\BlockPurchasingRoutes",
       "status": "PASS",
-      "parents": [],
+      "parents": [
+        "Coresh\\QuoteRequest\\Observer\\EnforcePurchasingPolicy"
+      ],
       "interfaces": [
         "Magento\\Framework\\Event\\ObserverInterface"
       ],
@@ -1160,6 +1162,20 @@
         "Magento\\Framework\\Event\\ObserverInterface"
       ],
       "file": "Observer/BlockPurchasingRoutes.php",
+      "exit_code": 0,
+      "missing_classes": []
+    },
+    {
+      "class": "Coresh\\QuoteRequest\\Observer\\EnforcePurchasingPolicy",
+      "status": "PASS",
+      "parents": [],
+      "interfaces": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "loaded_sources": [
+        "Magento\\Framework\\Event\\ObserverInterface"
+      ],
+      "file": "Observer/EnforcePurchasingPolicy.php",
       "exit_code": 0,
       "missing_classes": []
     },

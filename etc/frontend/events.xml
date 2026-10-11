@@ -2,5 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="catalog_block_product_list_collection"><observer name="coresh_quote_request_product_flag" instance="Coresh\QuoteRequest\Observer\AddProductListAttribute"/></event>
     <event name="layout_generate_blocks_after"><observer name="coresh_quote_request_catalogue_layout" instance="Coresh\QuoteRequest\Observer\ApplyCatalogueLayout"/></event>
-    <event name="controller_action_predispatch"><observer name="coresh_quote_request_block_purchase_routes" instance="Coresh\QuoteRequest\Observer\BlockPurchasingRoutes"/></event>
+    <!-- Keep the old global observer disabled when event configuration is merged. -->
+    <event name="controller_action_predispatch"><observer name="coresh_quote_request_block_purchase_routes" disabled="true"/></event>
+    <event name="controller_action_predispatch_checkout"><observer name="coresh_quote_request_enforce_checkout_purchasing" instance="Coresh\QuoteRequest\Observer\EnforcePurchasingPolicy"/></event>
+    <event name="controller_action_predispatch_multishipping"><observer name="coresh_quote_request_enforce_multishipping_purchasing" instance="Coresh\QuoteRequest\Observer\EnforcePurchasingPolicy"/></event>
+    <event name="controller_action_predispatch_paypal"><observer name="coresh_quote_request_enforce_paypal_purchasing" instance="Coresh\QuoteRequest\Observer\EnforcePurchasingPolicy"/></event>
 </config>

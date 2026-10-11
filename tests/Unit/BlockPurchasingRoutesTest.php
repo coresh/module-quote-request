@@ -9,6 +9,7 @@ require_once dirname(__DIR__) . '/Fixtures/route_observer_framework.php';
 use Coresh\QuoteRequest\Model\Catalog\PurchasingPolicy;
 use Coresh\QuoteRequest\Model\Config;
 use Coresh\QuoteRequest\Observer\BlockPurchasingRoutes;
+use Coresh\QuoteRequest\Observer\EnforcePurchasingPolicy;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\ActionFlag;
@@ -249,7 +250,7 @@ class BlockPurchasingRoutesTest extends TestCase
         } else {
             $this->expectNoDenialSideEffects();
         }
-        (new BlockPurchasingRoutes($policy, $this->checkoutSession, $this->actionFlag,
+        (new EnforcePurchasingPolicy($policy, $this->checkoutSession, $this->actionFlag,
             $this->redirect, $this->url, $this->messageManager, $request, $this->response))->execute($this->event($request));
     }
 
@@ -263,6 +264,49 @@ class BlockPurchasingRoutesTest extends TestCase
             'both stores allowed' => [2, 3, [1], false],
             'allowed current store without quote' => [2, null, [1], false],
         ];
+    }
+
+    public function testLegacyObserverIsAnInheritedCompatibilityShim(): void
+    {
+        $legacy = new \ReflectionClass(BlockPurchasingRoutes::class);
+        self::assertSame(EnforcePurchasingPolicy::class, $legacy->getParentClass()->getName());
+        self::assertSame(EnforcePurchasingPolicy::class, $legacy->getMethod('execute')->getDeclaringClass()->getName());
+        self::assertSame(EnforcePurchasingPolicy::class, $legacy->getConstructor()->getDeclaringClass()->getName());
+        self::assertSame([], array_values(array_filter($legacy->getMethods(),
+            static fn (\ReflectionMethod $method): bool => $method->getDeclaringClass()->getName() === BlockPurchasingRoutes::class)));
+        self::assertSame([], array_values(array_filter($legacy->getProperties(),
+            static fn (\ReflectionProperty $property): bool => $property->getDeclaringClass()->getName() === BlockPurchasingRoutes::class)));
+    }
+
+    public function testLegacyShimIgnoresQuoteSubmissionWithoutControllerGetters(): void
+    {
+        $request = $this->request('quoterequest', 'quoterequest_request_submit');
+        $controller = new class implements HttpPostActionInterface {
+            public function execute() { throw new \LogicException('Observer must not execute a controller.'); }
+        };
+        self::assertFalse(method_exists($controller, 'getRequest'));
+        self::assertFalse(method_exists($controller, 'getResponse'));
+        $this->expectNoPurchasingSideEffects();
+        (new BlockPurchasingRoutes($this->policy, $this->checkoutSession, $this->actionFlag,
+            $this->redirect, $this->url, $this->messageManager, $request, $this->response))
+            ->execute($this->event($request, $controller));
+    }
+
+    public function testLegacyShimStillDeniesPurchasingOnTheSharedResponse(): void
+    {
+        $request = $this->request('checkout', 'checkout_cart_add', true);
+        $this->configureDenial(false);
+        $this->actionFlag->expects(self::once())->method('set')->with('', ActionInterface::FLAG_NO_DISPATCH, true);
+        $this->response->expects(self::once())->method('setNoCacheHeaders');
+        $this->response->expects(self::once())->method('setHttpResponseCode')->with(403);
+        $this->response->expects(self::once())->method('setHeader')->with('Content-Type', 'application/json', true);
+        $this->response->expects(self::once())->method('setBody')->with(
+            '{"success":false,"message":"Online purchasing is unavailable. Please request a quote."}');
+        $this->redirect->expects(self::never())->method('redirect');
+        $this->messageManager->expects(self::never())->method('addErrorMessage');
+        (new BlockPurchasingRoutes($this->policy, $this->checkoutSession, $this->actionFlag,
+            $this->redirect, $this->url, $this->messageManager, $request, $this->response))
+            ->execute($this->event($request));
     }
 
     private function configureDenial(bool $savedStoreBlocked, string $message = 'private-policy-detail'): void
@@ -301,9 +345,9 @@ class BlockPurchasingRoutesTest extends TestCase
         $this->messageManager->expects(self::never())->method('addErrorMessage');
     }
 
-    private function observer(Http $request): BlockPurchasingRoutes
+    private function observer(Http $request): EnforcePurchasingPolicy
     {
-        return new BlockPurchasingRoutes($this->policy, $this->checkoutSession, $this->actionFlag,
+        return new EnforcePurchasingPolicy($this->policy, $this->checkoutSession, $this->actionFlag,
             $this->redirect, $this->url, $this->messageManager, $request, $this->response);
     }
 
