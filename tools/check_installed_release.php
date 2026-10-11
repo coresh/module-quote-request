@@ -166,19 +166,21 @@ function coreshQuoteReleaseCheck(array $arguments): array
         $required = [
             'Observer/EnforcePurchasingPolicy.php', 'Observer/BlockPurchasingRoutes.php', 'Controller/Request/Submit.php',
             'Model/Service/SubmitQuoteRequest.php', 'etc/events.xml', 'registration.php', 'composer.json',
-            'etc/frontend/events.xml',
+            'etc/frontend/events.xml', 'view/adminhtml/ui_component/product_form.xml', 'etc/adminhtml/di.xml',
         ];
         foreach ($required as $file) {
             if (!isset($runtimeManifest[$file])) {
                 $report['errors'][] = ['code' => 'reference_manifest_missing_required_file', 'file' => $file];
             }
         }
-        // Pin the executable observer, its compatibility shim and the event wiring.
+        // Pin the observer fix, its wiring and the corrected admin UI configuration.
         // A manifest rebuilt around an older release must not become a trusted fix.
         $verifiedSource = [
             'Observer/EnforcePurchasingPolicy.php' => ['5a0feacbc173df0c53dd9d0bcfd897e76167d8676c9f9f24c4a442c5ec3562b8', 'reference_observer_not_verified_fix'],
             'Observer/BlockPurchasingRoutes.php' => ['abba995ebfda20466d790e0d97004d2222fb4af44a4fc6b173e248017096febb', 'reference_legacy_observer_not_verified_shim'],
             'etc/frontend/events.xml' => ['37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00', 'reference_route_observer_registration_not_verified_fix'],
+            'view/adminhtml/ui_component/product_form.xml' => ['b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775', 'reference_product_form_configuration_not_verified_fix'],
+            'etc/adminhtml/di.xml' => ['b96cef7defdd6abf4d3e88a0907dcfbeb0291590935d1f42af977786ab3df286', 'reference_admin_collection_factory_not_verified_fix'],
         ];
         foreach ($verifiedSource as $file => [$hash, $code]) {
             if (($runtimeManifest[$file] ?? null) !== $hash) {

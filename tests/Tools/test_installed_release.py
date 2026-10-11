@@ -21,11 +21,22 @@ VERIFIED_SOURCE_SHA256 = {
     "Observer/EnforcePurchasingPolicy.php": "5a0feacbc173df0c53dd9d0bcfd897e76167d8676c9f9f24c4a442c5ec3562b8",
     "Observer/BlockPurchasingRoutes.php": "abba995ebfda20466d790e0d97004d2222fb4af44a4fc6b173e248017096febb",
     "etc/frontend/events.xml": "37a79a4359b37cb45eee828f8f2ee8be268af39974000e9c0cba0e1127bf1d00",
+    "view/adminhtml/ui_component/product_form.xml": "b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775",
+    "etc/adminhtml/di.xml": "b96cef7defdd6abf4d3e88a0907dcfbeb0291590935d1f42af977786ab3df286",
 }
 REQUIRED = (
     "Observer/EnforcePurchasingPolicy.php", "Controller/Request/Submit.php",
     "Model/Service/SubmitQuoteRequest.php", "etc/events.xml", "registration.php", "composer.json",
     "Observer/BlockPurchasingRoutes.php", "etc/frontend/events.xml",
+    "view/adminhtml/ui_component/product_form.xml", "etc/adminhtml/di.xml",
+)
+LEGACY_ADMIN_SOURCE = (
+    ("view/adminhtml/ui_component/product_form.xml", "product_form.xml",
+     "bc0b63ff912c14e2ca90681eefd16bbeeeb5c960ff93c38ed97655b3cbb566f6",
+     "reference_product_form_configuration_not_verified_fix"),
+    ("etc/adminhtml/di.xml", "adminhtml_di.xml",
+     "d7b324a6dee35dae59777dcf675466001c1ca1969708855522253cfb1106db49",
+     "reference_admin_collection_factory_not_verified_fix"),
 )
 
 
@@ -117,7 +128,7 @@ namespace {{
         self.write(magento, "vendor/autoload.php", source)
         return magento
 
-    def test_fixture_uses_the_verified_production_observer(self):
+    def test_fixture_uses_the_verified_production_fixes(self):
         for relative, expected_hash in VERIFIED_SOURCE_SHA256.items():
             with self.subTest(file=relative):
                 self.assertEqual(expected_hash, hashlib.sha256((self.reference / relative).read_bytes()).hexdigest())
@@ -125,7 +136,7 @@ namespace {{
     def test_matching_source_files_return_files_match_with_limits(self):
         report = self.run_checker()
         self.assertEqual("FILES_MATCH", report["status"])
-        self.assertEqual(10, report["checked_runtime_files"])
+        self.assertEqual(12, report["checked_runtime_files"])
         self.assertEqual(str(self.installed), report["paths"]["module_root"])
         self.assertFalse(report["composer_registration_files_executed"])
         self.assertIn("installed_Composer_and_ComponentRegistrar_resolution", report["not_verified"])
@@ -244,6 +255,49 @@ namespace {{
         path.write_text(path.read_text().replace('disabled="true"', 'disabled="false"'))
         self.manifest()
         self.assertIn("reference_route_observer_registration_not_verified_fix", self.codes(self.run_checker(expected_exit=2)))
+
+    def test_legacy_admin_snapshots_match_the_exact_116_release_sources(self):
+        # These are unchanged snapshots from the delivered 1.1.6 archive,
+        # rather than invented substitutes for the two reported admin failures.
+        for relative, fixture, expected_hash, _ in LEGACY_ADMIN_SOURCE:
+            with self.subTest(file=relative):
+                source = MODULE / "tests/Tools/fixtures/1.1.6" / fixture
+                self.assertEqual(expected_hash, hashlib.sha256(source.read_bytes()).hexdigest())
+
+    def test_installed_legacy_product_form_is_rejected(self):
+        relative, fixture, _, _ = LEGACY_ADMIN_SOURCE[0]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.6" / fixture, self.installed / relative)
+        report = self.run_checker(expected_exit=1)
+        self.assertIn({"code": "installed_runtime_file_changed", "file": relative}, report["errors"])
+
+    def test_installed_legacy_shared_collection_factory_override_is_rejected(self):
+        relative, fixture, _, _ = LEGACY_ADMIN_SOURCE[1]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.6" / fixture, self.installed / relative)
+        report = self.run_checker(expected_exit=1)
+        self.assertIn({"code": "installed_runtime_file_changed", "file": relative}, report["errors"])
+
+    def test_rebuilt_reference_manifest_cannot_trust_legacy_product_form(self):
+        relative, fixture, _, code = LEGACY_ADMIN_SOURCE[0]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.6" / fixture, self.reference / relative)
+        self.manifest()
+        report = self.run_checker(expected_exit=2)
+        self.assertIn({"code": code, "file": relative}, report["errors"])
+
+    def test_rebuilt_reference_manifest_cannot_trust_legacy_shared_collection_factory_override(self):
+        relative, fixture, _, code = LEGACY_ADMIN_SOURCE[1]
+        shutil.copyfile(MODULE / "tests/Tools/fixtures/1.1.6" / fixture, self.reference / relative)
+        self.manifest()
+        report = self.run_checker(expected_exit=2)
+        self.assertIn({"code": code, "file": relative}, report["errors"])
+
+    def test_missing_installed_admin_fix_files_are_rejected(self):
+        for relative, _, _, _ in LEGACY_ADMIN_SOURCE:
+            with self.subTest(file=relative):
+                original = (self.installed / relative).read_bytes()
+                (self.installed / relative).unlink()
+                report = self.run_checker(expected_exit=1)
+                self.assertIn({"code": "installed_runtime_file_missing", "file": relative}, report["errors"])
+                (self.installed / relative).write_bytes(original)
 
     def test_reference_with_only_legacy_observer_and_global_wiring_is_rejected(self):
         (self.reference / REQUIRED[0]).unlink()

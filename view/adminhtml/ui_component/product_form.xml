@@ -1,25 +1,35 @@
 <?xml version="1.0"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <fieldset name="quote-request">
-        <field name="coresh_quote_request_label_mode">
-            <settings>
-                <notice translate="true">Inherit uses the store button label. Custom uses this product’s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request.</notice>
-            </settings>
-        </field>
-        <field name="coresh_quote_request_button_label">
-            <settings>
-                <notice translate="true">Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control.</notice>
-            </settings>
-        </field>
-        <field name="coresh_quote_request_allow_cart">
-            <settings>
-                <notice translate="true">Inherit uses the store setting. No hides this product’s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server.</notice>
-            </settings>
-        </field>
-        <field name="coresh_quote_request_show_price">
-            <settings>
-                <notice translate="true">Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs.</notice>
-            </settings>
-        </field>
+        <!-- Native product EAV fields live inside container_<attribute code>. Keep that path
+             so notices merge with the existing field, options and store inheritance. -->
+        <container name="container_coresh_quote_request_label_mode">
+            <field name="coresh_quote_request_label_mode" formElement="select">
+                <settings>
+                    <notice translate="true">Inherit uses the store button label. Custom uses this product’s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request.</notice>
+                </settings>
+            </field>
+        </container>
+        <container name="container_coresh_quote_request_button_label">
+            <field name="coresh_quote_request_button_label" formElement="input">
+                <settings>
+                    <notice translate="true">Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control.</notice>
+                </settings>
+            </field>
+        </container>
+        <container name="container_coresh_quote_request_allow_cart">
+            <field name="coresh_quote_request_allow_cart" formElement="select">
+                <settings>
+                    <notice translate="true">Inherit uses the store setting. No hides this product’s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server.</notice>
+                </settings>
+            </field>
+        </container>
+        <container name="container_coresh_quote_request_show_price">
+            <field name="coresh_quote_request_show_price" formElement="select">
+                <settings>
+                    <notice translate="true">Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs.</notice>
+                </settings>
+            </field>
+        </container>
     </fieldset>
 </form>

@@ -1,0 +1,11 @@
+{
+  "baseline": "1.1.6",
+  "release": "1.1.7",
+  "changed_runtime_files": [
+    "etc/adminhtml/di.xml",
+    "tools/check_installed_release.php",
+    "view/adminhtml/ui_component/product_form.xml"
+  ],
+  "status": "PASS",
+  "scope": "Two application XML files and the classless read-only checker; no live deployment."
+}

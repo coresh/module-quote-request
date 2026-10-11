@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="CoreshQuoteRequestGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">coresh_quote_request</argument>
+            <argument name="resourceModel" xsi:type="string">Coresh\QuoteRequest\Model\ResourceModel\QuoteRequest</argument>
+            <argument name="identifierName" xsi:type="string">request_id</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments><argument name="collections" xsi:type="array"><item name="coresh_quote_request_listing_data_source" xsi:type="string">CoreshQuoteRequestGridCollection</item></argument></arguments>
+    </type>
+    <virtualType name="CoreshQuoteRequestGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments><argument name="appliers" xsi:type="array">
+            <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+            <item name="fulltext" xsi:type="object">Coresh\QuoteRequest\Ui\DataProvider\FulltextFilter</item>
+        </argument></arguments>
+    </virtualType>
+    <virtualType name="CoreshQuoteRequestGridReporting" type="Magento\Framework\View\Element\UiComponent\DataProvider\Reporting">
+        <arguments><argument name="filterPool" xsi:type="object">CoreshQuoteRequestGridFilterPool</argument></arguments>
+    </virtualType>
+    <virtualType name="CoreshQuoteRequestGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments><argument name="reporting" xsi:type="object">CoreshQuoteRequestGridReporting</argument></arguments>
+    </virtualType>
+    <type name="Magento\Ui\Model\Export\ConvertToCsv"><plugin name="coresh_quote_request_safe_export_csv" type="Coresh\QuoteRequest\Plugin\Adminhtml\PreventUnsafeCoreExport" sortOrder="10"/></type>
+    <type name="Magento\Ui\Model\Export\ConvertToXml"><plugin name="coresh_quote_request_safe_export_xml" type="Coresh\QuoteRequest\Plugin\Adminhtml\PreventUnsafeCoreExport" sortOrder="10"/></type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"><plugin name="coresh_quote_request_private_grid_fields" type="Coresh\QuoteRequest\Plugin\Adminhtml\ProtectPrivateGridFields" sortOrder="10"/></type>
+</config>

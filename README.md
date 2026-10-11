@@ -1,4 +1,4 @@
-# Coresh Quote Request 1.1.6
+# Coresh Quote Request 1.1.7
 
 A Magento Open Source extension for product enquiries: **Contact Us for a Quote** → form → saved request → notification email to the store. It provides store-view configuration, an admin grid, request details and email resend, quantity and product ID fields, Cart Hidden, and a separate server-side purchasing restriction.
 
@@ -17,6 +17,8 @@ Version 1.1.4 fixes the predispatch observer that caused HTTP 500 before modern 
 Version 1.1.5 adds read-only installed-source verification and an explicit deployment recovery procedure. The supplied 1.1.4 archive already contains the corrected observer; the new server trace executes incompatible older instructions at line 34. Application code remains identical to that supplied fixed source. Use `tools/check_installed_release.php` from a separately extracted trusted package to compare runtime hashes and the actual Composer/registered module paths. A file match does not verify PHP-FPM bytecode or a successful live request. See `docs/DEPLOYMENT_VERIFICATION.md` before another deployment.
 
 Version 1.1.6 explicitly disables the old global purchase observer and registers `EnforcePurchasingPolicy` only on checkout, multishipping and PayPal route predispatch events. Quote submission, Reports and customer section actions therefore do not invoke the purchase guard. The old observer class remains a compatibility subclass. Install the actual package files, rebuild Composer autoload/DI and refresh configuration/web PHP before live acceptance. See `docs/SUBMISSION_FIX_1.1.6.md` and `docs/DEPLOYMENT_VERIFICATION.md`.
+
+Version 1.1.7 fixes product-edit fields missing `formElement` by merging their notices into the native EAV containers with explicit input types. It also isolates the Coresh grid collection factory so its admin DI configuration cannot replace the shared collection registrations used by Mageplaza and other extensions. The 1.1.6 submission correction is included. See `docs/ADMIN_UI_FIX_1.1.7.md` for root causes, verification boundaries and installation steps.
 
 ## Installation
 
@@ -45,8 +47,8 @@ Skip the first command if the previous module is not installed. The examples dep
 `composer.json` is located at the extension root. For a local installation, use a Composer path repository pointing to the extracted package root outside `app/code`, or your own Composer/artifact repository. Example for an existing directory at `packages/coresh/module-quote-request`:
 
 ```bash
-composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.6"}}}'
-composer require coresh/module-quote-request:1.1.6
+composer config repositories.coresh-quote-request '{"type":"path","url":"packages/coresh/module-quote-request","options":{"versions":{"coresh/module-quote-request":"1.1.7"}}}'
+composer require coresh/module-quote-request:1.1.7
 php bin/magento module:enable Coresh_QuoteRequest
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile

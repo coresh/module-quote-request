@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.7 — 2026-10-11
+
+- Correct product form overrides to use native EAV `container_<attribute_code>` paths and explicit select/input `formElement` values; retain dynamic options, scope and defaults without duplicate controls.
+- Give the Coresh admin grid a dedicated collection factory and inject it into its reporting virtual type; stop replacing the shared admin `CollectionFactory.collections` map used by other extensions.
+- Add product form and DI isolation regressions, native target-source reproductions, and updated installed-source verification.
+- Include the previous quote-submission and purchasing-policy corrections; no database schema, public submission protocol or email template changes.
+
 ## 1.1.6 — 2026-10-11
 
 - Explicitly disable the legacy global purchasing observer; bind the corrected guard only to checkout, multishipping and PayPal predispatch events. Quote, Reports and customer section actions do not invoke it.

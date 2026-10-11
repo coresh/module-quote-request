@@ -1,0 +1,2088 @@
+{
+  "release": "1.1.7",
+  "generated_at_utc": "2026-10-11T06:47:15.131370+00:00",
+  "status": "PASS",
+  "executed_field_cases": 48,
+  "expected_baseline_missing_formElement_exceptions": 8,
+  "baseline_archive_sha256": "bf85d13b8f24c72c3658c3a2a9a3b06cbec7dde4faf347c27c116739e0f4f235",
+  "baseline_product_form_xml_sha256": "bc0b63ff912c14e2ca90681eefd16bbeeeb5c960ff93c38ed97655b3cbb566f6",
+  "commands": [
+    "test-bin/php admin-fix-117/native_product_form_probe.php 2.4.8-p5 admin-fix-117/Coresh_QuoteRequest admin-fix-117/native-ui admin-fix-117/baseline-product-form-1.1.6.xml",
+    "test-bin/php admin-fix-117/native_product_form_probe.php 2.4.9 admin-fix-117/Coresh_QuoteRequest admin-fix-117/native-ui admin-fix-117/baseline-product-form-1.1.6.xml"
+  ],
+  "probe_sha256": "86e49903f8d51f26a024f6fbcfb2c464fc06db7f4a135f2f9fc0e84506bd9909",
+  "summary": "The actual upstream Field::prepare raises the reported exception for all four old direct fields. Fixed nested container fields prepare as native select/input components. Native factory metadata merging gives eight fields for the baseline and exactly four for the fixed XML in both merge directions. Controlled EAV metadata options, labels, scopes, use-default helpers, disabled state and validation remain intact. In default merge order EAV notices win; reverseMetadataMerge preserves XML notices. Both orders tested.",
+  "limitations": "No installed Magento application, database, EAV setupAttributeMeta execution, ObjectManager, DI compile, full product edit page render, product save, frontend HTTP, browser, FPM or SMTP. Native sources are unmodified tagged upstream files; explicit adapters, doubles and constructor bypasses are listed for each result.",
+  "results": [
+    {
+      "tag": "2.4.8-p5",
+      "php": "8.3.6",
+      "status": "PASS",
+      "scope": "Unmodified native definition.map XML converter, layout argument Parser/Flat converter, Ui Config Converter/Composite/ArrayType/XpathType/ConverterUtils, UiComponentFactory mergeMetadataItem/mergeMetadataElement/argumentsResolver and Ui Form Field/Select/Input/AbstractComponent/Processor prepare methods execute. Config storage, definitions, element factory and UI context are adapters/doubles. Scalar/array argument evaluation is an explicit double. Select and UiComponentFactory constructors are bypassed by reflection. EAV metadata is a controlled fixture following the native Eav container naming; Eav::setupAttributeMeta, EAV database, ObjectManager, full HTML render, HTTP, browser, product save and server/FPM are NOT RUN.",
+      "results": [
+        {
+          "input": "baseline_1_1_6",
+          "xml_sha256": "bc0b63ff912c14e2ca90681eefd16bbeeeb5c960ff93c38ed97655b3cbb566f6",
+          "explicit_fields": [
+            {
+              "path": "/quote-request/coresh_quote_request_label_mode",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_label_mode\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_button_label",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_button_label\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_allow_cart",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_allow_cart\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_show_price",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_show_price\" field.",
+                "factory_calls": []
+              }
+            }
+          ],
+          "merge_orders": [
+            {
+              "reverseMetadataMerge": false,
+              "merged_field_count": 8,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice"
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            },
+            {
+              "reverseMetadataMerge": true,
+              "merged_field_count": 8,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice"
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "input": "fixed",
+          "xml_sha256": "b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775",
+          "explicit_fields": [
+            {
+              "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_label_mode",
+                  "formElement": "select",
+                  "notice": "Inherit uses the store button label. Custom uses this product\u2019s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_label_mode",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_button_label",
+                  "formElement": "input",
+                  "notice": "Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control."
+                },
+                "component": "form.input",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_button_label",
+                    "formElement": "input"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_allow_cart",
+                  "formElement": "select",
+                  "notice": "Inherit uses the store setting. No hides this product\u2019s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_allow_cart",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_show_price",
+                  "formElement": "select",
+                  "notice": "Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_show_price",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            }
+          ],
+          "merge_orders": [
+            {
+              "reverseMetadataMerge": false,
+              "merged_field_count": 4,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      }
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            },
+            {
+              "reverseMetadataMerge": true,
+              "merged_field_count": 4,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Inherit uses the store button label. Custom uses this product\u2019s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control."
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Inherit uses the store setting. No hides this product\u2019s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            }
+          ],
+          "status": "PASS"
+        }
+      ],
+      "native_sources": {
+        "app/code/Magento/Ui/Component/AbstractComponent.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/AbstractComponent.php",
+          "sha256": "ef3acbc3216b2d6fba27e31394eb8f83198bd77688e0e1e456c6d3628e848498"
+        },
+        "app/code/Magento/Ui/Component/Container.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Container.php",
+          "sha256": "c028e266e85f75787c43038c861d94fd6dbda4ed69aff8d89c6e62dbc037417a"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/AbstractElement.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Element/AbstractElement.php",
+          "sha256": "a90ceb5b80aa234aa1ffc34e6f192d04965e65f23354d098f1c8568fb5da9d02"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/AbstractOptionsField.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Element/AbstractOptionsField.php",
+          "sha256": "9927fe2ba1deb7bcc70707480819ab9ab196d64a41cbeb5f867f6212a6b24120"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/ElementInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Element/ElementInterface.php",
+          "sha256": "dbdcd50d1b7119e90cd546a08f1a7470afa193118bf6e418d57ead574421a93c"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/Input.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Element/Input.php",
+          "sha256": "e6a03919b68ab7b77851f2fa812c58451b62b72c05c4724ac889d73cac73b6d5"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/Select.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Element/Select.php",
+          "sha256": "a5900eab0ef7b262cdce13958c04d50f7ef2c91174f6fe8a6dcba0769d8b6492"
+        },
+        "app/code/Magento/Ui/Component/Form/Field.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Component/Form/Field.php",
+          "sha256": "a961d53fa193bfb11f4ebd8db052cf1fe2f76fc0614e015f61684cde9c820757"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/ArrayType.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Argument/Parser/ArrayType.php",
+          "sha256": "096ce1901d6cc53d667f441ec54f8f2ca59dab9d575919da51967ea2f47e8b50"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/Composite.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Argument/Parser/Composite.php",
+          "sha256": "748da63d371fc589da1c5e801c5617fe95d1e09db4d85436e6797dbc47637e5c"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/XpathType.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Argument/Parser/XpathType.php",
+          "sha256": "71f16da1d95126644442dc5f789b46376461b1673a0e6445691a5c84eca05701"
+        },
+        "app/code/Magento/Ui/Config/Argument/ParserInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Argument/ParserInterface.php",
+          "sha256": "d89ee14575b799b598629eec10bf4a6396452c685023d22c65e07860f17c687e"
+        },
+        "app/code/Magento/Ui/Config/Converter.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Converter.php",
+          "sha256": "184c51465fd564e3ad18512c88e7b217d1bb2708d13b852cdadaacda6a3e619e"
+        },
+        "app/code/Magento/Ui/Config/ConverterUtils.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/ConverterUtils.php",
+          "sha256": "c66fea3c1830e0f35f1263192b8ae85e3d0885308424c2832deaf63172ec2c9d"
+        },
+        "app/code/Magento/Ui/Config/Reader/DefinitionMap/Converter.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/Config/Reader/DefinitionMap/Converter.php",
+          "sha256": "1fefccdf97288297292313362ab832abce268075132029d53192b7133b5c1e01"
+        },
+        "lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php",
+          "sha256": "c42877e5be0435ea8c9709a045e506164e86515b1713b36d9cdda3f3520ffde8"
+        },
+        "lib/internal/Magento/Framework/Config/ConverterInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/ConverterInterface.php",
+          "sha256": "3b1acfd7cb4a8f328dc6a234a9059ea8294509b1b586a9352dbb29f76e02de98"
+        },
+        "lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php",
+          "sha256": "f46525208d3f8bac39864dc745909a8706157d7f8d066f54e3664a9a79d4165c"
+        },
+        "lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php",
+          "sha256": "cea78cb684152ea270518d53de707242b1538798c749370c8b1c34adbb554999"
+        },
+        "lib/internal/Magento/Framework/Config/ReaderInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/ReaderInterface.php",
+          "sha256": "159594a3bd2a95927e8dae9aee6d65513cd6951bfea0eca83c1406c66e9777ea"
+        },
+        "lib/internal/Magento/Framework/DataObject.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/DataObject.php",
+          "sha256": "f3cb59774fb9a0c9902e41a26c1e51786194b597f4f525240cffc947acb6e0f8"
+        },
+        "lib/internal/Magento/Framework/Exception/LocalizedException.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Exception/LocalizedException.php",
+          "sha256": "aa1814cecfe053d737a0d54a65b2c012f6e8fae6cce8e347a9f2dc2cbf902f15"
+        },
+        "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+          "sha256": "c15b341937333fc8ceb678c01f5c738d06d506422e52bd243020257e43696aa8"
+        },
+        "lib/internal/Magento/Framework/Phrase.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Phrase.php",
+          "sha256": "5560cb8184105c9cbbafb9b4814b2e669c063a200b9ee93027948662afe35f08"
+        },
+        "lib/internal/Magento/Framework/Phrase/Renderer/Placeholder.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Phrase/Renderer/Placeholder.php",
+          "sha256": "7079743f38832ff80c78176e26af5d99034ee4d904baeabac0693ddad592f84c"
+        },
+        "lib/internal/Magento/Framework/Phrase/RendererInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Phrase/RendererInterface.php",
+          "sha256": "06f443b592b98ddb2ae09aea04b49c65410370ad95492ad988a1787939d63103"
+        },
+        "lib/internal/Magento/Framework/View/Element/BlockInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/BlockInterface.php",
+          "sha256": "8b8e1359dbe79de96184443ee839e9632522086b68e2c41969ba734f36318840"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/Config/ManagerInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/Config/ManagerInterface.php",
+          "sha256": "5d6032f1c0105fe0b6f5b4cf24ea15a7bd636f68257787fe543402a223615fd0"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/ContextInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/ContextInterface.php",
+          "sha256": "3df64488b8a7e6300de77c889d1c94e6b691443bc084a8286a45ba4d1156a6a8"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/PoolInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/PoolInterface.php",
+          "sha256": "bf56b0b6d523d4a5c8864baaf3019e0bfa1cd539c5980327418363483dcddfc9"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/Processor.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/Processor.php",
+          "sha256": "6f9fb14c6c2ddb972892953029a11ccfffe07d48a2f23ac7491ec727cd7b58e2"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/SubjectInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/SubjectInterface.php",
+          "sha256": "208c2110f894d218e826d561df0b8666aa721607790d9b237bda2716ef7f0a46"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponentFactory.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponentFactory.php",
+          "sha256": "d528855ef04fa10669c0134b97a4cfcfefe546df21fa4f926aa8209858b2f664"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponentInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponentInterface.php",
+          "sha256": "9a5b7a96ceabe4565d25c51ddb4daab2ef16e596cfd5503e9a0c8fa863476725"
+        },
+        "lib/internal/Magento/Framework/View/Layout/Argument/Parser.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Layout/Argument/Parser.php",
+          "sha256": "44c89753c99dd1ad0f686832623b5ad31b1f2b2aa12a8ae15c9b45dbbdff1c14"
+        },
+        "app/code/Magento/Ui/view/base/ui_component/etc/definition.map.xml": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Ui/view/base/ui_component/etc/definition.map.xml",
+          "sha256": "e2db8ad74451685b638476a188d23f1cd50ceebd2393026a70df52b55bc07650"
+        }
+      },
+      "inspected_native_Eav_contract": {
+        "execution": "Source inspected only; EAV modifier methods and EAV storage NOT RUN",
+        "checks": {
+          "container_prefix_from_native_getAttributesMeta": true,
+          "native_getContainerChildren_uses_attribute_code": true,
+          "native_setupAttributeMeta_provides_form_element": true,
+          "native_modifyMeta_adds_metadata_to_group_children": true,
+          "native_container_prefix_is_container_": true
+        },
+        "source": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav.php",
+          "sha256": "cb73a47bfca5ab4080e0d0b9a1d661f0a76b5bcdbcfe422601b31fb36448cdc5"
+        },
+        "AbstractModifier_source": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AbstractModifier.php",
+          "sha256": "1939a248547b866e1b2033248135ff95bcd2dd23e123d5c7109d77e3581c2a88"
+        }
+      },
+      "executed_field_cases": 24
+    },
+    {
+      "tag": "2.4.9",
+      "php": "8.3.6",
+      "status": "PASS",
+      "scope": "Unmodified native definition.map XML converter, layout argument Parser/Flat converter, Ui Config Converter/Composite/ArrayType/XpathType/ConverterUtils, UiComponentFactory mergeMetadataItem/mergeMetadataElement/argumentsResolver and Ui Form Field/Select/Input/AbstractComponent/Processor prepare methods execute. Config storage, definitions, element factory and UI context are adapters/doubles. Scalar/array argument evaluation is an explicit double. Select and UiComponentFactory constructors are bypassed by reflection. EAV metadata is a controlled fixture following the native Eav container naming; Eav::setupAttributeMeta, EAV database, ObjectManager, full HTML render, HTTP, browser, product save and server/FPM are NOT RUN.",
+      "results": [
+        {
+          "input": "baseline_1_1_6",
+          "xml_sha256": "bc0b63ff912c14e2ca90681eefd16bbeeeb5c960ff93c38ed97655b3cbb566f6",
+          "explicit_fields": [
+            {
+              "path": "/quote-request/coresh_quote_request_label_mode",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_label_mode\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_button_label",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_button_label\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_allow_cart",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_allow_cart\" field.",
+                "factory_calls": []
+              }
+            },
+            {
+              "path": "/quote-request/coresh_quote_request_show_price",
+              "status": "PASS",
+              "result": {
+                "prepared": false,
+                "exception": "Magento\\Framework\\Exception\\LocalizedException",
+                "message": "The \"formElement\" configuration parameter is required for the \"coresh_quote_request_show_price\" field.",
+                "factory_calls": []
+              }
+            }
+          ],
+          "merge_orders": [
+            {
+              "reverseMetadataMerge": false,
+              "merged_field_count": 8,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice"
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            },
+            {
+              "reverseMetadataMerge": true,
+              "merged_field_count": 8,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice"
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "EAV attribute notice",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "input": "fixed",
+          "xml_sha256": "b8b1def1dacc26491a1c3ae2ead042f66592ad213c60f02372499876530a1775",
+          "explicit_fields": [
+            {
+              "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_label_mode",
+                  "formElement": "select",
+                  "notice": "Inherit uses the store button label. Custom uses this product\u2019s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_label_mode",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_button_label",
+                  "formElement": "input",
+                  "notice": "Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control."
+                },
+                "component": "form.input",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_button_label",
+                    "formElement": "input"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_allow_cart",
+                  "formElement": "select",
+                  "notice": "Inherit uses the store setting. No hides this product\u2019s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_allow_cart",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+              "status": "PASS",
+              "result": {
+                "prepared": true,
+                "config": {
+                  "dataScope": "coresh_quote_request_show_price",
+                  "formElement": "select",
+                  "notice": "Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs."
+                },
+                "component": "form.select",
+                "factory_calls": [
+                  {
+                    "name": "coresh_quote_request_show_price",
+                    "formElement": "select"
+                  }
+                ]
+              }
+            }
+          ],
+          "merge_orders": [
+            {
+              "reverseMetadataMerge": false,
+              "merged_field_count": 4,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      }
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": false,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "notice": "EAV attribute notice",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            },
+            {
+              "reverseMetadataMerge": true,
+              "merged_field_count": 4,
+              "merged_fields": [
+                {
+                  "path": "/quote-request/container_coresh_quote_request_label_mode/coresh_quote_request_label_mode",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_label_mode",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_label_mode",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Inherit uses the store button label. Custom uses this product\u2019s Label; an empty Custom label hides its inquiry control and prevents new public requests. Product overrides require Enable Quote Request.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_label_mode",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_button_label/coresh_quote_request_button_label",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_button_label",
+                      "formElement": "input",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_button_label",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Use Store View inheritance for translated labels. In Custom mode, clearing this label intentionally hides the inquiry control."
+                    },
+                    "component": "form.input",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_button_label",
+                        "formElement": "input"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_allow_cart/coresh_quote_request_allow_cart",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_allow_cart",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_allow_cart",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Inherit uses the store setting. No hides this product\u2019s purchase control. Yes cannot bypass global Disable Purchasing, which is enforced on the server.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_allow_cart",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "path": "/quote-request/container_coresh_quote_request_show_price/coresh_quote_request_show_price",
+                  "status": "PASS",
+                  "metadata_retained": true,
+                  "xml_notice_applied": true,
+                  "result": {
+                    "prepared": true,
+                    "config": {
+                      "dataScope": "coresh_quote_request_show_price",
+                      "formElement": "select",
+                      "componentType": "field",
+                      "source": "quote-request",
+                      "label": "Attribute coresh_quote_request_show_price",
+                      "scopeLabel": "[STORE VIEW]",
+                      "globalScope": false,
+                      "service": {
+                        "template": "ui/form/element/helper/service"
+                      },
+                      "disabled": true,
+                      "validation": {
+                        "required-entry": false
+                      },
+                      "notice": "Controls storefront price presentation for this product. Hiding a price does not make prices confidential in APIs.",
+                      "options": [
+                        {
+                          "value": "0",
+                          "label": "Inherit"
+                        },
+                        {
+                          "value": "1",
+                          "label": "Yes"
+                        },
+                        {
+                          "value": "2",
+                          "label": "No"
+                        }
+                      ]
+                    },
+                    "component": "form.select",
+                    "factory_calls": [
+                      {
+                        "name": "coresh_quote_request_show_price",
+                        "formElement": "select"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "duplicate_count_expectation_matched": true,
+              "status": "PASS"
+            }
+          ],
+          "status": "PASS"
+        }
+      ],
+      "native_sources": {
+        "app/code/Magento/Ui/Component/AbstractComponent.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/AbstractComponent.php",
+          "sha256": "f76674c8f057a84897414e2144477389c679eececcb59a9ea2b8c1c0335f6e97"
+        },
+        "app/code/Magento/Ui/Component/Container.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Container.php",
+          "sha256": "8b892edc8b57bca332bc97e80eaf12dc9854892f6313e34d51a49434eff83895"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/AbstractElement.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Element/AbstractElement.php",
+          "sha256": "204b419e3ed2ad10c0ab8757f565010c7894546eac8531dee3f8ef2f9b4f5464"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/AbstractOptionsField.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Element/AbstractOptionsField.php",
+          "sha256": "1be1b07bc67b4752fbccbdd24c07e876029aad139cee62b629bd79852ac07f6e"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/ElementInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Element/ElementInterface.php",
+          "sha256": "e59a1e6d50757fc10074cef17252d14f1d6d941f7f4678f467b67354e355d65c"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/Input.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Element/Input.php",
+          "sha256": "bf03d796a21f3ee27c0b5a3379c879a0f8b811be3c4428487b43dd18426885ee"
+        },
+        "app/code/Magento/Ui/Component/Form/Element/Select.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Element/Select.php",
+          "sha256": "815696c3a74ff4277a18e8c35ef494f5adc920a1f8cfa46188fb1b383e6c6464"
+        },
+        "app/code/Magento/Ui/Component/Form/Field.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Component/Form/Field.php",
+          "sha256": "b2b094fe5002c050e84ad07ce61c7f9c43736cd890cc65eeb89cab418e1d274f"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/ArrayType.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Argument/Parser/ArrayType.php",
+          "sha256": "404a5a76e9423e334e806704891a971cc93def81072c203c8833d6dc331fa4e3"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/Composite.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Argument/Parser/Composite.php",
+          "sha256": "3210827ce465bee84ecf1c5c1c56ff56977f1136f1aad00baf482304bae589a3"
+        },
+        "app/code/Magento/Ui/Config/Argument/Parser/XpathType.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Argument/Parser/XpathType.php",
+          "sha256": "70b9ff464765ee0ad96e06aa7265fb0623cfef11a54d4e3b56ef97fa6f2a7d6f"
+        },
+        "app/code/Magento/Ui/Config/Argument/ParserInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Argument/ParserInterface.php",
+          "sha256": "2f882fe65df403defc19343028d9f240f9246098b964c537f3549b7ebd02e0e7"
+        },
+        "app/code/Magento/Ui/Config/Converter.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Converter.php",
+          "sha256": "94c6cdca8c65c63f33013d82a0d40cbae2b6a2ee8103d903034a455520e8963c"
+        },
+        "app/code/Magento/Ui/Config/ConverterUtils.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/ConverterUtils.php",
+          "sha256": "9c662cf55c1b26c67a4d680ea19698847ee8465ab843bdb27ffef3ffeec426be"
+        },
+        "app/code/Magento/Ui/Config/Reader/DefinitionMap/Converter.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/Config/Reader/DefinitionMap/Converter.php",
+          "sha256": "56b651853e342bee54c577e3bb58696a77ec8a76cea58601207f0d6adca84f6d"
+        },
+        "lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php",
+          "sha256": "0cd43595cf01274a99a5ddbf2a6405fba9021a86fd7a9c475aa8e4690fa51390"
+        },
+        "lib/internal/Magento/Framework/Config/ConverterInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Config/ConverterInterface.php",
+          "sha256": "31139659a31d471280ce2c178dc6d2f5474cdf72ce049f3711e76de52b07d56e"
+        },
+        "lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php",
+          "sha256": "f29445cb613748ada6ccf45962f04d6ae78e3122c9daebc921c3d070c6e3616a"
+        },
+        "lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php",
+          "sha256": "df332065981c6ad06d231cbc9833a0f6bf6b37dd8bae6b0eee69abd60e50482a"
+        },
+        "lib/internal/Magento/Framework/Config/ReaderInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Config/ReaderInterface.php",
+          "sha256": "647fdb00798e8af0fdf6c353af44ff2c54261df1a46bfce987ddc14e05334d77"
+        },
+        "lib/internal/Magento/Framework/DataObject.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/DataObject.php",
+          "sha256": "47c6a1a977bdb8e506132d691eb376ba119f97c1359868261a3029a6b441deb6"
+        },
+        "lib/internal/Magento/Framework/Exception/LocalizedException.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Exception/LocalizedException.php",
+          "sha256": "85776a57b94cfe3bc9e268e0e17132fab8bfcc9228e0f82488e5ce1b9a2fdad9"
+        },
+        "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+          "sha256": "4ae8e50c240b0c52b3006d591bff352046ad6471d2f9472727bf44bfa8044dbb"
+        },
+        "lib/internal/Magento/Framework/Phrase.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Phrase.php",
+          "sha256": "e7915201f93b4f0179ff3e7a3651d72098e28183aba7fb1564f446933e661bf4"
+        },
+        "lib/internal/Magento/Framework/Phrase/Renderer/Placeholder.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Phrase/Renderer/Placeholder.php",
+          "sha256": "e0a172ab1bc1ba8baec5fa2dec8ab151530e47dde3af62dfd2c9672deeae1c65"
+        },
+        "lib/internal/Magento/Framework/Phrase/RendererInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/Phrase/RendererInterface.php",
+          "sha256": "894476da8767e2803ba9972e78b839becd69cef040334d3a12641ef960618d4a"
+        },
+        "lib/internal/Magento/Framework/View/Element/BlockInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/BlockInterface.php",
+          "sha256": "171046b043fe84d1f29943fff3e2011fe8a7e928e1f24a4f02bacd7180e33c86"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/Config/ManagerInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponent/Config/ManagerInterface.php",
+          "sha256": "8d72979905e5fa4b4e3d87ea5743b6fb64ad36cae0bf0060e01dff7601a280dc"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/ContextInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponent/ContextInterface.php",
+          "sha256": "9317b4a3d55c0316f03746aab58d2d8dad6ff24420e7d7884d2607c90771a563"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/PoolInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponent/PoolInterface.php",
+          "sha256": "413981c4d8e9757b7e08e382de2b98d8589e09447e0c780332401c257da42193"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/Processor.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponent/Processor.php",
+          "sha256": "df9c8431c751caee7c5fa11a6caaaffe54abd729b9eafb912cd49174e9ac6aa6"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponent/SubjectInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponent/SubjectInterface.php",
+          "sha256": "b9b543e0d56db7eb10b97ffd612b050402f0c52d258cf24c27ddaf16d6350062"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponentFactory.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponentFactory.php",
+          "sha256": "ba8b165f55d8dcb41fbd2507b0e9f355b2708a0035305c2df090a01ec61ed297"
+        },
+        "lib/internal/Magento/Framework/View/Element/UiComponentInterface.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Element/UiComponentInterface.php",
+          "sha256": "534843a80d2b96eab97b2a976b7cc3722659b918f5482666303c1bd5c8b27ce0"
+        },
+        "lib/internal/Magento/Framework/View/Layout/Argument/Parser.php": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/lib/internal/Magento/Framework/View/Layout/Argument/Parser.php",
+          "sha256": "3957f19776d127447d56e6c641673a77f5f96e30a8ab9a5f2c800a6d0bc3922a"
+        },
+        "app/code/Magento/Ui/view/base/ui_component/etc/definition.map.xml": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Ui/view/base/ui_component/etc/definition.map.xml",
+          "sha256": "efd3af1d5a313a98bca4d4b427575d486fde6c40ef98c61004de95bc1c917d98"
+        }
+      },
+      "inspected_native_Eav_contract": {
+        "execution": "Source inspected only; EAV modifier methods and EAV storage NOT RUN",
+        "checks": {
+          "container_prefix_from_native_getAttributesMeta": true,
+          "native_getContainerChildren_uses_attribute_code": true,
+          "native_setupAttributeMeta_provides_form_element": true,
+          "native_modifyMeta_adds_metadata_to_group_children": true,
+          "native_container_prefix_is_container_": true
+        },
+        "source": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/Eav.php",
+          "sha256": "e7533f14cf8ab5ebee3791f8463aee44648f2acd629d313043f52c0ac826a0ff"
+        },
+        "AbstractModifier_source": {
+          "url": "https://raw.githubusercontent.com/magento/magento2/2.4.9/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/AbstractModifier.php",
+          "sha256": "28516f1bda897f591dc1ac42b454251a213dd056bd508e84d6cff260500f9c61"
+        }
+      },
+      "executed_field_cases": 24
+    }
+  ]
+}

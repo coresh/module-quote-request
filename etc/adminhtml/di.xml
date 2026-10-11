@@ -7,9 +7,10 @@
             <argument name="identifierName" xsi:type="string">request_id</argument>
         </arguments>
     </virtualType>
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+    <!-- Keep this grid's handle map isolated: an area-specific shared map would replace global registrations. -->
+    <virtualType name="CoreshQuoteRequestGridCollectionFactory" type="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments><argument name="collections" xsi:type="array"><item name="coresh_quote_request_listing_data_source" xsi:type="string">CoreshQuoteRequestGridCollection</item></argument></arguments>
-    </type>
+    </virtualType>
     <virtualType name="CoreshQuoteRequestGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments><argument name="appliers" xsi:type="array">
             <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
@@ -17,7 +18,10 @@
         </argument></arguments>
     </virtualType>
     <virtualType name="CoreshQuoteRequestGridReporting" type="Magento\Framework\View\Element\UiComponent\DataProvider\Reporting">
-        <arguments><argument name="filterPool" xsi:type="object">CoreshQuoteRequestGridFilterPool</argument></arguments>
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">CoreshQuoteRequestGridCollectionFactory</argument>
+            <argument name="filterPool" xsi:type="object">CoreshQuoteRequestGridFilterPool</argument>
+        </arguments>
     </virtualType>
     <virtualType name="CoreshQuoteRequestGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments><argument name="reporting" xsi:type="object">CoreshQuoteRequestGridReporting</argument></arguments>

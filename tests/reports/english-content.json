@@ -1,12 +1,12 @@
 {
   "checker": "coresh-quote-request-english-content",
-  "generated_at": "2026-10-11T04:10:06.492278+00:00",
-  "root": "/workspace/scratch/ff728627a180/route-fix/Coresh_QuoteRequest",
+  "generated_at": "2026-10-11T06:49:40.509746+00:00",
+  "root": "/workspace/scratch/ff728627a180/admin-fix-117/Coresh_QuoteRequest",
   "status": "PASS",
   "scope": "All file/directory names and all UTF-8 file contents; no extension or directory allowlist.",
   "limitation": "Character scan only; does not assess translation quality or prove English-language content.",
-  "names_scanned": 317,
-  "utf8_files_scanned": 241,
+  "names_scanned": 334,
+  "utf8_files_scanned": 256,
   "findings": [],
   "unscanned": [],
   "omitted_output": [

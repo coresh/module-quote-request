@@ -1,0 +1,532 @@
+{
+    "schema": 1,
+    "tag": "2.4.8-p5",
+    "status": "PASS",
+    "checks": 77,
+    "results": [
+        {
+            "name": "global registrations, area order 0: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 0: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "global registrations, area order 1: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 0: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "adminhtml registrations, area order 1: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 0: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: shared map exactly unchanged",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: shared map excludes Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: sales_order_grid_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: mpcfp_callforprice_rules_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: mpcfp_callforprice_requests_collection_listing_data_source resolves",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: provider routes to private Reporting",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: Reporting routes to private factory",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: virtual factory resolves native class",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: private virtual factory inherits shared map and adds Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: native Reporting searches Coresh collection",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: native Reporting paginates and applies selected filter pool",
+            "status": "PASS"
+        },
+        {
+            "name": "both stages, area order 1: correct table and identifier",
+            "status": "PASS"
+        },
+        {
+            "name": "old module reproduces missing handle: sales_order_grid_data_source",
+            "status": "PASS"
+        },
+        {
+            "name": "old module reproduces missing handle: mpcfp_callforprice_rules_listing_data_source",
+            "status": "PASS"
+        },
+        {
+            "name": "old module reproduces missing handle: mpcfp_callforprice_requests_collection_listing_data_source",
+            "status": "PASS"
+        },
+        {
+            "name": "old map retained only Coresh handle",
+            "status": "PASS"
+        },
+        {
+            "name": "listing selects configured private data provider",
+            "status": "PASS"
+        }
+    ],
+    "native_sources": [
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/Config/Config.php",
+            "sha256": "67bd481c7217dc6e7b3a2fccf014b3caf9201fa7676836a8287436be36fc5f8c",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/Config/Config.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/Config/Reader/Dom.php",
+            "sha256": "5797681ecc2245b98c694581b54347fa8205a44b06da950c85c4fab2bd55f241",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/Config/Reader/Dom.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/Config/Mapper/Dom.php",
+            "sha256": "950dd7b32fad317e828fa0e8d8507633f40558feebd4eccdc0c5bad64d8c0136",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/Config/Mapper/Dom.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/Config/Mapper/ArgumentParser.php",
+            "sha256": "4ab874be7ea391453bcfd28c22dcebb28227a1c58ebd80ef725599985680d28e",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/Config/Mapper/ArgumentParser.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/Helper/SortItems.php",
+            "sha256": "01d3e73bb35bada48b58cf23b1cd8271e2d054d993c453f835758025a434ab3e",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/Helper/SortItems.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/ConfigInterface.php",
+            "sha256": "55f6390037c1118a76ce46129e694e8a6221e92da31e6ec40c8d36d5f6e3acde",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/ConfigInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/RelationsInterface.php",
+            "sha256": "c8e96e2e9b212fc40d0992341e700b80de8effa5f51a22e1ec577e516b4906c4",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/RelationsInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/DefinitionInterface.php",
+            "sha256": "10b605e1bd2c2b438916b2aedf1050305e34dc1302d0e178ffc1028aab34b60a",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/DefinitionInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManagerInterface.php",
+            "sha256": "e932036f0fe4a1a063892af2814fccc259ab87911a5771c60bc9446c7b2e089a",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManagerInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Dom.php",
+            "sha256": "ed05d79cce13d6a5982847c50dfe84bb6277c58a3d38700ac6fda06be5de12cc",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Dom/NodeMergingConfig.php",
+            "sha256": "d5587da6433ee8153fce9c87393f01b85a7099642c447679fab509e15e2abe5d",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom/NodeMergingConfig.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php",
+            "sha256": "cea78cb684152ea270518d53de707242b1538798c749370c8b1c34adbb554999",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom/NodePathMatcher.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/ValidationStateInterface.php",
+            "sha256": "4ca08507fc29c60174cb24306a13960933d33b6f84720d72fa2b169067fe3a52",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/ValidationStateInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Reader/Filesystem.php",
+            "sha256": "ab98d54d4174c31b3f42fec2443879516af1eb98e89a03d258a0a3a9cda4ff3c",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Reader/Filesystem.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/ReaderInterface.php",
+            "sha256": "159594a3bd2a95927e8dae9aee6d65513cd6951bfea0eca83c1406c66e9777ea",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/ReaderInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/ConverterInterface.php",
+            "sha256": "3b1acfd7cb4a8f328dc6a234a9059ea8294509b1b586a9352dbb29f76e02de98",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/ConverterInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/CollectionFactory.php",
+            "sha256": "73a701cb430391ce7fee282de6afbe3f1e47f89d84c3b329adb0eec24820b672",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/CollectionFactory.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/Reporting.php",
+            "sha256": "4339a1b8cdd605d3ea2a5a09a359af2f2373650cd52f129849bf28651221e2ba",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/Reporting.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Api/Search/ReportingInterface.php",
+            "sha256": "94a431a1cece20a710f276f6150f35288d588f03d65cf2a388d3aa89b5a3ff74",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Api/Search/ReportingInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Data/Collection.php",
+            "sha256": "9f488dcf25d28aea6419f96f19d968e97c311db02175167e932e6223e9a31112",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/Collection.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Data/CollectionDataSourceInterface.php",
+            "sha256": "130c9b14289f7bf15a27c34d9da4fa8f3d4019df6cf78d97a05e0bf6a86618f8",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/CollectionDataSourceInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Option/ArrayInterface.php",
+            "sha256": "c26eecace829b1ac1d83e7a78703a177e32fbc478ee46fb5ebe7a38d20df0027",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Option/ArrayInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php",
+            "sha256": "c15b341937333fc8ceb678c01f5c738d06d506422e52bd243020257e43696aa8",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/ObjectManager/ResetAfterRequestInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Data/Argument/InterpreterInterface.php",
+            "sha256": "a7b30ec8dd5864690d66ac3a2cecb400ee97e93c740e4033f16d2852700cc0ea",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/Argument/InterpreterInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Stdlib/BooleanUtils.php",
+            "sha256": "ea9b6d38343d8b26d4835d58625061d2c59654ce48346c18714931fedf93a482",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Stdlib/BooleanUtils.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php",
+            "sha256": "c42877e5be0435ea8c9709a045e506164e86515b1713b36d9cdda3f3520ffde8",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Converter/Dom/Flat.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php",
+            "sha256": "f46525208d3f8bac39864dc745909a8706157d7f8d066f54e3664a9a79d4165c",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Config/Dom/ArrayNodeConfig.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Api/Search/SearchCriteriaInterface.php",
+            "sha256": "7056266419ed40f6870d6fceb7a4d4bff907b1a909b3cdb09291ec9eae36be78",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Api/Search/SearchCriteriaInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php",
+            "sha256": "3a78a105292219fd766ea6056f3c1a4de9806bd59785e667ac2e737bc0a97749",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Api/SearchCriteriaInterface.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/FilterPool.php",
+            "sha256": "be0d96f6c7596b93e7642b83280e30b0a789cfea319473873833e56bb1e1207f",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/UiComponent/DataProvider/FilterPool.php"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/Data/OptionSourceInterface.php",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/Data/OptionSourceInterface.php",
+            "sha256": "5ba5fefe265ba55248ff6ba46d5d85d0862a41ef297900825608c9925bed2c33"
+        },
+        {
+            "tag": "2.4.8-p5",
+            "file": "lib/internal/Magento/Framework/View/Element/Block/ArgumentInterface.php",
+            "source_url": "https://raw.githubusercontent.com/magento/magento2/2.4.8-p5/lib/internal/Magento/Framework/View/Element/Block/ArgumentInterface.php",
+            "sha256": "dcefd9eacc52628788f379e6cfff638faa9bfb1bcd547daa6e384fba7f7284f9"
+        }
+    ],
+    "fixture_mappings": {
+        "sales_order_grid_data_source": "FixtureCoreOrderGridCollection",
+        "mpcfp_callforprice_rules_listing_data_source": "FixtureMageplazaRulesCollection",
+        "mpcfp_callforprice_requests_collection_listing_data_source": "FixtureMageplazaRequestsCollection"
+    },
+    "module_input_sha256": {
+        "etc/di.xml": "ba219bfd724124eba6805cac094295a2b94c53084e48a88acd465632bf2c9097",
+        "etc/adminhtml/di.xml": "b96cef7defdd6abf4d3e88a0907dcfbeb0291590935d1f42af977786ab3df286",
+        "legacy_etc/adminhtml/di.xml": "d7b324a6dee35dae59777dcf675466001c1ca1969708855522253cfb1106db49",
+        "view/adminhtml/ui_component/coresh_quote_request_listing.xml": "05f6a3c9c8132f00c7c30805d57c79e898c67192c78a66da102e5ce837fb34e4"
+    },
+    "doubles": [
+        "literal argument interpreter",
+        "class relations and definitions",
+        "SQL-free object creation",
+        "SQL-free filter pool",
+        "search criteria"
+    ],
+    "limits": [
+        "No installed Mageplaza XML or collection classes were provided.",
+        "No Magento bootstrap, compiled DI, database, admin HTTP or live server execution."
+    ]
+}

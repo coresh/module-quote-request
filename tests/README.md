@@ -60,7 +60,7 @@ The new block fixture models the native parent's mutable protected `formKey` pro
 
 ## Configuration and button regressions — 1.1.3
 
-The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 718-test/5534-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
+The 1.1.3 suite contained 607 tests/1842 assertions; those cases remain in the current 735-test/5630-assertion suite. The new configuration contract checks protect both path-derived default email IDs and old aliases. Backend configuration validation runs before save; native persistence and Save Config dispatch remain unverified. `AdminButtonActionsTest` executes the actual five mutation controllers with controlled request/resource/transport/session dependencies. Its 82 tests/591 assertions are included in the full total.
 
 `button-events.test.cjs` adds 19 actual-AMD event/output cases. With the modal (17), inline (10) and grid (10) cases, there were 56 unique JavaScript scenarios before the additional 34 submission-boundary cases in 1.1.4 (90 current unique scenarios). To exercise the four inherited grid button-click cases, pass the actual installed or downloaded upstream Magento AMD parent:
 
@@ -112,3 +112,9 @@ Current full results: 718 PHP tests/5534 assertions, 90 unique AMD scenarios, 80
 Native-event-registration.json separately records 62 checks (31 per tag), using actual core DOM merge/converter/manager/invoker/factory/FrontController with explicit infrastructure doubles. The disabled old entry is skipped before factory lookup and actual Submit executes. Its authoring probe and external reference cache are outside release runtime; ordinary package tests reproduce isolated observer/XML/submission contracts. Installed Magento integration remains NOT RUN.
 
 The checker now resolves the new class and pins its body, compatibility subclass and event XML. Ten additional Python cases cover legacy/mixed/missing files and new-class resolution without loading it. Earlier 1.1.5 counts describe that release; current results and boundaries are in docs/TEST_REPORT.md.
+
+## Admin product form and collection isolation — 1.1.7
+
+`ProductFormFieldConfigurationTest` verifies native EAV container paths, explicit input types, no orphan duplicate controls and preserved dynamic metadata (13 cases/80 assertions). The old XML gives nine expected failures in the new contract tests. `GridCollectionFactoryIsolationTest` protects the private provider → reporting → factory chain and absence of shared-map overrides (four cases/16 assertions). These are configuration contracts; the separate native reports document actual target metadata merging, Field preparation and ObjectManager stage/factory behavior with explicit doubles.
+
+The checker suite has 58 cases. Two exact 1.1.6 XML snapshots in `tests/Tools/fixtures/1.1.6` verify rejection of old installed sources and rehashed legacy references. They are test fixtures, not runtime configuration. Newly executed results, historical evidence and installed-Magento boundaries are separated in `docs/TEST_REPORT.md`.
