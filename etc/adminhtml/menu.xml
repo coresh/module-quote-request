@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu><add id="Coresh_QuoteRequest::requests" title="Coresh — Quote Requests" module="Coresh_QuoteRequest" sortOrder="80" parent="Magento_Customer::customer" action="coresh_quoterequest/request/index" resource="Coresh_QuoteRequest::view"/><add id="Coresh_QuoteRequest::migration" title="Legacy Quote Request Migration" module="Coresh_QuoteRequest" sortOrder="81" parent="Magento_Customer::customer" action="coresh_quoterequest/migration/index" resource="Coresh_QuoteRequest::migrate"/></menu>
+    <menu>
+        <add id="Coresh_QuoteRequest::requests" title="Coresh — Quote Requests" module="Coresh_QuoteRequest" sortOrder="80"
+             parent="Magento_Sales::sales" action="coresh_quoterequest/request/index" resource="Coresh_QuoteRequest::view"/>
+        <add id="Coresh_QuoteRequest::migration" title="Legacy Quote Request Migration" module="Coresh_QuoteRequest" sortOrder="81"
+             parent="Magento_Customer::customer" action="coresh_quoterequest/migration/index" resource="Coresh_QuoteRequest::migrate"/>
+    </menu>
 </config>

@@ -1,0 +1,23 @@
+{
+  "suite": "Grid export AMD isolated DOM doubles",
+  "passed": 10,
+  "failed": 0,
+  "tests": [
+    "missing runtime form key prevents export POST",
+    "missing grid params prevents export POST",
+    "selected IDs are serialized as POST body with current key and forced module namespace",
+    "native empty selection becomes select-all excluded literal false",
+    "excluded mode remains exclusive and runtime form key is reread",
+    "nested grid filters and HTML-like text remain input values; temporary form is removed",
+    "actual native Export button click dispatches module POST for selected requests and search filters",
+    "actual native empty selected export uses filtered select-all protocol",
+    "actual native excluded mode exports all filtered requests except explicit exclusions",
+    "actual native select-all exclusion mode with no excluded rows remains literal false"
+  ],
+  "native_parent_button_methods": {
+    "status": "PASS",
+    "path": "/workspace/scratch/ff728627a180/reference/2.4.8-p5/app/code/Magento/Ui/view/base/web/js/grid/export.js",
+    "sha256": "d3aaa029cf0386365b972fe7c64f2665acfecf5ca700d0f23c2a85311036236f",
+    "scope": "Actual upstream applyOption/getActiveOption/getParams; DOM, jQuery, underscore and uiElement doubles. No browser or Magento UI bootstrap."
+  }
+}

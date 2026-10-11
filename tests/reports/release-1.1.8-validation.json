@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-10-11T07:40:36.592713+00:00",
+  "release": "1.1.8",
+  "menu": "Sales > Coresh \u2014 Quote Requests",
+  "unit_php": {
+    "status": "PASS",
+    "tests": 748,
+    "assertions": 5723,
+    "additional_menu_cases": 13,
+    "additional_menu_assertions": 93,
+    "environment": "PHP8.3.6 PHPUnit10.5.66; explicit framework doubles"
+  },
+  "javascript": {
+    "status": "PASS",
+    "unique_scenarios": 90,
+    "scope": "Actual AMD modules with DOM/jquery/customer-data doubles; native grid parent repeated for both tags"
+  },
+  "python_tools": {
+    "status": "PASS",
+    "tests": 86
+  },
+  "static_xsd": {
+    "2.4.8-p5": {
+      "PASS": 199,
+      "FAIL": 0,
+      "NOT RUN": 0
+    },
+    "2.4.9": {
+      "PASS": 199,
+      "FAIL": 0,
+      "NOT RUN": 0
+    }
+  },
+  "native_menu": {
+    "2.4.8-p5": {
+      "status": "passed",
+      "assertions": 48,
+      "native_classes_executed": 6
+    },
+    "2.4.9": {
+      "status": "passed",
+      "assertions": 48,
+      "native_classes_executed": 6
+    }
+  },
+  "previous_release_regression": {
+    "reference": "Unchanged1.1.7archive with new AdminMenuConfigurationTest only",
+    "expected_failures": 2,
+    "cases": 13,
+    "assertions": 80,
+    "failures": [
+      "PreviousCustomers parent",
+      "MissingdirectSalespackage dependency"
+    ]
+  },
+  "changed_runtime_files": [
+    "composer.json",
+    "etc/adminhtml/menu.xml",
+    "etc/module.xml"
+  ],
+  "security_review": {
+    "acl_identifiers_and_hierarchy": "unchanged; native Sales resource is not overridden",
+    "admin_mutations": "Separate manage/send_email ACL resources; POST-body form keys retained",
+    "restricted_roles": "Sales container and QuoteRequestview required for menu navigation; otherSalesoperations reviewed independently",
+    "role_rule_save": "Native both-tag Rules::saveRel source inspected, not executed; customrole selections save explicit allow/deny rules"
+  },
+  "not_executed": [
+    "InstalledMagento DI compilation",
+    "Magento integration test database",
+    "Live admin session/ACL rule loader",
+    "Browser rendering and HTTPrequests",
+    "Production server deployment or SMTPdelivery"
+  ]
+}

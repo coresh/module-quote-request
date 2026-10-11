@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.8 — 2026-10-11
+
+- Move Coresh — Quote Requests to the Sales menu while retaining its label, action URL and separate view/manage/send permissions.
+- Declare Magento_Sales as a Composer and module-sequence dependency so its parent menu is registered before the extension's entry.
+- Update the administrator navigation, upgrade and permission instructions in README and the configuration guide; retain the Customers migration page.
+- Document the native Sales-container permission needed by restricted roles; preserve existing Coresh ACL identifiers and independent mutation permissions.
+- Add menu and access-control regressions and rerun the PHP, JavaScript, tool and target-XSD checks. No request persistence or email behavior changes.
+
 ## 1.1.7 — 2026-10-11
 
 - Correct product form overrides to use native EAV `container_<attribute_code>` paths and explicit select/input `formElement` values; retain dynamic options, scope and defaults without duplicate controls.
@@ -78,4 +86,4 @@
 - Cart Hidden, independent price visibility, and a shared server-side purchasing policy.
 - Explicit legacy migration with dry-run support, unit/integration test assets, reports, and verifiable packaging.
 
-The scope of checks actually performed is recorded in TEST_REPORT. This changelog does not replace runtime certification.
+Executed check outputs are retained under `tests/reports/`. This changelog does not replace runtime certification.

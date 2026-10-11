@@ -1,0 +1,109 @@
+{
+    "magento_tag": "2.4.9",
+    "status": "passed",
+    "assertions": 48,
+    "native_classes_executed": 6,
+    "roles": {
+        "quote_view_and_sales_container": {
+            "granted_resources": [
+                "Magento_Sales::sales",
+                "Coresh_QuoteRequest::view"
+            ],
+            "visible_top_level_items": [
+                "Magento_Sales::sales"
+            ],
+            "visible_sales_children": [
+                "Coresh_QuoteRequest::requests"
+            ],
+            "quote_request_reachable_in_menu": true
+        },
+        "quote_view_without_sales_container": {
+            "granted_resources": [
+                "Coresh_QuoteRequest::view"
+            ],
+            "visible_top_level_items": [],
+            "visible_sales_children": [
+                "Coresh_QuoteRequest::requests"
+            ],
+            "quote_request_reachable_in_menu": false
+        },
+        "sales_container_without_quote_view": {
+            "granted_resources": [
+                "Magento_Sales::sales"
+            ],
+            "visible_top_level_items": [
+                "Magento_Sales::sales"
+            ],
+            "visible_sales_children": [],
+            "quote_request_reachable_in_menu": false
+        },
+        "neither_permission": {
+            "granted_resources": [],
+            "visible_top_level_items": [],
+            "visible_sales_children": [],
+            "quote_request_reachable_in_menu": false
+        }
+    },
+    "checks": [
+        "Native Sales parent is registered",
+        "Native Sales item is a top-level menu",
+        "Native Sales parent uses the Sales ACL resource",
+        "Quote request parent matches the native Sales identifier",
+        "Quote request child keeps its own view permission",
+        "Quote request action remains the protected listing route",
+        "quote_view_and_sales_container: native builder attaches quote request beneath Sales",
+        "quote_view_and_sales_container: nested item remains reachable by its existing identifier",
+        "quote_view_and_sales_container: quote request is outside the native Operations subtree",
+        "quote_view_and_sales_container: native iterator applies the parent permission",
+        "quote_view_and_sales_container: native iterator applies the child permission",
+        "quote_view_and_sales_container: no order or other native Sales entries are granted",
+        "quote_view_and_sales_container: view/menu grants do not grant status changes",
+        "quote_view_and_sales_container: view/menu grants do not grant email resending",
+        "quote_view_and_sales_container: view/menu grants do not grant migration",
+        "quote_view_and_sales_container: both parent and child grants are needed for navigation",
+        "quote_view_without_sales_container: native builder attaches quote request beneath Sales",
+        "quote_view_without_sales_container: nested item remains reachable by its existing identifier",
+        "quote_view_without_sales_container: quote request is outside the native Operations subtree",
+        "quote_view_without_sales_container: native iterator applies the parent permission",
+        "quote_view_without_sales_container: native iterator applies the child permission",
+        "quote_view_without_sales_container: no order or other native Sales entries are granted",
+        "quote_view_without_sales_container: view/menu grants do not grant status changes",
+        "quote_view_without_sales_container: view/menu grants do not grant email resending",
+        "quote_view_without_sales_container: view/menu grants do not grant migration",
+        "quote_view_without_sales_container: both parent and child grants are needed for navigation",
+        "sales_container_without_quote_view: native builder attaches quote request beneath Sales",
+        "sales_container_without_quote_view: nested item remains reachable by its existing identifier",
+        "sales_container_without_quote_view: quote request is outside the native Operations subtree",
+        "sales_container_without_quote_view: native iterator applies the parent permission",
+        "sales_container_without_quote_view: native iterator applies the child permission",
+        "sales_container_without_quote_view: no order or other native Sales entries are granted",
+        "sales_container_without_quote_view: view/menu grants do not grant status changes",
+        "sales_container_without_quote_view: view/menu grants do not grant email resending",
+        "sales_container_without_quote_view: view/menu grants do not grant migration",
+        "sales_container_without_quote_view: both parent and child grants are needed for navigation",
+        "neither_permission: native builder attaches quote request beneath Sales",
+        "neither_permission: nested item remains reachable by its existing identifier",
+        "neither_permission: quote request is outside the native Operations subtree",
+        "neither_permission: native iterator applies the parent permission",
+        "neither_permission: native iterator applies the child permission",
+        "neither_permission: no order or other native Sales entries are granted",
+        "neither_permission: view/menu grants do not grant status changes",
+        "neither_permission: view/menu grants do not grant email resending",
+        "neither_permission: view/menu grants do not grant migration",
+        "neither_permission: both parent and child grants are needed for navigation",
+        "Native builder rejects a missing parent",
+        "Native builder rejects duplicate quote request menu registrations"
+    ],
+    "native_source_sha256": {
+        "app/code/Magento/Backend/Model/Menu.php": "b4c1c145300aaa123cb9a49d503b66428b835c0889b6934e61fd3f48a905411a",
+        "app/code/Magento/Backend/Model/Menu/Item.php": "8db87f99fb5e57f8fca542cd710872edab68890b29ebf335271f0d902d8f4d00",
+        "app/code/Magento/Backend/Model/Menu/Builder/AbstractCommand.php": "a71450cbfd22ccfc4de606614638f6a618873bffc0cfdbd0c88acd382686faea",
+        "app/code/Magento/Backend/Model/Menu/Builder/Command/Add.php": "23ec27333c576575f9d33d01d636c0d71acdc9f3518e38a8dc7f4b8b88e1aef2",
+        "app/code/Magento/Backend/Model/Menu/Builder.php": "59dffd679bf4fc4fe5a8fd76f17c676c117b12727fba2339d4b505405311f25b",
+        "app/code/Magento/Backend/Model/Menu/Filter/Iterator.php": "8317260cf21eb2ce7b2f0ab16e290a937ac9f0de5344c4fab428332c34d70a08",
+        "app/code/Magento/Sales/etc/adminhtml/menu.xml": "9b5a1bf26a47c7503fa4d9618afeb7cbe28079985063dd44ed1c60a27848457f",
+        "app/code/Magento/Sales/etc/acl.xml": "385118ef43436411236e0aa7bbb3c17d13d14953affb3d0183fbbc253e50585b"
+    },
+    "scope": "Unmodified native menu builder, commands, model, item and permission filter with controlled dependency/authorization fixtures.",
+    "limitations": "Constructors and generated factories bypassed with reflection; a reduced Sales branch is supplied as XML attributes. No native menu XML converter, installed ACL role loading, admin session, DI compilation, database or HTTP rendering was executed."
+}
